@@ -82,8 +82,14 @@ Last login: Tue May 18 09:42:11 on theta
   [ ENTER PAPER TRADE ]      [ OPEN BROKERAGE ]
 ```
 Ties to 3a (mono locked), 3c-1 (Θ terminal end card), and the L20
-scanner-unlock arc. Open sub-questions: live typing animation on
-load? coach line above or below the scan? paper-vs-real default.
+scanner-unlock arc. Sub-questions RESOLVED (Gee, 2026-05-18):
+- Load: NO type-on animation. Readout appears instant, framed by a
+  blinking cursor block at the top (after `Last login:`) and at the
+  bottom prompt line. Calm, alive at both ends.
+- Order: recap → stats → coach scan → action (as mocked). LOCKED.
+- Bottom action default = **adaptive**: paper-trade is primary
+  until the scanner unlocks at L20; after L20, open-brokerage
+  becomes the primary action, paper stays available.
 
 ### 3c. Game format  — DESIGN NEEDED
 What makes the lessons a "game": progress/XP, streaks, the locked scanner
