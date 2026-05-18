@@ -50,6 +50,24 @@ them with the generation tool's job_display.
     (end hook LOCKED 2026-05-18 Gee: "Θ / don't predict it. trade
     it. now." — supersedes old S7 `b5b93023…` / "trading, made
     usable today"; the dropped line is retired everywhere)
+- **Lesson 1 BLACK redo (current canonical), 2026-05-18**, nano_banana_2,
+  9:16, 1k. Global palette = black (navy retired). Black identity
+  anchor `1e1e016f-10ea-4fa4-9823-afca85b3be22` (derived from
+  a777c0e0; same face/proportions/outfit, pure-black bg) — this is
+  Nova's on-palette identity anchor; a777c0e0 is the navy-era
+  proportions source only. Frames ref = the black anchor:
+  - S1 cold-open: `e206e9c3-aa1f-47c9-80e9-feb8bf8ca111`
+  - S2 the buzz: `b9f4867e-278b-4afe-a3c0-80d889ddc8f2`
+  - S3 the read: `b646b750-0b7d-4bb9-8552-50069ab85f4d`
+  - S4 teaching A: `e2fd6c12-97b4-43af-825b-35d2fcc4e025`
+  - S5 teaching B: `6d259ad6-4832-4e76-8d56-0237bd15f1a0`
+  - S6 the scan: `cb5f48ab-b689-4c1f-ac18-7136ef0e94dd`
+  - S7 coach land + Θ CTA: **NOT YET DONE on black** — ran out of
+    credits before submit. Only navy `649619ad` exists. Regenerate
+    on black first thing after top-up (prompt ready; ~2 cr; keep
+    locked hook "Θ / don't predict it. trade it. now.").
+  Navy S1–S7 (`8cc62c94…`/`f8b262ee…`/`21d422dd…`/`2cef1c82…`/
+  `29324721…`/`8b8179a2…`/`649619ad…`) are SUPERSEDED/off-palette.
 - Terminal HOME screen render (DESIGN 3b-1), 2026-05-18,
   nano_banana_2, 9:16, 1k, ~2 cr: job
   `c78dd19f-1930-40f3-9067-78b63c1c6b6d`. Tight block, +$ delta in
