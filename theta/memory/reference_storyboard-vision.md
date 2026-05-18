@@ -37,3 +37,13 @@ them with the generation tool's job_display.
   seedance_2_0_fast, 9:16, 480p, 4s, 6 credits, start_image = locked
   still: job `f7f11d9d-6b04-45fc-9aaa-d23775ad566c`. Silent (VO is a
   separate step). Re-display via job_display.
+- Lesson 1 stills storyboard (7 key-frames, one per shot), 2026-05-18,
+  nano_banana_2, 9:16, 1k, ~2 cr each, identity ref = locked still A.
+  Maps 1:1 to `lesson1-script.md` shots. Re-display via job_display:
+  - S1 cold-open: `8cc62c94-198a-44be-a10b-e4099fb52f88`
+  - S2 the buzz: `f8b262ee-f6d3-4991-82c3-83d6095f782e`
+  - S3 the read (mono): `21d422dd-b1fd-4519-8d17-ab8cac9840c4`
+  - S4 teaching A: `2cef1c82-6367-4847-bad0-3831a308bd9d`
+  - S5 teaching B: `29324721-36bd-4bfc-8a52-cd559eb8e2b3`
+  - S6 the scan (app UI): `8b8179a2-ffce-411f-b321-117a1e9ce87e`
+  - S7 coach land + Θ CTA: `b5b93023-0bb7-4382-a76b-7568c2ee0122`
