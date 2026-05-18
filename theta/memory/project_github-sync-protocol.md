@@ -5,8 +5,13 @@ Decision: GitHub is the single sync backbone across all environments.
 - **Session start:** the cloud container auto-clones the repo from
   GitHub. Knowledge is "uploaded" automatically at start. CLAUDE.md
   auto-loads and points to HANDOFF.md + DESIGN.md + this memory index.
+- **Automated safety net:** `.claude/settings.json` (repo-tracked) has a
+  `Stop` hook that auto-commits + pushes any changes to the current
+  branch every time Claude stops. Nothing in-repo is ever lost even if
+  no one says "back it up". Persists across containers (it's in the repo).
 - **"Back it up" / "create a handoff" / end of session:** commit + push
-  EVERYTHING to GitHub. Push = next session downloads it on clone.
+  EVERYTHING to GitHub, then mirror `main` (the named/clean ritual on top
+  of the automated checkpoints). Push = next session downloads it.
 - **Banned transfer channels:** Gmail drafts, pastebin, Telegram. Git
   only. Local ~/.claude does not cross machines — never rely on it.
 

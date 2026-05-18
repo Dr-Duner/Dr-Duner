@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "R=$(git rev-parse --show-toplevel 2>/dev/null)||exit 0;cd \"$R\"||exit 0;[ -n \"$(git status --porcelain)\" ]||exit 0;B=$(git rev-parse --abbrev-ref HEAD);git add -A;git commit -q -m \"auto: session checkpoint $(date -u +%Y-%m-%dT%H:%M:%SZ)\"||exit 0;n=0;until git push -q origin \"$B\";do n=$((n+1));[ $n -ge 4 ]&&break;sleep $((2*n));done;exit 0",
+            "timeout": 120,
+            "statusMessage": "Auto-committing session to GitHub..."
+          }
+        ]
+      }
+    ]
+  }
+}
