@@ -54,3 +54,9 @@ them with the generation tool's job_display.
   nano_banana_2, 9:16, 1k, ~2 cr: job
   `c78dd19f-1930-40f3-9067-78b63c1c6b6d`. Tight block, +$ delta in
   signal green, paper/brokerage buttons. First visual of 3b-1.
+  (SUPERSEDED — was navy + dense.)
+- Terminal HOME screen v2 — black + readable spacing + real
+  scanner feed (DESIGN 3b-1 current), 2026-05-18, nano_banana_2,
+  9:16, 1k, ~2 cr: job `96e246fb-6404-44f9-a844-a0cd245091c4`.
+  Pure black bg, cyan [NOVA]+scan, green +delta, amber ! alert,
+  blank-line-per-block. Canonical 3b-1 visual.
