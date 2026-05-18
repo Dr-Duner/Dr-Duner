@@ -90,6 +90,12 @@ navy/green/off-white palette. This is Nova's official identity for all
 19 lessons — match it in every future Nova generation. Network policy
 blocks committing the file; re-display via job_display by that ID.
 
+**Nova voice LOCKED 2026-05-18 (Gee):** kind but *deeper* — a warm low
+female register, unhurried, grounded, calm authority; asks more than
+tells; close-mic intimate. NOT the video model's job — VO is a separate
+TTS/talent step composited over animation. Full script per shot:
+`lesson1-script.md`.
+
 ### 3d. Lessons 2–19 treatment  — DRAFTED
 - **Curriculum + per-lesson storyboards drafted:** see `LESSONS.md`
   (beat sheets) and `lesson-arc.png` (visual map). Built now from

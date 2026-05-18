@@ -12,6 +12,8 @@ Read this index and the files it points to before Theta work.
 - `reference_font.md` — coach-facing font LOCKED: IBM Plex Mono.
 - `reference_storyboard-vision.md` — LOCKED storyboard structure
   (Ancient Greece, chibi, buzz, mono, real scanner UI, Θ CTA).
+- `../lesson1-script.md` — Lesson 1 FINAL shooting script: per-shot VO
+  + Nova voice direction LOCKED (kind but deeper, warm low female).
 
 ## Session records
 - `../SESSION-2026-05-18.md` — persistence architecture built.
