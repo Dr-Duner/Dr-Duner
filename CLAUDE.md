@@ -32,18 +32,21 @@ in the same turn. Never let a decision live only in chat.
   format. The coach is the emotional spine.
 - Four coaches: Nova (Analyst), Rex (Veteran), Finn (Patient Teacher),
   Atlas (Risk Manager). Detail in `theta/lesson-flow.mmd`.
-- Palette — TWO REGISTERS (REFINED 2026-05-18, Gee). Black is the
-  BRAND/TERMINAL layer, NOT Nova's world:
-  (1) Brand/terminal = pure **black #000000**: logo, app UI, phone
-  screen, full-screen text/quote moments, closing Θ CTA lockup.
-  (2) Diegetic world = **real Aegean** (whitewashed stucco, bright
-  blue sea, sun-warm marble, dawn sky, period-accurate) — the phone
-  is the only modern object. Cut between the two registers.
-  Text = coach's color (see DESIGN 3b-1); default off-white #eef6f3.
-  Signal green #00c896 = Θ mark + reserved gain delta only; red =
-  reserved loss delta only. Old navy #0b1f3a retired. NOTE: earlier
-  "black everywhere" scene renders (Lesson 1 anchor + S1–S6) were a
-  misread of this rule — redo on the Aegean after credit top-up.
+- Palette — DELIBERATE DICHOTOMY (REFINED 2026-05-18, Gee). The
+  color split IS the message: modern phone/app vs ancient world;
+  the contrast is felt, not explained. Rhymes with L1 Dichotomy
+  of Control.
+  (1) **Phone/app interface = the ONLY black/green thing**: pure
+  black #000000, signal green #00c896 (Θ mark + gain delta only),
+  off-white #eef6f3 text, red = loss delta only. Covers phone
+  screen, app UI, logo, and any full-screen "app talking" beat
+  (text/quote, closing Θ CTA card) — that IS the app full-frame.
+  (2) **Everything else = full-color real Aegean** (whitewashed
+  stucco, bright blue sea, sun-warm marble, dawn sky, period-
+  accurate); phone is the only modern object, nothing else is
+  black/green. Cut between the two registers. Navy #0b1f3a
+  retired. NOTE: earlier all-black scene renders (Lesson 1 anchor
+  + S1–S6) misread this — scrap, redo on the Aegean after top-up.
 - Coach-facing text font is **IBM Plex Mono** (LOCKED 2026-05-18) — the
   monospace computer-terminal interface voice. See DESIGN.md 3a.
 - Lesson 9 was built in Cowork, viewed in the simulator; it is the bar for

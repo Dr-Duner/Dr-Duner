@@ -27,19 +27,25 @@ Theta trade scan.
 
 ## 2. Locked Decisions
 - **LOCKED** Brand name: Theta (symbol Θ).
-- **LOCKED** Palette — TWO REGISTERS (REFINED 2026-05-18, Gee). The
-  black is the BRAND/TERMINAL layer, not the world:
-  1. **Brand/terminal layer = pure black `#000000`**: logo, app UI,
-     the phone screen, full-screen text/quote moments, and the closing
-     Θ CTA lockup. Text in coach's color, default off-white `#eef6f3`;
-     signal green `#00c896` = Θ mark + reserved gain delta only; red =
-     reserved loss delta only. Retired navy `#0b1f3a` (never use).
-  2. **Diegetic world = real Aegean, NOT black**: whitewashed stucco,
-     bright blue sea, sun-warm white marble, dawn sky, period-accurate
-     to ancient Greece. The ONLY modern object in-world is the phone.
-  Cut between registers (warm world ↔ cold black terminal card). Black
-  backdrops on scene shots were a misread — redo. Earlier all-black
-  renders (incl. Lesson 1 anchor + S1–S6) are wrong-environment.
+- **LOCKED** Palette — DELIBERATE DICHOTOMY (REFINED 2026-05-18, Gee).
+  WHY: the color split *is* the message. The phone/app is modern tech
+  dropped into the ancient world; black/green/off-white vs full-color
+  antiquity makes that contrast felt, not explained. It also rhymes
+  with Lesson 1's Dichotomy of Control — two worlds, one frame.
+  1. **The phone/app interface = ONLY black/green thing**: pure black
+     `#000000`, signal green `#00c896` (= Θ mark + reserved gain delta
+     only), off-white `#eef6f3` text, red = reserved loss delta only.
+     This covers the phone screen, the app UI, the logo, and any
+     full-screen "the app talking" moment (text/quote beats, closing
+     Θ CTA card) — those ARE the app shown full-frame. Navy `#0b1f3a`
+     retired (never use).
+  2. **Everything else = full-color real Aegean**: whitewashed
+     Cycladic stucco, bright blue sea, sun-warm white marble, dawn
+     sky, period-accurate ancient Greece. NOTHING here is black/green.
+     The phone is the single modern object in the world.
+  Cut between the two registers (warm antiquity ↔ cold device). Black
+  scene backdrops were a misread — redo. Earlier all-black renders
+  (Lesson 1 anchor + S1–S6) are wrong-environment, scrap.
 - **LOCKED** Four coaches: Nova (Analyst), Rex (Veteran), Finn (Patient
   Teacher), Atlas (Risk Manager). Identities in `lesson-flow.mmd`.
 - **LOCKED** Arc: Lesson 1 (Dichotomy of Control) → 2–19 (mindset + craft)
