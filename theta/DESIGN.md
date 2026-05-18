@@ -77,7 +77,11 @@ for ALL lesson videos 1–19, (b) a recurring wrapper around each lesson's
 teaching middle (cold-open everyday life + buzz → lesson → Θ CTA), and
 (c) the marketing format. **Brand essence:** ancient and modern at the
 same time — Theta takes trading and makes it modern and usable today.
-Example render: `storyboard-vision-nova.png`.
+Renders: `storyboard-vision-nova.png` (concept),
+`storyboard-production-template.png` (the video shot-by-shot +
+App-Store quality bar), `storyboard-frame-layout.png` (9:16 grid /
+in-app coach-UI language), `storyboard-L5-theta.png` (worked example).
+All 19 lessons re-cut onto this template in `LESSONS.md`.
 
 ### 3d. Lessons 2–19 treatment  — DRAFTED
 - **Curriculum + per-lesson storyboards drafted:** see `LESSONS.md`

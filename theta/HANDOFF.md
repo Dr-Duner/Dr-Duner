@@ -28,11 +28,15 @@ and it is briefed automatically — he does not re-explain anything.
 - Font: LOCKED (IBM Plex Mono). Persistence: SOLVED.
 
 ## 4. Next steps
-0. Storyboard VISION locked (Ancient Greece, chibi, buzz, mono, real
-   scanner UI, Θ CTA) — see `reference_storyboard-vision.md` +
-   `storyboard-vision-nova.png`. Confirm Finn/Atlas scenes + scope.
-1. Gee reviews `LESSONS.md` + `lesson-arc.png`; refine any lesson beats.
-2. Re-cut lesson storyboards into the locked vision template on request.
+0. VISION locked + scope locked (universal spine for ALL 19 lessons +
+   marketing; "ancient and modern at once"). Production storyboards
+   rendered: `storyboard-production-template.png` (the video shot-by-
+   shot + App-Store quality bar), `storyboard-frame-layout.png` (9:16
+   grid, also the in-app coach-UI language), `storyboard-L5-theta.png`.
+   All 19 in `LESSONS.md` re-cut onto the template + per-lesson SCAN
+   card. Open: Finn/Atlas everyday scenes (TBD — Gee defines).
+1. Gee reviews the production storyboards; lock/adjust the quality bar.
+2. Render remaining per-lesson middles L5-style on request.
 3. Swap provisional L9 when the Cowork original surfaces.
 4. Train the 4 coaches as Soul characters (small spend, reused everywhere).
 5. Generate one hero lesson video as the quality bar.
