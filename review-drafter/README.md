@@ -10,7 +10,11 @@ API auto-ingest + operator-gated post-back. There is intentionally no
 client-facing app.
 
 Flow: paste/CSV reviews → 2 HIPAA-safe, voice-matched drafts each →
-operator edits → confirm → mark posted → export record CSV.
+operator QA → route by rating (4–5★ bulk-approvable / auto if the
+practice opted in; 1–3★ explicit client approval) → client approves on
+their channel (email | magic-link | SMS) → we post. Phase 1 simulates
+the approve/post step (mark posted + CSV record); Phase 2 wires the
+real channels + Google API.
 
 Spec: `SPEC.md`. Business logic skills: `../.claude/skills/`.
 
@@ -56,10 +60,11 @@ a patient or echo a treatment, even when the reviewer mentioned it.
 
 ## Boundaries (by design)
 
-The compliance gate cannot be skipped. The **operator** (us, not the
-client, not autonomous) reviews every gated draft and posts it —
-Phase 1 marks posted; Phase 2 posts to Google via API. We post to the
-practice's public listing on their written + OAuth authorization; the
-gate + operator review are the safety net. Google-only (Yelp has no
-reply API). No PHI persisted in Phase 1. See `service-operator` /
-`business-operations` / `product-design` skills.
+The compliance gate cannot be skipped. Nothing posts to a practice's
+public listing without that practice's approval — explicit per-reply
+for 1–3★, bulk (or opt-in auto) for 4–5★. Client approval is the
+liability anchor (consent to what posts in their name). Layered safety:
+HIPAA gate → operator QA → client approval → post. We do all the labor;
+the client only approves. Google-only (Yelp has no reply API). No PHI
+persisted in Phase 1. See `service-operator` / `business-operations` /
+`product-design` skills.

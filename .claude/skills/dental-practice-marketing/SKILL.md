@@ -21,11 +21,13 @@ to the owner's ROI.
 
 ## The wedge
 Generic responders violate HIPAA by confirming patients/treatments. We
-are the one built *not to* — and it's **fully managed**: we draft AND
-post every Google review reply, in their voice. The client does
-nothing. Lead every asset with safety + voice + "you do nothing," not
-"AI replies." Tagline: **"We answer every Google review for your
-practice — HIPAA-safe, in your voice. You do nothing."**
+are the one built *not to* — and it's **fully managed**: we write AND
+post every Google review reply, in their voice; the practice just gives
+a quick thumbs-up before it goes live (positives can be bundled). Lead
+every asset with safety + voice + "we do the work, you just approve,"
+not "AI replies." Tagline: **"We write and post every Google review
+reply for your practice — HIPAA-safe, in your voice. You just tap
+approve."**
 
 ## ROI math for the owner
 - Time: 4–5 hrs/week ≈ ~$150–250/mo of staff time recovered.
@@ -37,12 +39,12 @@ practice — HIPAA-safe, in your voice. You do nothing."**
 Value-priced, not cost-plus (API cost is ~$1–3/practice/mo). Anchor on
 hours saved + risk removed. Simple monthly tiers by review volume.
 Offer a free first week: we handle their last 10 reviews + that week's,
-fully — they just see them posted.
+fully — they just approve.
 
 ## Asset checklist (landing page)
-Hero: the tagline + "Fully managed. HIPAA-safe by design. You do
-nothing." Sections: the fear (generic AI confirms patients), how it
-works (you grant Google access once → we draft, HIPAA-gate, and post
-every review → weekly recap), the demo, a compliance one-pager link,
+Hero: the tagline + "Fully managed. HIPAA-safe by design. You just tap
+approve." Sections: the fear (generic AI confirms patients), how it
+works (grant Google access once → we draft + HIPAA-gate → you tap
+approve → we post → weekly recap), the demo, a compliance one-pager,
 simple pricing, "your counsel can review our safety rules." Be precise:
 Google reviews only; never imply Yelp.

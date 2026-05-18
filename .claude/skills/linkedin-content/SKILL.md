@@ -34,7 +34,7 @@ LinkedIn craft layer.
   bait ("comment YES"), no fake metrics.
 - End with a soft, specific CTA: "If you run a dental practice and
   reviews pile up, DM me 'reviews' — I'll handle your last 10 free,
-  HIPAA-safe, you do nothing."
+  HIPAA-safe; you just approve."
 - Never reference any patient/clinical info, only public review facts.
 
 ## Comment & DM motion

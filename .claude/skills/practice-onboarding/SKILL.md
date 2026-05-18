@@ -33,6 +33,13 @@ One-time per practice. Output is a reusable config the
   this is the only thing we need from the client, ever. (Phase 2 stores
   the OAuth token per practice; escalate token/account setup to the
   human operator — see `business-operations`.)
+- **Approval setup (required):** `approval_channel` — one of `email` |
+  `link` | `sms` (the practice picks; all three supported).
+  `approver_contact` — the email or mobile to send approvals to.
+  `auto_approve_positives` — bool, default `false`; if true, 4–5★
+  replies post without an explicit tap (1–3★ still always explicit).
+  Explain the trade-off before enabling: convenience vs. losing the
+  consent anchor on positives.
 - Google-only. Yelp has no reply API; never promise it.
 
 ## Stored config shape (JSON, per practice)
@@ -45,6 +52,9 @@ One-time per practice. Output is a reusable config the
     "formality": 3, "warmth": 4, "emoji": "sparing",
     "length": "short", "always_say": [], "never_say": []
   },
+  "approval_channel": "email",
+  "approver_contact": "",
+  "auto_approve_positives": false,
   "platforms": ["google"]
 }
 ```

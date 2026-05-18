@@ -18,8 +18,9 @@ touch live in `cold-outreach-dental`; this is the close.
    after that every review is answered for you, HIPAA-safe. You never
    touch it." Sell the absence of work.
 3. **Quantify their pain back.** "You said reviews take ~4–5 hrs/week
-   and you worry about saying the wrong thing. That goes to zero —
-   we handle all of it, HIPAA-checked, you do nothing."
+   and you worry about saying the wrong thing. That drops to a few
+   seconds of tapping approve — we write it, HIPAA-check it, and post
+   it; you just say yes (and we can bundle the positives)."
 4. **Price simply, once, then stop talking.** One monthly number by
    their review volume. Don't over-explain or discount reflexively.
 5. **Lower the risk:** "Free for the first week on your real reviews —

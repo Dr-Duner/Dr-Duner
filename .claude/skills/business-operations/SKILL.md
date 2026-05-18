@@ -47,14 +47,17 @@ MRR, churn, operator time per practice (the model only works if it
 stays low — leverage, not a second job).
 
 ## Automate vs. escalate
-- Automate: sourcing, drafting, compliance gate, console delivery,
-  recaps, pipeline updates, content drafting, follow-up reminders.
+- Automate: sourcing, drafting, compliance gate, operator-console QA,
+  sending drafts to the client for approval, posting on the client's
+  approval, recaps, pipeline/approval-state tracking, content drafting,
+  follow-up reminders.
 - ESCALATE to / owned by the human operator: money movement,
   legal/contract/PHI terms, Google API access application + per-practice
-  OAuth/token setup, **the post action itself** (operator reviews the
-  gated draft and posts to the client's public listing — never the
-  client, never autonomous in v1/v2), any review with a threat / legal
-  claim / medical emergency, anything outside these skills.
+  OAuth/token setup, **the consent boundary** (nothing posts without
+  the client's approval — explicit for 1–3★, bulk/opt-in for 4–5★;
+  re-gate any client edit), enabling a practice's auto-approve-positives
+  opt-in, any review with a threat / legal claim / medical emergency,
+  anything outside these skills.
 
 ## Cadence
 Daily: fire due pipeline next-actions, draft/queue, content.

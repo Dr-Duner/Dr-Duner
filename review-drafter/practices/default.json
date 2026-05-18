@@ -10,5 +10,8 @@
     "always_say": [],
     "never_say": []
   },
+  "approval_channel": "email",
+  "approver_contact": "",
+  "auto_approve_positives": false,
   "platforms": ["google"]
 }

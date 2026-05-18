@@ -44,6 +44,11 @@ button.ghost { background: #eef1f6; color: var(--ink); }
   border-radius: 999px; }
 .chip.posted { background: #e6efe9; color: #2c6a4f; }
 .chip.skipped { background: #eee; color: var(--muted); }
+.chip.route { margin-left: 6px; }
+.chip.route.explicit { background: #fdece4; color: var(--warn); }
+.chip.route.bulk { background: #e8f3ee; color: var(--accent); }
+.chip.route.auto { background: #eef1f6; color: var(--muted); }
+.card.mode-explicit { border-left: 4px solid var(--warn); }
 .flag { color: var(--warn); font-weight: 600; font-size: 12px; margin-left: 8px; }
 .card.neg { border-left: 4px solid var(--warn); }
 .variant { border: 1px solid var(--line); border-radius: 8px;

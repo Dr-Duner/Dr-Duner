@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import json
 
-from . import compliance, config, prompts
+from . import compliance, config, models, prompts
 from .models import DraftedReview, DraftVariant, PracticeConfig, Review
 
 _client = None
@@ -102,4 +102,9 @@ def draft_for_review(review: Review, practice: PracticeConfig) -> DraftedReview:
 
 def draft_all(reviews: list[Review],
               practice: PracticeConfig) -> list[DraftedReview]:
-    return [draft_for_review(r, practice) for r in reviews]
+    out = []
+    for r in reviews:
+        d = draft_for_review(r, practice)
+        d.approval_mode = models.approval_mode(r, practice)
+        out.append(d)
+    return out

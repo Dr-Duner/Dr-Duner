@@ -10,5 +10,8 @@
     "always_say": ["we're always here for you"],
     "never_say": ["unfortunately"]
   },
-  "platforms": ["google", "yelp"]
+  "approval_channel": "sms",
+  "approver_contact": "+15550123456",
+  "auto_approve_positives": true,
+  "platforms": ["google"]
 }

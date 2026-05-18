@@ -2,7 +2,9 @@
 const $ = (s, r = document) => r.querySelector(s);
 const queue = $("#queue");
 const exportBtn = $("#exportBtn");
+const bulkBtn = $("#bulkBtn");
 const approved = []; // {author,rating,platform,date,review,reply}
+let cards = []; // {card, r, mode} for bulk approval
 
 $("#draftBtn").addEventListener("click", async () => {
   const fd = new FormData();
@@ -19,9 +21,15 @@ $("#draftBtn").addEventListener("click", async () => {
     if (!res.ok) { setStatus(data.error || "Error"); return; }
     queue.innerHTML = "";
     approved.length = 0;
+    cards = [];
     exportBtn.disabled = true;
     data.results.forEach(renderCard);
-    setStatus(`Found ${data.count} review(s).`);
+    const bulkable = data.results.filter(
+      (d) => d.approval_mode !== "explicit").length;
+    bulkBtn.disabled = bulkable === 0;
+    const expl = data.results.length - bulkable;
+    setStatus(`Found ${data.count} review(s) — ${bulkable} positive ` +
+      `(bulk/auto), ${expl} need explicit client approval.`);
   } catch (e) {
     setStatus("Request failed.");
   } finally {
@@ -43,6 +51,16 @@ function renderCard(d) {
     `${r.author || "Anonymous"} · ${r.rating ?? "—"}★ · ${r.platform}` +
     (r.date ? ` · ${r.date}` : "");
   tpl.querySelector(".text").textContent = r.text;
+
+  const route = { explicit: "Needs explicit client approval (1–3★)",
+    bulk: "Bulk-approvable (4–5★)",
+    auto: "Auto-approve — practice opted in (4–5★)" }[d.approval_mode];
+  const badge = document.createElement("span");
+  badge.className = "chip route " + d.approval_mode;
+  badge.textContent = route;
+  card.classList.add("mode-" + d.approval_mode);
+  tpl.querySelector(".rev").insertBefore(
+    badge, tpl.querySelector(".meta"));
 
   const vbox = tpl.querySelector(".variants");
   d.variants.forEach((v) => {
@@ -76,7 +94,18 @@ function renderCard(d) {
   };
   tpl.querySelector(".skip").onclick = () => finishCard(card, "skipped");
   queue.appendChild(tpl);
+  cards.push({ card, r, mode: d.approval_mode });
 }
+
+bulkBtn.addEventListener("click", () => {
+  cards.forEach(({ card, r, mode }) => {
+    if (mode === "explicit" || card.classList.contains("done")) return;
+    const first = card.querySelector(".variant textarea");
+    recordApproved(r, first ? first.value : "");
+    finishCard(card, "posted");
+  });
+  bulkBtn.disabled = true;
+});
 
 function recordApproved(r, reply) {
   approved.push({

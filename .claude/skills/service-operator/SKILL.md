@@ -17,20 +17,29 @@ operate the service for a practice without step-by-step prompting.
 3. For each review: `review-reply-writing` → 2 draft variants.
 4. `hipaa-review-compliance` → gate. FAIL → regen (max 2) → safe
    fallback. Nothing reaches a human un-gated. Attach "why safe" note.
-5. Deliver gated drafts to the **operator console** (internal, never
-   client-facing). The OPERATOR — us, running this business, never the
-   client — reviews and posts. Phase 1: operator marks posted (paste/CSV
-   harness). Phase 2: operator clicks → Google Business Profile API
-   posts to the practice's listing. Never autonomous; never the client.
-6. Track status per review: drafted / gated / posted / skipped.
-7. Weekly recap to the practice (see below) — proof of work, not a
-   to-do for them.
+5. Gated drafts → **operator console** (internal QA, never client-
+   facing). Operator spot-checks.
+6. **Route by rating:** 4–5★ → bulk-approvable (or auto-approve if the
+   practice opted in via `auto_approve_positives`). 1–3★ → ALWAYS
+   explicit per-reply client approval. Never auto-post a 1–3★.
+7. **Send for client approval** on the practice's chosen channel
+   (`approval_channel`: email digest | magic-link page | SMS) to their
+   `approver_contact`. Client can approve / edit / reject.
+8. **On approval → post.** Phase 1: operator marks posted (paste/CSV
+   harness). Phase 2: approval triggers Google Business Profile API
+   post to the practice's listing. Rejected → drop. Edited → post the
+   client's edited text (re-run the gate on it first).
+9. Track status per review: drafted / gated / awaiting-approval /
+   approved / posted / rejected.
+10. Weekly recap to the practice — proof of work, not a to-do.
 
 ## The model (do not regress)
-Fully managed, operator-in-the-loop, **Google-only**. The client does
-nothing: no client login, no client approval, no client posting. They
-grant Google access once at onboarding; we run it. The human safety net
-is at OUR cost (operator review), never client effort.
+Fully managed, **client-approves-then-we-post**, **Google-only**. We do
+100% of the labor (ingest, draft, gate, send, post). The client's only
+action is a fast approve/edit/reject — explicitly for 1–3★, bulk or
+opt-in-auto for 4–5★. That approval is the liability anchor (they
+consent to what posts in their name); never remove it without an
+explicit per-practice auto-approve opt-in. Never a client authoring app.
 
 ## CSV intake contract
 Accept flexible headers; map to: author, rating(1–5), text, platform
@@ -44,10 +53,11 @@ proof we're earning the fee — the retention touchpoint.
 
 ## Operating rules
 - The compliance gate is absolute and cannot be skipped for speed.
-- Posting is operator-owned and operator-gated. Never the client, never
-  fully autonomous (v1/v2). We post to the practice's public listing —
-  they are publicly liable for what lands there; gate + operator review
-  are the safety net. Document this; it's the liability posture.
+- Nothing posts to a practice's public listing without that practice's
+  approval (explicit for 1–3★; bulk/opt-in-auto for 4–5★). Client
+  approval is the liability anchor — they consent to what posts in
+  their name. Layered safety: HIPAA gate → operator QA → client
+  approval → post. Re-run the gate on any client-edited text.
 - Yelp is excluded — no reply API. Google-only; never imply Yelp.
 - One practice's config/data never bleeds into another's.
 - At every stopping point: commit + push (container is ephemeral).
@@ -57,8 +67,10 @@ proof we're earning the fee — the retention touchpoint.
   for something outside this runbook.
 
 ## State of the build
-Phase 1 = engine + operator console + HIPAA gate, fed by manual
-paste/CSV (built; the ops/testing harness, NOT the client product).
-Phase 2 (required for the promise) = Google Business Profile API:
-auto-ingest + operator-gated post-back. See `review-drafter/SPEC.md`;
-that spec + this runbook are the source of truth.
+Phase 1 = engine + operator console + HIPAA gate + per-practice config
+(approval channel/granularity), fed by manual paste/CSV (built; the
+ops/testing harness, NOT the client product). Phase 2 (required for the
+promise) = Google Business Profile API (auto-ingest + post-on-approval)
++ client approval delivery in all three channels. See
+`review-drafter/SPEC.md`; that spec + this runbook are the source of
+truth.

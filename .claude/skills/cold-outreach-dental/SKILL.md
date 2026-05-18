@@ -22,14 +22,14 @@ reference their actual (public) review situation, never patient info.
 4. Tiny ask. No attachment, no pitch deck.
 
 Keep it ~5 sentences. The free drafted batch is the hook — show, don't
-tell. Sell the *outcome* (every review answered, you do nothing), not a
-tool.
+tell. Sell the *outcome* (every review answered for you; you just tap
+approve), not a tool.
 
 ## Demo-to-close
 Deliver the free batch fast. Show: their real review → safe, on-voice
-reply → why-safe note. Then: "Grant us Google access once and this
-happens for every review, automatically — you never touch it. $X/mo."
-Free week → monthly.
+reply → why-safe note. Then: "Grant us Google access once; we write &
+post every review, you just get a quick approve (and we can bundle the
+positives). $X/mo." Free week → monthly.
 
 ## Objection handling
 - "We reply ourselves." → "Stop — that's the point. You grant access
