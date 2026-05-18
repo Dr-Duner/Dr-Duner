@@ -9,8 +9,8 @@
   anachronism is the signature hook) -> chibi coach reads MONO text
   (IBM Plex Mono) -> scanner UI rendered EXACTLY like the real app
   -> trade ideas -> CTA + Theta Θ logo.
-- Per-coach everyday scene: Nova = telescope at dawn (locked);
-  Rex = training/Spartan drill (locked); Finn = TBD; Atlas = TBD
+- Per-coach everyday scene: Lyra = telescope at dawn (locked);
+  Nestor = training/Spartan drill (locked); Chiron = TBD; Atlas = TBD
   (Gee defines later).
 - SCOPE LOCKED: universal spine — (a) template for ALL lesson videos
   1–19, (b) recurring wrapper around each lesson's teaching middle,
@@ -25,15 +25,15 @@
 Network policy blocks the image-host domain, so generated media can NOT
 be curled into the repo. Persist job IDs here; future sessions re-open
 them with the generation tool's job_display.
-- Nova chibi key still (cold-open + buzz, locked scene), 2026-05-18,
+- Lyra chibi key still (cold-open + buzz, locked scene), 2026-05-18,
   nano_banana_2, 9:16, ~2 credits each:
   - Option A: job `a777c0e0-195e-46f0-b9ae-11b4e45c9b66`
   - Option B: job `47efdc27-b9b7-4b11-a869-d3f014e8a90c`
   - Canonical pick: **Option A** — job
     `a777c0e0-195e-46f0-b9ae-11b4e45c9b66` LOCKED 2026-05-18 (Gee).
-    Nova's official chibi identity for all 19 lessons; match
-    proportions/palette/scene to it in every future Nova generation.
-- Nova proof clip (Shot 1→2 cold-open + buzz), 2026-05-18,
+    Lyra's official chibi identity for all 19 lessons; match
+    proportions/palette/scene to it in every future Lyra generation.
+- Lyra proof clip (Shot 1→2 cold-open + buzz), 2026-05-18,
   seedance_2_0_fast, 9:16, 480p, 4s, 6 credits, start_image = locked
   still: job `f7f11d9d-6b04-45fc-9aaa-d23775ad566c`. Silent (VO is a
   separate step). Re-display via job_display.
@@ -66,10 +66,22 @@ them with the generation tool's job_display.
     period-accurate ancient Greece; the phone is the only modern
     object. Generate FIRST, then ref it for the scene frames.
   - S1 cold-open, S2 buzz, S5 sort, S7 coach-land = Aegean world.
-  - S3 the read = phone screen fills frame → pure-black + signal
-    green IBM Plex Mono (brand card), Nova's face at edge in-world.
+  - PHONE-SCREEN INVARIANT (Gee 2026-05-18): whenever the phone
+    screen is shown it must be PIXEL-FAITHFUL to the real shipping
+    app terminal — DESIGN §3b-1 + approved render
+    `96e246fb-6404-44f9-a844-a0cd245091c4`: pure black, IBM Plex
+    Mono, constant `[<username>@theta ~] %` prompt, off-white
+    majority text, cyan `[LYRA]` tag, green ONLY on a `+delta`,
+    amber `!` alert, blank-line-per-block spacing,
+    `[ PAPER TRADE ] [ OPEN BROKERAGE ]` action line. The in-video
+    screen IS the app screen — never a bespoke title card. "The
+    screen looks exactly like the app when they get a message."
+  - S3 the read = phone fills frame, screen = that exact terminal
+    with the THETA message arriving in the terminal flow; Lyra's
+    face at edge in-world (Aegean behind the phone).
   - S4 = Aegean, but the Epictetus quote on a black lower-third.
-  - S6 the scan = full black app-UI card (brand register).
+  - S6 the scan = the exact terminal scanner card (per the
+    invariant above), full-frame brand register.
   - S7 closing Θ CTA = cut from Aegean coach-land to a pure-black
     brand card for the locked lockup "Θ / don't predict it. trade
     it. now." (hook still LOCKED, unchanged).
@@ -83,5 +95,5 @@ them with the generation tool's job_display.
 - Terminal HOME screen v2 — black + readable spacing + real
   scanner feed (DESIGN 3b-1 current), 2026-05-18, nano_banana_2,
   9:16, 1k, ~2 cr: job `96e246fb-6404-44f9-a844-a0cd245091c4`.
-  Pure black bg, cyan [NOVA]+scan, green +delta, amber ! alert,
+  Pure black bg, cyan [LYRA]+scan, green +delta, amber ! alert,
   blank-line-per-block. Canonical 3b-1 visual.

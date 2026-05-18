@@ -38,7 +38,7 @@ and it is briefed automatically — he does not re-explain anything.
    shot + App-Store quality bar), `storyboard-frame-layout.png` (9:16
    grid, also the in-app coach-UI language), `storyboard-L5-theta.png`.
    All 19 in `LESSONS.md` re-cut onto the template + per-lesson SCAN
-   card. Open: Finn/Atlas everyday scenes (TBD — Gee defines).
+   card. Open: Chiron/Atlas everyday scenes (TBD — Gee defines).
 1. Gee reviews the production storyboards; lock/adjust the quality bar.
 2. Render remaining per-lesson middles L5-style on request.
 3. Swap provisional L9 when the Cowork original surfaces.

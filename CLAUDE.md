@@ -30,7 +30,7 @@ in the same turn. Never let a decision live only in chat.
 - Theta: Stoic discipline applied to live options markets. Symbol Θ.
 - Product = the coaches' videos + characters + real-time data in a game
   format. The coach is the emotional spine.
-- Four coaches: Nova (Analyst), Rex (Veteran), Finn (Patient Teacher),
+- Four coaches: Lyra (Analyst), Nestor (Veteran), Chiron (Patient Teacher),
   Atlas (Risk Manager). Detail in `theta/lesson-flow.mmd`.
 - Palette — DELIBERATE DICHOTOMY (REFINED 2026-05-18, Gee). The
   color split IS the message: modern phone/app vs ancient world;

@@ -20,9 +20,9 @@ COACH LAND closes the read just before the CTA.
 ## Coach model
 Lessons are coach-agnostic templates. `[COACH]` = the partner Gee's
 user chose; voice adapts:
-- Nova: precise non-round numbers, calm, asks more than tells.
-- Rex: short sentences, like punches.
-- Finn: warm, teaches by question, never rushed.
+- Lyra: precise non-round numbers, calm, asks more than tells.
+- Nestor: short sentences, like punches.
+- Chiron: warm, teaches by question, never rushed.
 - Atlas: downside first, names the exit before the entry.
 Supersedes the old "coach silent 2–19" line — the coach is PRESENT and
 interactive throughout (builds trust, ties user to the coach).

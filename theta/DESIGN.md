@@ -46,7 +46,7 @@ Theta trade scan.
   Cut between the two registers (warm antiquity ↔ cold device). Black
   scene backdrops were a misread — redo. Earlier all-black renders
   (Lesson 1 anchor + S1–S6) are wrong-environment, scrap.
-- **LOCKED** Four coaches: Nova (Analyst), Rex (Veteran), Finn (Patient
+- **LOCKED** Four coaches: Lyra (Analyst), Nestor (Veteran), Chiron (Patient
   Teacher), Atlas (Risk Manager). Identities in `lesson-flow.mmd`.
 - **LOCKED** Arc: Lesson 1 (Dichotomy of Control) → 2–19 (mindset + craft)
   → first paper trade closes → coach's one line → Lesson 20 scanner unlock.
@@ -74,7 +74,7 @@ Terminal screenshot).
 
 **APPROVED reference render (Gee: "That is perfect!", 2026-05-18):**
 job `96e246fb-6404-44f9-a844-a0cd245091c4` — black bg, mostly
-off-white text, cyan `[NOVA]` + scan, green `+delta`, amber `!`
+off-white text, cyan `[LYRA]` + scan, green `+delta`, amber `!`
 alert, blank-line-per-block. This image is the canonical look;
 match it for all future home-screen work.
 
@@ -99,7 +99,7 @@ Top-to-bottom order:
    green for a gain, red for a loss** — sign and number together.
 3. Trading stats: trades entered (count) + win rate (%).
 4. Coach block: coach's name + that day's scan, scan results listed
-   in the same mono font (e.g. `[NOVA] daily scan — DD Mon`).
+   in the same mono font (e.g. `[LYRA] daily scan — DD Mon`).
 5. Bottom action prompt: paper-trade in-app, OR open brokerage to
    place a real trade. Two clear actions on a terminal prompt line.
 Approved feel mock (text, not final art) — READABLE spacing
@@ -115,7 +115,7 @@ Last login: Tue May 18 09:42:11 on theta
   balance   $12,480.00   +$340.00
   entered 47   ·   win 61%
 
-[NOVA] scan — 18 May   market: OPEN
+[LYRA] scan — 18 May   market: OPEN
   ! schwab token 0.0d — RE-AUTH
 
   holdings (2)
@@ -145,13 +145,13 @@ just spaced like a clean readout, NOT a jammed wall. Lists may cap
 **Coach terminal colors.** Each coach has a signature terminal
 color; their name tag `[NAME]` AND their scan line render in that
 color (everything else stays off-white #eef6f3):
-- Nova (Analyst) — cyan `#4fd1e6`
-- Finn (Patient Teacher) — soft blue `#6c8cff`
-- Rex (Veteran) — amber `#ffb000`
+- Lyra (Analyst) — cyan `#4fd1e6`
+- Chiron (Patient Teacher) — soft blue `#6c8cff`
+- Nestor (Veteran) — amber `#ffb000`
 - Atlas (Risk Manager) — violet `#b18cff`
 Status guard: signal green `#00c896` is RESERVED strictly for the
 gain delta, and red strictly for the loss delta — NO coach uses
-green or red (Gee, 2026-05-18, Nova swapped off green so gains own
+green or red (Gee, 2026-05-18, Lyra swapped off green so gains own
 it cleanly). Signal green still lives in the app as the Θ mark /
 brand accent, just never as a coach text color. The ± delta token
 always wins and is never recolored to a coach color.
@@ -173,7 +173,7 @@ the READABLE spacing rule above (blank line per block, label then
 one record per aligned line — NOT the old dense `|` packing).
 Section → block mapping (Telegram → terminal):
 - header: `DAILY SCAN — DATE` + `Market: OPEN` →
-  `[NOVA] scan — DD Mon   market: OPEN`
+  `[LYRA] scan — DD Mon   market: OPEN`
 - token/auth status (`SCHWAB TOKEN … RE-AUTH`) → its own system
   ALERT line prefixed `!`, amber `#ffb000` (status-warning role):
   `! schwab token 0.0d — RE-AUTH`
@@ -198,9 +198,9 @@ The canonical structure for the coach videos:
    living ordinary Greek life.
 2. **Style:** CHIBI animated characters (locked).
 3. **Everyday scene:** each coach shown individually mid–daily-life.
-   - Nova: at a telescope/astronomical instrument at dawn (locked).
-   - Rex: training / working out — Spartan drill (locked).
-   - Finn: everyday scene TBD (open — Gee defines later).
+   - Lyra: at a telescope/astronomical instrument at dawn (locked).
+   - Nestor: training / working out — Spartan drill (locked).
+   - Chiron: everyday scene TBD (open — Gee defines later).
    - Atlas: everyday scene TBD (open — Gee defines later).
 4. **Hook:** an unexpected modern smartphone BUZZES — "Theta has
    something for you." The anachronism IS the signature visual.
@@ -222,14 +222,14 @@ App-Store quality bar), `storyboard-frame-layout.png` (9:16 grid /
 in-app coach-UI language), `storyboard-L5-theta.png` (worked example).
 All 19 lessons re-cut onto this template in `LESSONS.md`.
 
-**Nova canonical look LOCKED 2026-05-18 (Gee):** chibi key still, job
+**Lyra canonical look LOCKED 2026-05-18 (Gee):** chibi key still, job
 `a777c0e0-195e-46f0-b9ae-11b4e45c9b66` (nano_banana_2, 9:16). Telescope
 at dawn, modern phone glowing signal-green on the marble ledge, strict
-black/green/off-white palette. This is Nova's official identity for all
-19 lessons — match it in every future Nova generation. Network policy
+black/green/off-white palette. This is Lyra's official identity for all
+19 lessons — match it in every future Lyra generation. Network policy
 blocks committing the file; re-display via job_display by that ID.
 
-**Nova voice LOCKED 2026-05-18 (Gee):** kind but *deeper* — a warm low
+**Lyra voice LOCKED 2026-05-18 (Gee):** kind but *deeper* — a warm low
 female register, unhurried, grounded, calm authority; asks more than
 tells; close-mic intimate. NOT the video model's job — VO is a separate
 TTS/talent step composited over animation. Full script per shot:
