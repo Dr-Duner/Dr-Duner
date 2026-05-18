@@ -69,22 +69,45 @@ Terminal screenshot). Top-to-bottom order:
    in the same mono font (e.g. `[NOVA] daily scan — DD Mon`).
 5. Bottom action prompt: paper-trade in-app, OR open brokerage to
    place a real trade. Two clear actions on a terminal prompt line.
-Approved feel mock (text, not final art) — TIGHT spacing, no blank
-lines, no divider rules, single-space leading; the readout reads as
-one dense terminal block:
+Approved feel mock (text, not final art) — READABLE spacing
+(REVERSED 2026-05-18, Gee: the ultra-dense one-line packing was too
+condensed; you couldn't tell where one idea ended and the next
+began). Now: blank line between logical sections, a label header
+then indented aligned rows, ONE item per line:
 ```
 Last login: Tue May 18 09:42:11 on theta
+
 [trader@theta ~] % recap --last
- 3 trades closed  bal $12,480.00 +$340.00  entered 47  win 61%
-[NOVA] scan 18 May
- SPY put-credit risk:def edge:hi | AAPL iron-condor risk:def edge:md | NVDA skip:off-plan
-[trader@theta ~] % _   [ PAPER TRADE ]  [ OPEN BROKERAGE ]
+  3 trades closed
+  balance   $12,480.00   +$340.00
+  entered 47   ·   win 61%
+
+[NOVA] scan — 18 May   market: OPEN
+  ! schwab token 0.0d — RE-AUTH
+
+  holdings (2)
+    DT    $38.64      HV%ile 100   vol ↑
+    MELI  $1,556.31   HV%ile 100   ↓
+
+  vspreads   none today  (profile: tighter-width)
+
+  pipeline (4)
+    MCO   $440.96   compounder, <50d MA, -4.9% wk
+    SPGI  $414.33   compounder, <50d MA, -4.0% wk
+    GPRT  …
+    BPOS  $52.00    high-risk
+
+[trader@theta ~] % _
+
+  [ PAPER TRADE ]      [ OPEN BROKERAGE ]
 ```
-Layout rule: maximum density — consolidate multiple facts per line
-(recap + stats on ONE line; the whole scan on ONE wrapped line, `|`
-separated). No empty lines, no `---` separators, single leading
-space for indented rows. It should read like a real packed
-terminal, not a spaced-out card.
+Layout rule (supersedes the old "maximum density" rule): legibility
+first. A **blank line separates each logical block** (recap / coach
+header / holdings / vspreads / pipeline / prompt). Each block is a
+lowercase label line, then **one record per indented line** with
+**column alignment** so the eye scans down. Still a real terminal —
+just spaced like a clean readout, NOT a jammed wall. Lists may cap
+(e.g. top rows + `… n more`); scroll/expand handling still open.
 
 **Coach terminal colors.** Each coach has a signature terminal
 color; their name tag `[NAME]` AND their scan line render in that
@@ -111,36 +134,26 @@ scanner-unlock arc. Sub-questions RESOLVED (Gee, 2026-05-18):
 
 **Scanner block spec — real feed, terminal-skinned (Gee, 2026-05-18).**
 Source = the existing "Capital Mind" Telegram bot daily-scan feed.
-Same data, restyled into the §3b-1 house style: IBM Plex Mono, black,
-the `[COACH]` header + scan body in that coach's color, dense
-ONE-LINE-per-section packing with `|` separators and lowercase
-abbreviations. Section → line mapping (Telegram → terminal):
-- header: `DAILY SCAN — DATE` + `Market: OPEN` → `[NOVA] scan DD Mon  market:OPEN`
-- token/auth status (`SCHWAB TOKEN: 0.0d … RE-AUTH`) → a system
-  ALERT line prefixed `!`, in amber `#ffb000` (status-warning role):
-  `!schwab token 0.0d EXPIRED → RE-AUTH`
-- `HOLDINGS ALERT (n)` rows → one line:
-  `holdings(2) DT $38.64 HV%100 vol-spike↑ | MELI $1556.31 HV%100 ↓`
-- `VERTICAL SPREADS` → `vspreads: none today (profile:tighter-width)`
-- `PIPELINE — buy signals (n)` → one wrapped line:
-  `pipeline(4) MCO $440.96 compounder <50dMA -4.9%w | SPGI $414.33 <50dMA -4.0%w | …`
-Rule: directional ticks (vol-spike ↑ / ↓, week %) stay in the coach
-color or off-white — they are market direction, NOT the user's P&L,
-so they must NOT borrow the reserved gain-green / loss-red. Red and
-green still mean only the user's ± delta. Amber `!` is the sole
+Same data, restyled into the §3b-1 house style: IBM Plex Mono,
+black bg, `[COACH]` header + scan body in that coach's color, and
+the READABLE spacing rule above (blank line per block, label then
+one record per aligned line — NOT the old dense `|` packing).
+Section → block mapping (Telegram → terminal):
+- header: `DAILY SCAN — DATE` + `Market: OPEN` →
+  `[NOVA] scan — DD Mon   market: OPEN`
+- token/auth status (`SCHWAB TOKEN … RE-AUTH`) → its own system
+  ALERT line prefixed `!`, amber `#ffb000` (status-warning role):
+  `! schwab token 0.0d — RE-AUTH`
+- `HOLDINGS ALERT (n)` → a `holdings (n)` label then one ticker per
+  indented, column-aligned line.
+- `VERTICAL SPREADS` → `vspreads   none today  (profile: …)`
+- `PIPELINE — buy signals (n)` → a `pipeline (n)` label then one
+  ticker per indented line; may cap with `… n more`.
+Rule: directional ticks (vol ↑ / ↓, week %) stay coach color or
+off-white — market direction, NOT the user's P&L, so they never
+borrow the reserved gain-green / loss-red. Amber `!` is the sole
 system-status role and overrides coach color on that line only.
-Full mock (top + real scanner, one dense block):
-```
-Last login: Tue May 18 09:42:11 on theta
-[trader@theta ~] % recap --last
- 3 trades closed  bal $12,480.00 +$340.00  entered 47  win 61%
-[NOVA] scan 18 May  market:OPEN
- !schwab token 0.0d EXPIRED → RE-AUTH
- holdings(2) DT $38.64 HV%100 vol↑ | MELI $1556.31 HV%100 ↓
- vspreads: none today (profile:tighter-width)
- pipeline(4) MCO $440.96 cmpndr <50dMA -4.9%w | SPGI $414.33 <50dMA -4.0%w | GPRT … | BPOS $52.00 high-risk
-[trader@theta ~] % _   [ PAPER TRADE ]  [ OPEN BROKERAGE ]
-```
+(Canonical mock is the readable one above in this section.)
 
 ### 3c. Game format  — DESIGN NEEDED
 What makes the lessons a "game": progress/XP, streaks, the locked scanner
