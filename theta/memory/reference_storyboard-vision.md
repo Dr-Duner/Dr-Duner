@@ -46,4 +46,7 @@ them with the generation tool's job_display.
   - S4 teaching A: `2cef1c82-6367-4847-bad0-3831a308bd9d`
   - S5 teaching B: `29324721-36bd-4bfc-8a52-cd559eb8e2b3`
   - S6 the scan (app UI): `8b8179a2-ffce-411f-b321-117a1e9ce87e`
-  - S7 coach land + Θ CTA: `b5b93023-0bb7-4382-a76b-7568c2ee0122`
+  - S7 coach land + Θ CTA: `649619ad-ad6e-4c3b-a180-4a556966d1bb`
+    (end hook LOCKED 2026-05-18 Gee: "Θ / don't predict it. trade
+    it. now." — supersedes old S7 `b5b93023…` / "trading, made
+    usable today"; the dropped line is retired everywhere)

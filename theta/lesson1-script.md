@@ -76,7 +76,7 @@ dawn, modern phone glowing signal-green on the ledge.
 - VISUAL: Nova sets the phone down, returns to the telescope; camera
   pulls back — ancient + modern in one frame. Θ draws on in green
   candlesticks.
-- ON-SCREEN: `OPEN THETA — trading, made usable today.`
+- ON-SCREEN (end hook, locked 2026-05-18): `Θ` / `don't predict it. trade it. now.`
 - VO (Nova, the one line — softest, lands it): "You don't control the
   price. You control whether you deserved the trade."
 

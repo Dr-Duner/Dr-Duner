@@ -14,7 +14,7 @@ FIXED WRAPPER (every lesson, every coach):
    INTERACTIVE — the per-lesson beats below.
 6. **SCAN:** the lesson resolves into a live scanner card, 1:1 with
    the real app UI (the per-lesson `SCAN:` line below).
-7. Θ CTA end card — "trading, made usable today."
+7. Θ CTA end card — "Θ / don't predict it. trade it. now." (locked 2026-05-18)
 COACH LAND closes the read just before the CTA.
 
 ## Coach model
