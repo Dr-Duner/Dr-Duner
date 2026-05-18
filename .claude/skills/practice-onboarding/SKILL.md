@@ -26,7 +26,14 @@ One-time per practice. Output is a reusable config the
 - `practice_name` and `sign_off`.
 - `never_say` list — practice-specific banned words/claims (on top of
   the HIPAA term list, which is non-negotiable and separate).
-- Platforms in use (Google always; Yelp = manual paste only).
+- **Google authorization (critical, gates everything):** the practice
+  grants OAuth access to their Google Business Profile location AND
+  signs a written authorization for us to post replies on their behalf.
+  No grant = we cannot run the service for them. Capture this once;
+  this is the only thing we need from the client, ever. (Phase 2 stores
+  the OAuth token per practice; escalate token/account setup to the
+  human operator — see `business-operations`.)
+- Google-only. Yelp has no reply API; never promise it.
 
 ## Stored config shape (JSON, per practice)
 ```json

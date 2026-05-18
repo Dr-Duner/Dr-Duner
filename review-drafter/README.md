@@ -1,7 +1,16 @@
-# Review Response Drafter — Phase 1
+# Review Drafter — Phase 1 (Operator Console)
 
-First-draft MVP: paste/CSV dental reviews → 2 HIPAA-safe, voice-matched
-draft replies each → edit → copy → mark posted → export approved CSV.
+**Internal operator tool, not a client product.** This is a fully
+managed, operator-in-the-loop, **Google-only** service: the practice
+does nothing; the operator (us) reviews HIPAA-gated drafts here and
+posts them. Phase 1 = the drafting/compliance engine + operator console
+fed by manual paste/CSV (the testing/ops harness that proves the
+engine). Phase 2 (required for the promise) = Google Business Profile
+API auto-ingest + operator-gated post-back. There is intentionally no
+client-facing app.
+
+Flow: paste/CSV reviews → 2 HIPAA-safe, voice-matched drafts each →
+operator edits → confirm → mark posted → export record CSV.
 
 Spec: `SPEC.md`. Business logic skills: `../.claude/skills/`.
 
@@ -42,12 +51,15 @@ a patient or echo a treatment, even when the reviewer mentioned it.
 | Model / API key / retry knobs | `.env` and `app/config.py` |
 | A practice's voice/phone/sign-off | `practices/<name>.json` |
 | Input formats accepted | `app/parser.py` |
-| The UI / approval flow | `app/templates/index.html`, `app/static/` |
+| Operator console UI | `app/templates/index.html`, `app/static/` |
 | Routes / wiring | `app/main.py` |
 
 ## Boundaries (by design)
 
-The compliance gate cannot be skipped. Nothing auto-posts — a human
-approves and posts (v1). No PHI is persisted; CSV export is
-user-initiated. See `service-operator` / `business-operations` skills
-for what escalates to a human.
+The compliance gate cannot be skipped. The **operator** (us, not the
+client, not autonomous) reviews every gated draft and posts it —
+Phase 1 marks posted; Phase 2 posts to Google via API. We post to the
+practice's public listing on their written + OAuth authorization; the
+gate + operator review are the safety net. Google-only (Yelp has no
+reply API). No PHI persisted in Phase 1. See `service-operator` /
+`business-operations` / `product-design` skills.

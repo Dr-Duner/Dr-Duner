@@ -15,8 +15,9 @@ How this business gets seen and gets its first customers.
 3. **Local + niche communities:** dental office-manager Facebook
    groups, r/Dentistry / r/dentaloffice (give value, don't spam),
    dental practice-management forums.
-4. **Direct demo clips:** 30-sec screen recording: paste a nasty review
-   → safe, warm draft appears. Single most converting asset.
+4. **Direct demo clips:** 30-sec screen recording: a nasty Google
+   review → safe, warm reply → posted, "the practice did nothing."
+   Sell the managed outcome, not a tool. Single most converting asset.
 
 ## Post patterns that work here
 - **The dangerous-default hook:** "Most AI review responders just

@@ -41,17 +41,20 @@ operator.
 
 ## Metrics that matter (review weekly)
 Funnel: leads sourced → contacted → engaged → demo'd → trial → won
-(`lead-pipeline`). Service: reviews handled, % approved un-edited
-(quality proxy), turnaround time. Business: active practices, MRR,
-churn, time you spent (the point is leverage, not a second job).
+(`lead-pipeline`). Service: reviews handled & posted, % posted
+un-edited (quality proxy), turnaround time. Business: active practices,
+MRR, churn, operator time per practice (the model only works if it
+stays low — leverage, not a second job).
 
 ## Automate vs. escalate
-- Automate: sourcing, drafting, compliance gate, queue delivery,
+- Automate: sourcing, drafting, compliance gate, console delivery,
   recaps, pipeline updates, content drafting, follow-up reminders.
-- ESCALATE to human: money movement, legal/contract/PHI terms, Google
-  API approval submissions, posting replies (human-in-loop v1), any
-  review with a threat / legal claim / medical emergency, anything
-  outside these skills.
+- ESCALATE to / owned by the human operator: money movement,
+  legal/contract/PHI terms, Google API access application + per-practice
+  OAuth/token setup, **the post action itself** (operator reviews the
+  gated draft and posts to the client's public listing — never the
+  client, never autonomous in v1/v2), any review with a threat / legal
+  claim / medical emergency, anything outside these skills.
 
 ## Cadence
 Daily: fire due pipeline next-actions, draft/queue, content.

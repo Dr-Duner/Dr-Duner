@@ -15,8 +15,14 @@ one in the source tweet) get wrong for dentistry:
 > trusting us with your cleaning, Jane!" — that is a HIPAA violation
 > (improper disclosure of PHI / treatment relationship).
 
-**Value prop:** *"HIPAA-safe review responses for dental practices,
-written in your voice, ready to approve in 30 seconds."*
+**Value prop:** *"We answer every Google review for your dental practice
+— HIPAA-safe, in your voice. You do nothing."*
+
+This is a **fully managed service**, not self-serve software. The
+practice does not log in, approve, or post. We ingest their reviews,
+draft replies, pass them through the HIPAA gate, and **the operator
+(us, running this business) posts them** to the practice's Google
+listing. The client's 4–5 hrs/week → zero.
 
 Compliance is the product, not a feature. It is also the moat: it lets us
 charge more than a $20 generic SaaS and sell to compliance-nervous office
@@ -24,28 +30,39 @@ managers.
 
 Target buyer: dental office manager / practice owner. Pain: 4–5 hrs/week,
 plus fear of replying wrong. Volume: a busy practice gets 5–30
-reviews/week across Google + Yelp.
+reviews/week. **Scope: Google reviews only** (see §2 — Yelp has no
+reply API and is not part of the promise).
 
 ---
 
-## 2. MVP scope (decided)
+## 2. Scope (decided)
 
-- **Ingestion: manual paste / CSV.** No API approvals, ships in days,
-  proves value before we invest in Google integration. Owner pastes
-  review text (or uploads a CSV export from Google/Yelp/their PMS).
-- **Delivery: single-page review queue (recommended).** Rationale: with
-  manual ingestion the staffer pasting reviews *is* the approver — a
-  daily email digest only makes sense once ingestion is automated
-  (phase 2). v1 flow on one screen:
-  1. Paste reviews or upload CSV.
-  2. Each review gets 2 draft replies (one warm/short, one fuller).
-  3. Inline edit → **Copy** button → "Mark posted."
-  4. Optional: export approved replies back to CSV.
+Fully managed, **operator-in-the-loop**, **Google-only**:
+
+- **The client does nothing.** No client login, no client approval, no
+  client posting. The practice grants one-time Google access at
+  onboarding; after that it's hands-off for them.
+- **Operator-in-the-loop:** the operator (us) reviews the gated drafts
+  in an internal **operator console** and posts them. The human safety
+  net is at *our* cost, not the client's effort. Never the client.
+- **Posting to Google requires the Google Business Profile API + the
+  practice's OAuth grant.** No compliant shortcut (scripting Google's UI
+  violates ToS and flags the listing — fatal for a reputation product).
+  This makes the Google API integration **core, not optional**.
+- **Yelp is out.** Yelp has no public API to post review replies, by any
+  compliant means. The promise is Google-only; do not imply Yelp.
+- **Phase 1 (built):** offline drafting + HIPAA gate + the operator
+  console, fed by manual paste/CSV. This is the testing/ops harness and
+  proves the engine. It is NOT the client-facing product.
+- **Phase 2 (required for the promise):** Google Business Profile API —
+  auto-pull new reviews + **operator-gated post-back** to Google. This
+  is what makes "the client does nothing" true.
 - **Drafting: Claude API.** Tone learned from 5–10 of the practice's own
   past replies (or a short brand-voice questionnaire if none exist).
 
-Out of scope for v1: auto-posting replies, Google/Yelp API, multi-user
-accounts, billing, analytics dashboard.
+Out of scope: client-facing UI, fully autonomous posting (gate-passes →
+live with no human; revisit per-practice once trust is earned), Yelp,
+multi-tenant accounts, billing UI, analytics dashboard.
 
 ---
 
@@ -115,12 +132,19 @@ CSV / pasted text
  HIPAA post-check (deterministic) ──fail──► regen (max 2 retries)
       │ pass
       ▼
- review queue UI  (paste box | edit | Copy | Mark posted | export CSV)
+ OPERATOR CONSOLE (internal — never client-facing)
+   edit | confirm | post
+      │
+      ▼
+ Phase 1: operator marks posted (manual paste/CSV harness)
+ Phase 2: operator clicks → Google Business Profile API posts the
+          reply to the practice's listing
 ```
 
-- Single small web app (server + one page). No DB needed for v1 —
-  in-memory/session + CSV export is enough; add SQLite only when we add
-  accounts.
+- The console is an **internal operator tool**, not a client product.
+  Single small web app. No DB needed for the Phase 1 harness —
+  in-memory + CSV export; add storage with the Phase 2 Google
+  integration (OAuth tokens per practice, posted-state tracking).
 - Stack suggestion: Python (FastAPI) or Node — pick whatever ships
   fastest; Claude API SDK either way. Decide at build time.
 - Secrets: `ANTHROPIC_API_KEY` via env only. No PHI written to disk; CSV
@@ -156,14 +180,19 @@ CSV / pasted text
 
 ## 8. Roadmap
 
-- **Phase 1 (MVP, now):** manual paste/CSV → queue → copy. Validate with
-  1–2 real dental offices. Goal: they say "I'd pay for this."
-- **Phase 2:** Google Business Profile API (OAuth, auto-pull new
-  reviews), daily email digest delivery, "posted" tracking. Yelp =
-  best-effort/manual (Fusion API returns only 3 truncated reviews;
-  scraping violates ToS — do not).
-- **Phase 3:** multi-practice accounts, billing, analytics (response
-  rate, rating trend), optional auto-post with approval.
+- **Phase 1 (built):** offline drafting + HIPAA gate + operator console,
+  fed by manual paste/CSV. The engine + ops harness. Use it to validate
+  draft quality with 1–2 real dental offices' past reviews. NOT the
+  client-facing product.
+- **Phase 2 (required for the promise — the real product):** Google
+  Business Profile API: OAuth grant at onboarding, auto-pull new
+  reviews, and **operator-gated post-back to Google**. Persist OAuth
+  tokens + posted state per practice. This is what makes "the client
+  does nothing" true. Start the Google API access application early
+  (it has lead time).
+- **Phase 3:** multi-practice scale, billing, analytics (response rate,
+  rating trend), optional **per-practice fully-autonomous** posting once
+  a practice has earned trust in the gate.
 - **Phase 4:** adjacent niches reusing the compliance engine (medical,
   dermatology, vet, legal).
 
@@ -175,15 +204,27 @@ CSV / pasted text
 - BAA / PHI contractual path before paid launch (see §6).
 - Do target practices *have* past replies to learn tone from, or is the
   brand-voice form the common path? (Affects onboarding UX.)
-- Yelp coverage gap — set expectation up front that v1 is Google-centric.
-- Liability framing: we draft, human approves & posts. Keep the human in
-  the loop; never auto-post in v1. Document this.
+- Yelp is excluded from the promise (no reply API) — sell Google-only;
+  never imply Yelp coverage.
+- **Liability framing:** we post on the practice's behalf to *their*
+  public listing — they are publicly liable for what lands there. The
+  deterministic HIPAA gate + operator review are the safety net. Posting
+  is operator-owned and operator-gated (never client, never autonomous
+  in v1/v2). The practice's Google OAuth grant authorizes us to post;
+  capture that authorization in writing at onboarding. Counsel sign-off
+  on the gate + a data/PHI BAA path remain hard launch-blockers.
+- Google API approval + per-practice OAuth onboarding friction is now on
+  the critical path, not deferrable.
 
 ---
 
 ## 10. Next step
 
-On approval of this spec, build Phase 1: parser + drafter (with HIPAA
-system prompt, prompt caching, post-check) + single-page queue, plus a
-small fixture set of realistic dental reviews (positive, negative,
-PHI-laden) to test the guardrails.
+Phase 1 (engine + operator console + HIPAA gate + fixtures) is **built**
+— it proves the drafting/compliance engine and is the operator's daily
+tool. The promise ("client does nothing") is not real until **Phase 2**:
+Google Business Profile API for auto-ingest + operator-gated post-back.
+That work starts with the Google API access application (lead time) and
+the per-practice OAuth onboarding flow. Everything client-facing is
+replaced by that managed pipeline; there is intentionally no
+client-facing app.

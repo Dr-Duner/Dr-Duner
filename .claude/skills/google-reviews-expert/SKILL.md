@@ -45,6 +45,11 @@ conflicts of interest. For dentistry this stacks with HIPAA — see the
 - More recent positive reviews + owner responses → stronger local
   presence and higher click/call rates. Frame as "reputation velocity."
 - Unanswered negative reviews are the visible risk we remove.
-- Yelp gap: Yelp's Fusion API returns only ~3 truncated review
-  excerpts and scraping violates Yelp ToS — v1 is Google-centric;
-  Yelp is manual paste only. Set this expectation with practices.
+- Yelp is OUT of the promise: Yelp has no public API to post review
+  replies (and Fusion returns only ~3 truncated excerpts; scraping
+  violates ToS). The service is **Google-only**. Never imply Yelp
+  coverage to a practice — Google reviews are the promise.
+- Posting requires the Business Profile API + the practice's OAuth
+  grant; there is no compliant UI-scripting shortcut. This is why the
+  Google integration is core, not optional, and why onboarding must
+  capture the OAuth grant (see `practice-onboarding`).

@@ -21,9 +21,11 @@ to the owner's ROI.
 
 ## The wedge
 Generic responders violate HIPAA by confirming patients/treatments. We
-are the one built *not to*. Lead every asset with safety + voice, not
-"AI replies." Tagline: **"HIPAA-safe review responses, in your voice,
-approved in 30 seconds."**
+are the one built *not to* — and it's **fully managed**: we draft AND
+post every Google review reply, in their voice. The client does
+nothing. Lead every asset with safety + voice + "you do nothing," not
+"AI replies." Tagline: **"We answer every Google review for your
+practice — HIPAA-safe, in your voice. You do nothing."**
 
 ## ROI math for the owner
 - Time: 4–5 hrs/week ≈ ~$150–250/mo of staff time recovered.
@@ -34,10 +36,13 @@ approved in 30 seconds."**
 ## Pricing posture
 Value-priced, not cost-plus (API cost is ~$1–3/practice/mo). Anchor on
 hours saved + risk removed. Simple monthly tiers by review volume.
-Offer a free first-week trial: paste your reviews, see the drafts.
+Offer a free first week: we handle their last 10 reviews + that week's,
+fully — they just see them posted.
 
 ## Asset checklist (landing page)
-Hero: the tagline + "Built for dental practices, HIPAA-safe by design."
-Sections: the fear (generic AI confirms patients), how it works (paste
-→ safe drafts → approve), the 30-second demo, a compliance one-pager
-link, simple pricing, "your counsel can review our safety rules."
+Hero: the tagline + "Fully managed. HIPAA-safe by design. You do
+nothing." Sections: the fear (generic AI confirms patients), how it
+works (you grant Google access once → we draft, HIPAA-gate, and post
+every review → weekly recap), the demo, a compliance one-pager link,
+simple pricing, "your counsel can review our safety rules." Be precise:
+Google reviews only; never imply Yelp.
