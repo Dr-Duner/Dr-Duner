@@ -1,54 +1,45 @@
-# Theta — Conversation Handoff
+# Theta — Handoff
 
-Snapshot of this working session so any future chat (or Cowork, or you)
-can resume with zero re-explaining. Read `CLAUDE.md` and
-`theta/DESIGN.md` first; this file is the "what just happened + what's
-next" layer on top of them.
+For Gee. Read `CLAUDE.md` + `theta/DESIGN.md` + `theta/memory/MEMORY.md`
+first; this is the "where we are / what's next" layer.
 
-## Where things stand
-- This repo (`Dr-Duner`, branch `claude/evaluate-mobile-workflow-nbDLD`)
-  is the single source of truth for Theta design work.
-- Persistence is now wired: `CLAUDE.md` (auto-loaded every session),
-  `theta/DESIGN.md` (living spec), this handoff.
+## 1. State
+Persistence is solved. The repo is the single source of truth across all
+Claude Code sessions. Gee can open a fresh session, say "continue Theta,"
+and it is briefed automatically — he does not re-explain anything.
 
-## Done this session
-- `theta/lesson-flow.mmd` / `.png` — Theta cast + 20-lesson arc flowchart.
-- `theta/lesson1-storyboard.mmd` / `.png` — Lesson 1 video storyboard
-  pitch (6 shots, ~35s vertical, Nova lead). No video generated.
-- `theta/DESIGN.md` — living design doc (locked vs. open decisions,
-  capability map, next-process order).
-- `CLAUDE.md` — auto-loaded shared memory + rules (read DESIGN.md first;
-  context boundary; persist decisions immediately).
-- Captured from user: coach text = monospace terminal font; Lesson 9
-  was built in Cowork and seen in the simulator.
+## 2. Done this session
+- `CLAUDE.md` — auto-loads every session; rules + foundational facts.
+- `theta/DESIGN.md` — living spec (locked vs. open decisions).
+- `theta/memory/` — MEMORY.md index + project_ decision files.
+- `main` made the blind-clone safety mirror; synced every backup.
+- `.claude/settings.json` — Stop hook auto-commits + pushes every
+  session so nothing is ever lost (active for all future sessions).
+- Captured: coach text = monospace terminal font (exact family still
+  unconfirmed); Lesson 9 built in Cowork, seen in simulator.
 
-## The core problem surfaced
-Claude Code cannot see Cowork, the simulator, or any other session — only
-this repo. Foundational Theta context was lost because it lived in Cowork,
-not here. Fix in place: everything must be written to this repo; CLAUDE.md
-makes it auto-load for all future Claude Code sessions in this repo. Limit:
-this does NOT bridge to Cowork — both tools must use this same repo.
-
-## Open blockers (need user input)
-1. **Where does Cowork save its work?** (same repo / different repo /
-   only the simulator) — determines if Lesson 9 is recoverable.
-2. **Lesson 9 artifact** — upload a screen recording OR describe its
+## 3. Open blockers (need Gee)
+1. **Cowork save location** — does Cowork commit to this repo, another
+   repo, or only the simulator? Decides if Lesson 9 is recoverable.
+2. **Lesson 9 artifact** — upload a screen recording or describe its
    animation + automation + how the coach appears. It is the bar for 2–19.
-3. **Exact terminal font family** — confirm the name to mark LOCKED.
-4. **Credits** — ~44 generation credits, starter plan. 18 lesson videos
-   won't fit. Design free; generation metered; storyboard before generating.
+3. **Exact terminal font name** — decided in Cowork, never written here;
+   genuinely uncaptured. Gee must supply it to lock it.
+4. **Credits** — ~44 generation credits; 18 lesson videos won't fit.
+   Design is free; generation is metered; storyboard before generating.
 
-## Next steps (proposed order)
-1. Answer blocker 1 (Cowork storage location).
-2. Get Lesson 9 reference (blocker 2).
-3. Confirm terminal font (blocker 3).
-4. Storyboard lessons 2–19 (free, no credits) to lock the creative spine.
+## 4. Next steps
+1. Gee answers blocker 1 (Cowork location).
+2. Recover or re-describe Lesson 9 (blocker 2).
+3. Gee names the font; lock it in DESIGN.md + CLAUDE.md (blocker 3).
+4. Storyboard lessons 2–19 (free) to lock the creative spine.
 5. Train the 4 coaches as Soul characters (small spend, reused everywhere).
 6. Generate one hero lesson video as the quality bar.
 7. Shape marketing once the spine is locked.
 
-## Pointers
+## 5. Pointers
 - Spec / decisions: `theta/DESIGN.md`
-- Shared memory / rules: `CLAUDE.md`
+- Shared memory / rules: `CLAUDE.md`, `theta/memory/MEMORY.md`
+- Session records: `theta/SESSION-*.md`
 - Cast + arc: `theta/lesson-flow.png`
 - Lesson 1 pitch: `theta/lesson1-storyboard.png`

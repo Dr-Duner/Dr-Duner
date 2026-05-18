@@ -6,9 +6,12 @@ Read this index and the files it points to before Theta work.
 
 ## Index
 - `project_github-sync-protocol.md` — session-start load + "back it up"
-  push loop; branch single-source-of-truth rule.
+  push loop; main mirror; Stop-hook auto-save; branch SoT rule.
 - `project_kevin-working-protocol.md` — adopted working protocol
   (style, memory-capture, handoff ritual) adapted to this repo.
+
+## Session records
+- `../SESSION-2026-05-18.md` — persistence architecture built.
 
 ## Conventions
 - File types: `feedback_` (corrections), `user_` (preferences),
