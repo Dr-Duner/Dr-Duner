@@ -19,23 +19,21 @@ and it is briefed automatically — he does not re-explain anything.
   unconfirmed); Lesson 9 built in Cowork, seen in simulator.
 
 ## 3. Open blockers (need Gee)
-1. **Cowork save location** — does Cowork commit to this repo, another
-   repo, or only the simulator? Decides if Lesson 9 is recoverable.
-2. **Lesson 9 artifact** — upload a screen recording or describe its
-   animation + automation + how the coach appears. It is the bar for 2–19.
-3. **Exact terminal font name** — decided in Cowork, never written here;
-   genuinely uncaptured. Gee must supply it to lock it.
-4. **Credits** — ~44 generation credits; 18 lesson videos won't fit.
+1. **Lesson 9 artifact** — the real L9 (built in Cowork, seen in
+   simulator) is the animation/automation bar. Provisional L9 is in
+   place so the arc holds; swap when Gee surfaces it (recording or
+   written description).
+2. **Credits** — ~44 generation credits; 18 lesson videos won't fit.
    Design is free; generation is metered; storyboard before generating.
+- Font: LOCKED (IBM Plex Mono). Persistence: SOLVED.
 
 ## 4. Next steps
-1. Gee answers blocker 1 (Cowork location).
-2. Recover or re-describe Lesson 9 (blocker 2).
-3. Gee names the font; lock it in DESIGN.md + CLAUDE.md (blocker 3).
-4. Storyboard lessons 2–19 (free) to lock the creative spine.
-5. Train the 4 coaches as Soul characters (small spend, reused everywhere).
-6. Generate one hero lesson video as the quality bar.
-7. Shape marketing once the spine is locked.
+1. Gee reviews `LESSONS.md` + `lesson-arc.png`; refine any lesson beats.
+2. Render per-lesson visual storyboards (free) Lesson-1 style on request.
+3. Swap provisional L9 when the Cowork original surfaces.
+4. Train the 4 coaches as Soul characters (small spend, reused everywhere).
+5. Generate one hero lesson video as the quality bar.
+6. Shape marketing once the spine is locked.
 
 ## 5. Pointers
 - Spec / decisions: `theta/DESIGN.md`

@@ -48,14 +48,17 @@ Typing animation? Coach avatar still vs. short looping video? Voice/audio?
 What makes the lessons a "game": progress/XP, streaks, the locked scanner
 as the prize, paper-trade scoreboard, the coach's trust meter? To define.
 
-### 3d. Lessons 2–19 treatment  — DESIGN NEEDED
-- **Known:** Lesson 9 was built in **Cowork (not Claude Code)** and viewed
-  in the **simulator**. It is the quality/animation/automation bar for
-  2–19. Claude Code cannot see it — need it brought here: a screen
-  recording uploaded, OR a written description of its animation +
-  automation + how the coach appears.
-- Engaging + interactive + coach-present throughout (supersedes the old
-  "coach stays silent 2–19" line in lesson-flow.mmd — confirm).
+### 3d. Lessons 2–19 treatment  — DRAFTED
+- **Curriculum + per-lesson storyboards drafted:** see `LESSONS.md`
+  (beat sheets) and `lesson-arc.png` (visual map). Built now from
+  current knowledge; coach PRESENT + interactive throughout (this
+  supersedes the old "coach silent 2–19" line — confirmed by Gee).
+- **L9 is PROVISIONAL.** Real Lesson 9 was built in Cowork, seen in the
+  simulator, and is the animation/automation bar. Not reachable here;
+  swap the provisional L9 when Gee surfaces it (recording or written
+  description of its animation + automation + how the coach appears).
+- Open: refine individual lesson beats; render per-lesson visual
+  storyboards (free) Lesson-1 style on request.
 
 ### 3e. Marketing  — IDEAS PARKED
 User has several marketing ideas. Capture them here as raw bullets, shape
