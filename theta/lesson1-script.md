@@ -3,8 +3,8 @@
 Status: storyboard + voiceover **locked** 2026-05-18 (Gee).
 Structure is the LOCKED release cut (`lesson1-release-cut.mmd/.png`) —
 this file adds the **voiceover script** and **voice direction** on top
-of it. 9:16, ~40s, chibi 2.5D, App-Store quality. Palette ONLY navy
-`#0b1f3a` / signal green `#00c896` / off-white `#eef6f3`. Coach-facing
+of it. 9:16, ~40s, chibi 2.5D, App-Store quality. Palette ONLY black
+`#000000` / signal green `#00c896` / off-white `#eef6f3`. Coach-facing
 on-screen text = IBM Plex Mono.
 
 ## Nova — visual identity (LOCKED)
@@ -41,7 +41,7 @@ dawn, modern phone glowing signal-green on the ledge.
 
 ### SHOT 3 — THE READ (mono) · 7–11s
 - VISUAL: phone fills frame, Nova's chibi face at the edge. IBM Plex
-  Mono types on, green on navy.
+  Mono types on, green on black.
 - ON-SCREEN: `> THETA: you think you control the outcome.`
   `> you don't.`
 - VO (Nova, reading it back low and even): "You think you control the

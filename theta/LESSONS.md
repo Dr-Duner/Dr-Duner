@@ -2,7 +2,7 @@
 
 Every lesson is the **locked production template** (see
 `storyboard-production-template.png` + `storyboard-frame-layout.png`).
-Font = IBM Plex Mono; palette navy/green; ~40s, 9:16, chibi, App-Store
+Font = IBM Plex Mono; palette black/green; ~40s, 9:16, chibi, App-Store
 quality. The wrapper is FIXED for all 19; only the teaching middle and
 the scanner card change per lesson.
 

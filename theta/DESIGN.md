@@ -27,7 +27,12 @@ Theta trade scan.
 
 ## 2. Locked Decisions
 - **LOCKED** Brand name: Theta (symbol Θ).
-- **LOCKED** Palette: navy `#0b1f3a`, signal green `#00c896`, off-white `#eef6f3`.
+- **LOCKED** Palette (UPDATED 2026-05-18, Gee — navy→BLACK, global):
+  background `#000000` everywhere (logo, app UI, all video/storyboard);
+  text in the coach's color, default off-white `#eef6f3`; signal green
+  `#00c896` = Θ mark + reserved gain delta only; red = reserved loss
+  delta only. Retired navy `#0b1f3a`. Existing navy renders to be
+  redone against black over time (cost noted, not urgent).
 - **LOCKED** Four coaches: Nova (Analyst), Rex (Veteran), Finn (Patient
   Teacher), Atlas (Risk Manager). Identities in `lesson-flow.mmd`.
 - **LOCKED** Arc: Lesson 1 (Dichotomy of Control) → 2–19 (mindset + craft)
@@ -106,7 +111,7 @@ scanner-unlock arc. Sub-questions RESOLVED (Gee, 2026-05-18):
 
 **Scanner block spec — real feed, terminal-skinned (Gee, 2026-05-18).**
 Source = the existing "Capital Mind" Telegram bot daily-scan feed.
-Same data, restyled into the §3b-1 house style: IBM Plex Mono, navy,
+Same data, restyled into the §3b-1 house style: IBM Plex Mono, black,
 the `[COACH]` header + scan body in that coach's color, dense
 ONE-LINE-per-section packing with `|` separators and lowercase
 abbreviations. Section → line mapping (Telegram → terminal):
@@ -174,7 +179,7 @@ All 19 lessons re-cut onto this template in `LESSONS.md`.
 **Nova canonical look LOCKED 2026-05-18 (Gee):** chibi key still, job
 `a777c0e0-195e-46f0-b9ae-11b4e45c9b66` (nano_banana_2, 9:16). Telescope
 at dawn, modern phone glowing signal-green on the marble ledge, strict
-navy/green/off-white palette. This is Nova's official identity for all
+black/green/off-white palette. This is Nova's official identity for all
 19 lessons — match it in every future Nova generation. Network policy
 blocks committing the file; re-display via job_display by that ID.
 

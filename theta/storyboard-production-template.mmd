@@ -2,7 +2,7 @@ flowchart TB
   H["THETA - PRODUCTION TEMPLATE  (the video I intend to make)<br/>9:16 vertical - chibi 2.5D - App Store launch quality<br/>Universal spine: wraps EVERY lesson 1-19 + marketing<br/>Only the teaching middle (shots 4-5) swaps per lesson"]:::brand
 
   H --> Q
-  Q["QUALITY BAR (locked target)<br/>- Chibi rig: clean vector cel, 2-3 head-tall, soft rim light<br/>- 24fps on-twos for charm; UI elements at 60fps for crispness<br/>- Camera: gentle parallax push-ins, never static, never frantic<br/>- Palette ONLY: navy 0b1f3a / signal green 00c896 / off-white eef6f3<br/>- Transitions: light-streak wipe on the BUZZ; soft dissolves elsewhere<br/>- Sound: ambient ancient world bed -> single modern phone buzz = the hook"]:::spec
+  Q["QUALITY BAR (locked target)<br/>- Chibi rig: clean vector cel, 2-3 head-tall, soft rim light<br/>- 24fps on-twos for charm; UI elements at 60fps for crispness<br/>- Camera: gentle parallax push-ins, never static, never frantic<br/>- Palette ONLY: black 000000 / signal green 00c896 / off-white eef6f3<br/>- Transitions: light-streak wipe on the BUZZ; soft dissolves elsewhere<br/>- Sound: ambient ancient world bed -> single modern phone buzz = the hook"]:::spec
 
   Q --> S1
   S1["SHOT 1 - COLD OPEN: EVERYDAY GREEK LIFE - 0 to 4s<br/>FRAME: wide. Coach lower-third, doing their daily craft.<br/>Ancient setting fills frame; warm dawn key light.<br/>CHIBI: relaxed, absorbed in the task, unaware of camera.<br/>ANIM: slow 8% camera push-in; idle breathing loop;<br/>dust/light motes drift (parallax depth).<br/>NOVA telescope - REX drill - FINN tbd - ATLAS tbd."]:::nova
@@ -11,7 +11,7 @@ flowchart TB
   S2["SHOT 2 - THE BUZZ (the signature anachronism) - 4 to 7s<br/>FRAME: cut tighter to a modern phone resting in the scene.<br/>Screen dark, then a green pulse.<br/>CHIBI: head snaps toward it - surprise pop (squash/stretch).<br/>ANIM: phone shudder + 2-ring green glow expanding;<br/>light-streak wipe primes the transition.<br/>AUDIO: ancient bed ducks; one clean modern buzz."]:::shot
 
   S2 --> S3
-  S3["SHOT 3 - THE READ: MONO MESSAGE - 7 to 11s<br/>FRAME: phone fills 70% of frame, chibi face peeking at edge.<br/>TEXT zone: IBM Plex Mono, signal green on navy,<br/>typed on character (cursor blink).<br/>&gt; THETA: I've got something for you.<br/>CHIBI: eyes track the typing; small lean-in.<br/>ANIM: per-glyph type-on; subtle screen bloom."]:::nova
+  S3["SHOT 3 - THE READ: MONO MESSAGE - 7 to 11s<br/>FRAME: phone fills 70% of frame, chibi face peeking at edge.<br/>TEXT zone: IBM Plex Mono, signal green on black,<br/>typed on character (cursor blink).<br/>&gt; THETA: I've got something for you.<br/>CHIBI: eyes track the typing; small lean-in.<br/>ANIM: per-glyph type-on; subtle screen bloom."]:::nova
 
   S3 --> S4
   S4["SHOT 4 - TEACHING MIDDLE A: HOOK + STOIC - 11 to 20s<br/>(SWAPS PER LESSON - the only variable region)<br/>FRAME: phone becomes a full-screen 'scene within';<br/>the lesson HOOK image animates inside the device.<br/>One Stoic line overlays in mono, lower third.<br/>CHIBI: reduced to a small watching avatar, top corner.<br/>ANIM: hook motif builds with green line-draw."]:::shot
@@ -23,12 +23,12 @@ flowchart TB
   S6["SHOT 6 - SCANNER TIE-IN (1:1 with real app) - 30 to 36s<br/>FRAME: the lesson resolves into a live scanner card -<br/>pixel-identical to the shipping app UI.<br/>Defined risk + exit pre-filled, signal-green accents.<br/>CHIBI: small approving glance to camera.<br/>DEPENDENCY: this frame == app UI (DESIGN 3b/3c)."]:::spec
 
   S6 --> S7
-  S7["SHOT 7 - CTA + THETA Θ END CARD - 36 to 40s<br/>FRAME: chibi sets the phone down, returns to ancient task;<br/>camera pulls back - ancient + modern in one frame.<br/>Θ mark resolves center, signal green on navy.<br/>TEXT: Θ / don't predict it. trade it. now.<br/>ANIM: Θ draw-on; clean hold; 1s logo breathing loop."]:::brand
+  S7["SHOT 7 - CTA + THETA Θ END CARD - 36 to 40s<br/>FRAME: chibi sets the phone down, returns to ancient task;<br/>camera pulls back - ancient + modern in one frame.<br/>Θ mark resolves center, signal green on black.<br/>TEXT: Θ / don't predict it. trade it. now.<br/>ANIM: Θ draw-on; clean hold; 1s logo breathing loop."]:::brand
 
   S7 --> F
   F["WHY THIS IS THE PRODUCT (until the scanner ships)<br/>The video + coach interface IS Theta right now, so it must<br/>read as a finished App Store app, not a pitch.<br/>Wrapper is FIXED (shots 1-3, 6-7). Teaching middle (4-5)<br/>is the only per-lesson work. Coach + scene swap by pick.<br/>Next: this exact grammar applied to all 19 in LESSONS.md."]:::brand
 
-  classDef brand fill:#0b1f3a,color:#ffffff,stroke:#00c896,stroke-width:3px;
-  classDef nova fill:#00c896,color:#0b1f3a,stroke:#0b1f3a,stroke-width:3px;
-  classDef spec fill:#0b1f3a,color:#00c896,stroke:#00c896,stroke-width:2px;
-  classDef shot fill:#eef6f3,color:#0b1f3a,stroke:#0b1f3a,stroke-width:1px;
+  classDef brand fill:#000000,color:#ffffff,stroke:#00c896,stroke-width:3px;
+  classDef nova fill:#00c896,color:#000000,stroke:#000000,stroke-width:3px;
+  classDef spec fill:#000000,color:#00c896,stroke:#00c896,stroke-width:2px;
+  classDef shot fill:#eef6f3,color:#000000,stroke:#000000,stroke-width:1px;
