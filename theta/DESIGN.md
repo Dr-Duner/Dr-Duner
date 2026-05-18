@@ -84,15 +84,16 @@ terminal, not a spaced-out card.
 **Coach terminal colors.** Each coach has a signature terminal
 color; their name tag `[NAME]` AND their scan line render in that
 color (everything else stays off-white #eef6f3):
-- Nova (Analyst) — signal green `#00c896`
+- Nova (Analyst) — cyan `#4fd1e6`
+- Finn (Patient Teacher) — soft blue `#6c8cff`
 - Rex (Veteran) — amber `#ffb000`
-- Finn (Patient Teacher) — cyan `#4fd1e6`
 - Atlas (Risk Manager) — violet `#b18cff`
-Status guard: the ± delta token's gain-green / loss-red is a
-RESERVED status signal and always wins — never recolor the delta to
-a coach color. Nova's green == the brand signal green; the delta is
-the only other green and is unambiguous (always a signed `$` amount
-in the recap line, never a coach tag).
+Status guard: signal green `#00c896` is RESERVED strictly for the
+gain delta, and red strictly for the loss delta — NO coach uses
+green or red (Gee, 2026-05-18, Nova swapped off green so gains own
+it cleanly). Signal green still lives in the app as the Θ mark /
+brand accent, just never as a coach text color. The ± delta token
+always wins and is never recolored to a coach color.
 Ties to 3a (mono locked), 3c-1 (Θ terminal end card), and the L20
 scanner-unlock arc. Sub-questions RESOLVED (Gee, 2026-05-18):
 - Load: NO type-on animation. Readout appears instant, framed by a
