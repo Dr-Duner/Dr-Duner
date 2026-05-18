@@ -20,3 +20,13 @@
 - Hard dependency: in-video scanner/message UI must equal the real app
   UI (DESIGN.md §3b/§3c). Video and app are coupled — design together.
 - Example render: theta/storyboard-vision-nova.png (+ .mmd).
+
+## Generated assets (job IDs — re-display via job_display)
+Network policy blocks the image-host domain, so generated media can NOT
+be curled into the repo. Persist job IDs here; future sessions re-open
+them with the generation tool's job_display.
+- Nova chibi key still (cold-open + buzz, locked scene), 2026-05-18,
+  nano_banana_2, 9:16, ~2 credits each:
+  - Option A: job `a777c0e0-195e-46f0-b9ae-11b4e45c9b66`
+  - Option B: job `47efdc27-b9b7-4b11-a869-d3f014e8a90c`
+  - Canonical pick: PENDING Gee's choice.

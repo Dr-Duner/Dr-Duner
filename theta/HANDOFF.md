@@ -23,8 +23,12 @@ and it is briefed automatically — he does not re-explain anything.
    simulator) is the animation/automation bar. Provisional L9 is in
    place so the arc holds; swap when Gee surfaces it (recording or
    written description).
-2. **Credits** — ~44 generation credits; 18 lesson videos won't fit.
-   Design is free; generation is metered; storyboard before generating.
+2. **Credits** — ~44 generation credits (images ~2 each; video far
+   more). Design is free; generation metered; storyboard before gen.
+3. **Network policy blocks the image-host domain** — generated media
+   CANNOT be curled into the repo or viewed by Claude Code. Only Gee
+   sees them in the UI widget. Persist job IDs (see
+   `reference_storyboard-vision.md`) and re-display via job_display.
 - Font: LOCKED (IBM Plex Mono). Persistence: SOLVED.
 
 ## 4. Next steps
