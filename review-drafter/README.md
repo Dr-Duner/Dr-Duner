@@ -1,20 +1,24 @@
-# Review Drafter — Phase 1 (Operator Console)
+# Review Drafter — Phases 1 & 2
 
-**Internal operator tool, not a client product.** This is a fully
-managed, operator-in-the-loop, **Google-only** service: the practice
-does nothing; the operator (us) reviews HIPAA-gated drafts here and
-posts them. Phase 1 = the drafting/compliance engine + operator console
-fed by manual paste/CSV (the testing/ops harness that proves the
-engine). Phase 2 (required for the promise) = Google Business Profile
-API auto-ingest + operator-gated post-back. There is intentionally no
-client-facing app.
+**We do all the labor; the client only approves.** Fully managed,
+**Google-only**. The operator drafts + HIPAA-gates here (internal
+console); the practice approves before anything posts, on their chosen
+channel. Phase 1 (engine + console + gate + per-practice config) and
+Phase 2 (approval state machine + persistence + 3-channel delivery +
+working magic-link approval page + simulated Google post-back, tested
+end-to-end offline) are built. Remaining is credential-gated only:
+Google Business Profile API + per-practice OAuth, and real SMTP/Twilio
+behind the `Sender` protocol — no design work left.
 
-Flow: paste/CSV reviews → 2 HIPAA-safe, voice-matched drafts each →
-operator QA → route by rating (4–5★ bulk-approvable / auto if the
-practice opted in; 1–3★ explicit client approval) → client approves on
-their channel (email | magic-link | SMS) → we post. Phase 1 simulates
-the approve/post step (mark posted + CSV record); Phase 2 wires the
-real channels + Google API.
+Flow: paste/CSV → 2 HIPAA-safe voice-matched drafts each → operator QA
+→ "Send batch for client approval" (delivered on the practice's channel;
+opted-in positives auto-approved) → route by rating (4–5★ bulk /
+auto; 1–3★ + unrated always explicit) → client approves/edits/rejects
+on the magic-link page (edits re-run the gate) → "Post approved"
+(`SimulatedGoogleClient` until Google access is granted; a final HIPAA
+scan is a hard pre-post backstop). State persists per practice under
+`data/` (gitignored, isolated, public review text + decisions only — no
+PHI).
 
 Spec: `SPEC.md`. Business logic skills: `../.claude/skills/`.
 
@@ -64,7 +68,9 @@ The compliance gate cannot be skipped. Nothing posts to a practice's
 public listing without that practice's approval — explicit per-reply
 for 1–3★, bulk (or opt-in auto) for 4–5★. Client approval is the
 liability anchor (consent to what posts in their name). Layered safety:
-HIPAA gate → operator QA → client approval → post. We do all the labor;
-the client only approves. Google-only (Yelp has no reply API). No PHI
-persisted in Phase 1. See `service-operator` / `business-operations` /
-`product-design` skills.
+HIPAA gate → operator QA → client approval → final pre-post HIPAA scan
+→ post; client edits are re-gated before they can post. We do all the
+labor; the client only approves. Google-only (Yelp has no reply API).
+Persisted state is public review text + decisions only — no PHI,
+gitignored, isolated per practice. See `service-operator` /
+`business-operations` / `product-design` skills.

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ practice }} — Approve replies</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>{{ practice }}</h1>
+    <p class="tag">We wrote and HIPAA-checked these Google review
+      replies. Just approve — positives in one tap, anything sensitive
+      one at a time. Nothing posts until you say so.</p>
+  </header>
+
+  <main>
+  <p id="msg" class="tag"></p>
+
+  {% if positives %}
+  <section>
+    <h2>Positive reviews ({{ positives|length }})</h2>
+    <button id="allPos" class="primary">Approve all positives</button>
+    {% for c in positives %}
+    <article class="card" data-id="{{ c.id }}">
+      <p class="meta">{{ c.rating }}★ · {{ c.author }}</p>
+      <p class="text">{{ c.review }}</p>
+      <p class="reply">{{ c.reply }}</p>
+      <p class="why">✓ {{ c.why_safe }}</p>
+    </article>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if explicit %}
+  <section>
+    <h2>Needs your OK ({{ explicit|length }})</h2>
+    {% for c in explicit %}
+    <article class="card neg" data-id="{{ c.id }}">
+      <p class="meta">{{ c.rating }}★ · {{ c.author }}</p>
+      <p class="text">{{ c.review }}</p>
+      <textarea class="reply-edit">{{ c.reply }}</textarea>
+      <p class="why">✓ {{ c.why_safe }}</p>
+      <div class="vbtns">
+        <button class="approve">Approve</button>
+        <button class="saveedit ghost">Save edit &amp; approve</button>
+        <button class="reject ghost">Reject</button>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if not positives and not explicit %}
+  <p class="tag">Nothing pending — you're all caught up.</p>
+  {% endif %}
+  </main>
+
+  <script>
+    const TOKEN = {{ token|tojson }};
+    const msg = document.getElementById("msg");
+    async function act(payload) {
+      const r = await fetch("/approve/" + TOKEN, {
+        method: "POST", headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(payload),
+      });
+      return r.json();
+    }
+    function done(card, label) {
+      card.classList.add("done");
+      card.querySelectorAll("button,textarea").forEach(e => e.disabled = true);
+      msg.textContent = label;
+    }
+    document.querySelectorAll(".card.neg").forEach(card => {
+      const id = card.dataset.id;
+      const ta = card.querySelector(".reply-edit");
+      card.querySelector(".approve").onclick = async () => {
+        const j = await act({action: "approve", item: id});
+        j.ok ? done(card, "Approved.") : (msg.textContent = j.error);
+      };
+      card.querySelector(".saveedit").onclick = async () => {
+        const e = await act({action: "edit", item: id, text: ta.value});
+        if (!e.ok) { msg.textContent =
+          "Edit blocked: " + (e.violations || [e.error]).join("; "); return; }
+        const j = await act({action: "approve", item: id});
+        j.ok ? done(card, "Edited & approved.") : (msg.textContent = j.error);
+      };
+      card.querySelector(".reject").onclick = async () => {
+        const j = await act({action: "reject", item: id});
+        j.ok ? done(card, "Rejected.") : (msg.textContent = j.error);
+      };
+    });
+    const allPos = document.getElementById("allPos");
+    if (allPos) allPos.onclick = async () => {
+      const j = await act({action: "approve_all_positives"});
+      if (j.ok) {
+        document.querySelectorAll("section:first-of-type .card")
+          .forEach(c => done(c, ""));
+        msg.textContent = "Approved " + j.approved + " positive reply(ies).";
+        allPos.disabled = true;
+      }
+    };
+  </script>
+</body>
+</html>

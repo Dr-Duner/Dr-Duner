@@ -56,6 +56,10 @@ button.ghost { background: #eef1f6; color: var(--ink); }
 .variant h4 { margin: 0 0 6px; font-size: 13px; }
 .variant textarea { min-height: 70px; }
 .why { color: var(--accent); font-size: 12px; margin: 6px 0; }
+.reply { background: #f4f8f6; border-radius: 8px; padding: 10px;
+  margin: 8px 0; }
+.reply-edit { min-height: 70px; }
+button.primary { margin: 4px 0 8px; }
 .fallback { color: var(--warn); }
 .vbtns { display: flex; gap: 8px; margin-top: 6px; }
 .actions { margin-top: 10px; display: flex; gap: 8px; }

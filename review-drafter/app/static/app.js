@@ -3,6 +3,9 @@ const $ = (s, r = document) => r.querySelector(s);
 const queue = $("#queue");
 const exportBtn = $("#exportBtn");
 const bulkBtn = $("#bulkBtn");
+const sendBtn = $("#sendBtn");
+const postBtn = $("#postBtn");
+const sendOut = $("#sendOut");
 const approved = []; // {author,rating,platform,date,review,reply}
 let cards = []; // {card, r, mode} for bulk approval
 
@@ -27,6 +30,7 @@ $("#draftBtn").addEventListener("click", async () => {
     const bulkable = data.results.filter(
       (d) => d.approval_mode !== "explicit").length;
     bulkBtn.disabled = bulkable === 0;
+    sendBtn.disabled = data.results.length === 0;
     const expl = data.results.length - bulkable;
     setStatus(`Found ${data.count} review(s) — ${bulkable} positive ` +
       `(bulk/auto), ${expl} need explicit client approval.`);
@@ -105,6 +109,54 @@ bulkBtn.addEventListener("click", () => {
     finishCard(card, "posted");
   });
   bulkBtn.disabled = true;
+});
+
+function currentItems() {
+  return cards.map(({ card, r }) => {
+    const ta = card.querySelector(".variant textarea");
+    const why = card.querySelector(".variant .why");
+    return {
+      author: r.author, rating: r.rating ?? null,
+      platform: r.platform || "google", date: r.date, review: r.text,
+      reply: ta ? ta.value : "",
+      why_safe: why ? why.textContent.replace(/^✓\s*/, "").trim() : "",
+    };
+  });
+}
+
+sendBtn.addEventListener("click", async () => {
+  sendBtn.disabled = true;
+  sendOut.textContent = "Sending for client approval…";
+  const practice = $("#practice").value;
+  try {
+    const res = await fetch("/api/approvals", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ practice, items: currentItems() }),
+    });
+    const j = await res.json();
+    const link = j.approve_url
+      ? ` Client link: ${location.origin}${j.approve_url}` : "";
+    sendOut.textContent =
+      `Queued ${j.queued} (auto-approved ${j.auto_approved}) via ` +
+      `${j.channel} → ${j.delivery.to || "outbox"}.` + link;
+    postBtn.disabled = false;
+  } catch (e) {
+    sendOut.textContent = "Send failed.";
+    sendBtn.disabled = false;
+  }
+});
+
+postBtn.addEventListener("click", async () => {
+  postBtn.disabled = true;
+  const practice = $("#practice").value;
+  const res = await fetch("/api/post/" + encodeURIComponent(practice),
+    { method: "POST" });
+  const j = await res.json();
+  sendOut.textContent =
+    `Posted ${j.posted} approved reply(ies)` +
+    (j.live ? " (LIVE Google)." : " (simulated — Google access pending).") +
+    (j.blocked && j.blocked.length
+      ? ` ${j.blocked.length} blocked by final HIPAA scan.` : "");
 });
 
 function recordApproved(r, reply) {

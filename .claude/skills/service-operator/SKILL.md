@@ -67,10 +67,14 @@ proof we're earning the fee — the retention touchpoint.
   for something outside this runbook.
 
 ## State of the build
-Phase 1 = engine + operator console + HIPAA gate + per-practice config
-(approval channel/granularity), fed by manual paste/CSV (built; the
-ops/testing harness, NOT the client product). Phase 2 (required for the
-promise) = Google Business Profile API (auto-ingest + post-on-approval)
-+ client approval delivery in all three channels. See
-`review-drafter/SPEC.md`; that spec + this runbook are the source of
-truth.
+Phase 1 (engine + console + HIPAA gate + per-practice config) AND
+Phase 2 (approval state machine + per-practice persistence + 3-channel
+rendering + working magic-link approval page + simulated Google
+post-back, tested end-to-end offline) are **built**. Run it via the
+console: draft → "Send batch for client approval" (delivers on the
+practice's channel; auto-approves opted-in positives) → client approves
+on the magic-link page (or bulk-approves positives) → "Post approved"
+(simulated until Google access is granted). Only credential-gated swaps
+remain: Google Business Profile API + per-practice OAuth, and real
+SMTP/Twilio behind the `Sender` protocol — no design work left. See
+`review-drafter/SPEC.md`; that spec + this runbook are source of truth.

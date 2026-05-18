@@ -209,13 +209,20 @@ CSV / pasted text
   fed by manual paste/CSV. The engine + ops harness. Use it to validate
   draft quality with 1–2 real dental offices' past reviews. NOT the
   client-facing product.
-- **Phase 2 (required for the promise — the real product):** (a) Google
-  Business Profile API: OAuth grant at onboarding, auto-pull new
-  reviews, post-back to Google **on client approval**; (b) the client
-  approval delivery in all three channels (email digest, magic-link
-  page, SMS) with the bulk-positives / explicit-negatives routing.
-  Persist OAuth tokens, approval state, and posted state per practice.
-  Start the Google API access application early (it has lead time).
+- **Phase 2 (built offline; live pending credentials):** the full
+  approval state machine is implemented and persisted per practice
+  (pending → approved → posted / rejected), with: client approval
+  delivery rendered for all three channels (email digest, magic-link
+  page, SMS) + the working **magic-link approval page**; the
+  bulk-positives / explicit-negatives routing; client edits re-run
+  through the HIPAA gate before they can post; a final pre-post HIPAA
+  backstop; and a **Google post-back seam** (`SimulatedGoogleClient`
+  proves the pipeline end-to-end; `LiveGoogleClient` refuses rather
+  than fake a post). What remains is purely credential-gated and is a
+  known, small swap: (a) Google Business Profile API access + the
+  per-practice OAuth grant (start the access application early — lead
+  time); (b) real SMTP / Twilio Senders behind the existing one-method
+  `Sender` protocol. No further architecture needed.
 - **Phase 3:** multi-practice scale, billing, analytics (response rate,
   rating trend), optional **per-practice auto-approve** (skip the
   approval step entirely) once a practice has earned trust in the gate.
@@ -249,13 +256,17 @@ CSV / pasted text
 
 ## 10. Next step
 
-Phase 1 (engine + operator console + HIPAA gate + per-practice config
-incl. approval channel/granularity + fixtures) is **built** — it proves
-the engine and is the operator's daily tool. The managed promise ("we
-write & post, you just approve") is not real until **Phase 2**: Google
-Business Profile API (auto-ingest + post-on-approval) plus the client
-approval delivery in all three channels with bulk-positive /
-explicit-negative routing. That work starts with the Google API access
-application (lead time) and the per-practice OAuth + approval-channel
-onboarding flow. The only client-facing surfaces are the lightweight
-approval channels and a weekly proof-of-work recap — no authoring app.
+Phase 1 (engine + operator console + HIPAA gate + per-practice config)
+and Phase 2 (approval state machine + persistence + 3-channel rendering
++ working magic-link approval page + simulated Google post-back, all
+tested end-to-end offline) are **built**. The managed promise ("we
+write & post, you just approve") is now real except for two purely
+credential-gated swaps with no remaining design work: the Google
+Business Profile API access + per-practice OAuth grant (start that
+access application now — it has lead time), and real SMTP/Twilio
+Senders behind the existing protocol. Next step is operational, not
+architectural: file the Google access application and validate draft
+quality on a real practice's history. The only client-facing surfaces
+are the lightweight approval channels and a weekly recap — no
+authoring app. Counsel sign-off on the HIPAA gate + a PHI/BAA path
+remain the hard launch-blockers before any live post.

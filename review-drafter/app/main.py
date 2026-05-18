@@ -9,7 +9,8 @@ from fastapi.responses import HTMLResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from . import config, drafter, parser, practices
+from . import (approvals, channels, config, drafter, google_gbp, models,
+               parser, practices, store)
 
 app = FastAPI(title="Review Response Drafter")
 app.mount("/static", StaticFiles(directory=config.ROOT / "app" / "static"),
@@ -47,6 +48,90 @@ async def api_draft(
         "count": len(reviews),
         "results": [d.to_dict() for d in drafted],
     })
+
+
+@app.post("/api/approvals")
+async def api_approvals(request: Request):
+    """Operator pushes a drafted batch into the client approval queue
+    and we deliver it on the practice's channel. Returns the exact
+    message the client will receive (operator can preview/confirm)."""
+    body = await request.json()
+    name = body.get("practice", "default")
+    cfg = practices.load_practice(name)
+    drafted: list[models.DraftedReview] = []
+    for row in body.get("items", []):
+        rv = models.Review(
+            text=row.get("review", ""), author=row.get("author", ""),
+            rating=row.get("rating") or None,
+            platform=row.get("platform", "google"),
+            date=row.get("date", ""))
+        var = models.DraftVariant(text=row.get("reply", ""),
+                                  why_safe=row.get("why_safe", ""),
+                                  label="approved")
+        drafted.append(models.DraftedReview(
+            review=rv, variants=[var],
+            approval_mode=models.approval_mode(rv, cfg)))
+    items = approvals.create_from_drafted(name, cfg, drafted)
+    pending = [i for i in items if i.status == store.PENDING
+               or i.status == store.APPROVED]
+    delivery = channels.get_sender(cfg).send(
+        cfg, [i for i in items if i.status == store.PENDING]) \
+        if any(i.status == store.PENDING for i in items) \
+        else {"sent": 0, "channel": cfg.approval_channel}
+    return JSONResponse({
+        "queued": len(items),
+        "auto_approved": sum(i.status == store.APPROVED for i in items),
+        "channel": cfg.approval_channel,
+        "delivery": delivery,
+        "approve_url": f"/approve/{pending[0].token}" if pending else None,
+    })
+
+
+@app.get("/api/queue/{practice}")
+def api_queue(practice: str):
+    return JSONResponse({"items": [
+        {"id": i.id, "status": i.status, "mode": i.approval_mode,
+         "rating": i.review.get("rating"),
+         "author": i.review.get("author"), "reply": i.reply}
+        for i in store.list_items(practice)]})
+
+
+@app.post("/api/post/{practice}")
+def api_post(practice: str):
+    """Simulated Google post-back of approved replies. Real Google is
+    credential-gated; this proves the pipeline offline."""
+    return JSONResponse(approvals.post_approved(practice))
+
+
+@app.get("/approve/{token}", response_class=HTMLResponse)
+def approve_page(request: Request, token: str):
+    found = store.find_by_token(token)
+    if not found:
+        return HTMLResponse("<h1>Link expired or invalid.</h1>",
+                            status_code=404)
+    name, _ = found
+    cfg = practices.load_practice(name)
+    pending = store.list_items(name, store.PENDING)
+    payload = channels.render_link_payload(cfg, pending)
+    return templates.TemplateResponse(request, "approve.html", {
+        "token": token, "practice": payload["practice_name"],
+        "positives": payload["positives"], "explicit": payload["explicit"],
+    })
+
+
+@app.post("/approve/{token}")
+async def approve_action(request: Request, token: str):
+    body = await request.json()
+    action = body.get("action", "")
+    if action == "approve_all_positives":
+        found = store.find_by_token(token)
+        if not found:
+            return JSONResponse({"ok": False, "error": "invalid link"},
+                                status_code=404)
+        return JSONResponse(approvals.bulk_approve_positives(found[0]))
+    return JSONResponse(approvals.apply_action(
+        token, action, item_id=body.get("item"),
+        edited_text=body.get("text")))
 
 
 @app.post("/api/export")

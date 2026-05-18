@@ -38,9 +38,12 @@
   <section id="queue"></section>
 
   <footer>
+    <button id="sendBtn" disabled>Send batch for client approval</button>
+    <button id="postBtn" class="ghost" disabled>Post approved (simulated)</button>
     <button id="bulkBtn" class="ghost" disabled>Approve all positives</button>
     <button id="exportBtn" disabled>Export approved CSV</button>
   </footer>
+  <p id="sendOut" class="muted"></p>
 
   <template id="cardTpl">
     <article class="card">
