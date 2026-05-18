@@ -104,6 +104,39 @@ scanner-unlock arc. Sub-questions RESOLVED (Gee, 2026-05-18):
   until the scanner unlocks at L20; after L20, open-brokerage
   becomes the primary action, paper stays available.
 
+**Scanner block spec — real feed, terminal-skinned (Gee, 2026-05-18).**
+Source = the existing "Capital Mind" Telegram bot daily-scan feed.
+Same data, restyled into the §3b-1 house style: IBM Plex Mono, navy,
+the `[COACH]` header + scan body in that coach's color, dense
+ONE-LINE-per-section packing with `|` separators and lowercase
+abbreviations. Section → line mapping (Telegram → terminal):
+- header: `DAILY SCAN — DATE` + `Market: OPEN` → `[NOVA] scan DD Mon  market:OPEN`
+- token/auth status (`SCHWAB TOKEN: 0.0d … RE-AUTH`) → a system
+  ALERT line prefixed `!`, in amber `#ffb000` (status-warning role):
+  `!schwab token 0.0d EXPIRED → RE-AUTH`
+- `HOLDINGS ALERT (n)` rows → one line:
+  `holdings(2) DT $38.64 HV%100 vol-spike↑ | MELI $1556.31 HV%100 ↓`
+- `VERTICAL SPREADS` → `vspreads: none today (profile:tighter-width)`
+- `PIPELINE — buy signals (n)` → one wrapped line:
+  `pipeline(4) MCO $440.96 compounder <50dMA -4.9%w | SPGI $414.33 <50dMA -4.0%w | …`
+Rule: directional ticks (vol-spike ↑ / ↓, week %) stay in the coach
+color or off-white — they are market direction, NOT the user's P&L,
+so they must NOT borrow the reserved gain-green / loss-red. Red and
+green still mean only the user's ± delta. Amber `!` is the sole
+system-status role and overrides coach color on that line only.
+Full mock (top + real scanner, one dense block):
+```
+Last login: Tue May 18 09:42:11 on theta
+[trader@theta ~] % recap --last
+ 3 trades closed  bal $12,480.00 +$340.00  entered 47  win 61%
+[NOVA] scan 18 May  market:OPEN
+ !schwab token 0.0d EXPIRED → RE-AUTH
+ holdings(2) DT $38.64 HV%100 vol↑ | MELI $1556.31 HV%100 ↓
+ vspreads: none today (profile:tighter-width)
+ pipeline(4) MCO $440.96 cmpndr <50dMA -4.9%w | SPGI $414.33 <50dMA -4.0%w | GPRT … | BPOS $52.00 high-risk
+[trader@theta ~] % _   [ PAPER TRADE ]  [ OPEN BROKERAGE ]
+```
+
 ### 3c. Game format  — DESIGN NEEDED
 What makes the lessons a "game": progress/XP, streaks, the locked scanner
 as the prize, paper-trade scoreboard, the coach's trust meter? To define.
