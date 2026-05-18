@@ -70,18 +70,29 @@ one dense terminal block:
 ```
 Last login: Tue May 18 09:42:11 on theta
 [trader@theta ~] % recap --last
- closed 3 trades   balance $12,480.00  +$340.00   <-+/- token green(up)/red(down)
- trades entered 47   win rate 61%
-[NOVA] scan — 18 May
- > SPY  put credit spread  risk:defined  edge:high
- > AAPL iron condor        risk:defined  edge:med
- > NVDA skip — outside plan
-[trader@theta ~] % _   [ ENTER PAPER TRADE ]  [ OPEN BROKERAGE ]
+ 3 trades closed  bal $12,480.00 +$340.00  entered 47  win 61%
+[NOVA] scan 18 May
+ SPY put-credit risk:def edge:hi | AAPL iron-condor risk:def edge:md | NVDA skip:off-plan
+[trader@theta ~] % _   [ PAPER TRADE ]  [ OPEN BROKERAGE ]
 ```
-Layout rule: keep it compact — no empty lines between sections, no
-`---` separators, single leading space for indented rows. Density
-is the point; it should feel like a real packed terminal, not a
-spaced-out card.
+Layout rule: maximum density — consolidate multiple facts per line
+(recap + stats on ONE line; the whole scan on ONE wrapped line, `|`
+separated). No empty lines, no `---` separators, single leading
+space for indented rows. It should read like a real packed
+terminal, not a spaced-out card.
+
+**Coach terminal colors.** Each coach has a signature terminal
+color; their name tag `[NAME]` AND their scan line render in that
+color (everything else stays off-white #eef6f3):
+- Nova (Analyst) — signal green `#00c896`
+- Rex (Veteran) — amber `#ffb000`
+- Finn (Patient Teacher) — cyan `#4fd1e6`
+- Atlas (Risk Manager) — violet `#b18cff`
+Status guard: the ± delta token's gain-green / loss-red is a
+RESERVED status signal and always wins — never recolor the delta to
+a coach color. Nova's green == the brand signal green; the delta is
+the only other green and is unambiguous (always a signed `$` amount
+in the recap line, never a coach tag).
 Ties to 3a (mono locked), 3c-1 (Θ terminal end card), and the L20
 scanner-unlock arc. Sub-questions RESOLVED (Gee, 2026-05-18):
 - Load: NO type-on animation. Readout appears instant, framed by a
