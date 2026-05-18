@@ -9,8 +9,8 @@ from fastapi.responses import HTMLResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from . import (approvals, channels, config, drafter, google_gbp, models,
-               parser, practices, store)
+from . import (approvals, channels, config, drafter, google_gbp, leads,
+               models, parser, practices, store)
 
 app = FastAPI(title="Review Response Drafter")
 app.mount("/static", StaticFiles(directory=config.ROOT / "app" / "static"),
@@ -132,6 +132,52 @@ async def approve_action(request: Request, token: str):
     return JSONResponse(approvals.apply_action(
         token, action, item_id=body.get("item"),
         edited_text=body.get("text")))
+
+
+@app.get("/prospect", response_class=HTMLResponse)
+def prospect_page(request: Request):
+    return templates.TemplateResponse(request, "prospect.html", {
+        "practices": practices.list_practices()})
+
+
+@app.post("/api/sample")
+async def api_sample(
+    practice: str = Form("default"),
+    practice_name: str = Form(""),
+    pasted: str = Form(""),
+    review_count: int = Form(0),
+    avg_rating: float = Form(0.0),
+    unanswered_recent: int = Form(0),
+    unanswered_negative: int = Form(0),
+    robotic_replies: bool = Form(False),
+    file: UploadFile | None = None,
+):
+    if file is not None and file.filename:
+        raw = (await file.read()).decode("utf-8", errors="replace")
+        reviews = parser.parse(raw, is_csv=True)
+    else:
+        reviews = parser.parse(pasted, is_csv=False)
+    if not reviews:
+        return JSONResponse({"error": "Paste the prospect's reviews."},
+                            status_code=400)
+
+    cfg = practices.load_practice(practice)
+    if practice_name.strip():
+        cfg.practice_name = practice_name.strip()
+    pros = leads.Prospect(
+        practice_name=cfg.practice_name,
+        review_count=review_count or len(reviews),
+        avg_rating=avg_rating,
+        unanswered_recent=unanswered_recent,
+        unanswered_negative=unanswered_negative,
+        robotic_replies=robotic_replies,
+    )
+    ls = leads.qualify(pros)
+    sample = leads.free_sample(reviews, cfg)
+    return JSONResponse({
+        "score": ls.score, "tier": ls.tier, "reasons": ls.reasons,
+        "opener": ls.opener, "sample": sample,
+    })
 
 
 @app.post("/api/export")

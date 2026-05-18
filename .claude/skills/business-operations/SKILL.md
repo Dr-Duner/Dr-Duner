@@ -59,6 +59,16 @@ stays low — leverage, not a second job).
   opt-in, any review with a threat / legal claim / medical emergency,
   anything outside these skills.
 
+## Delivery modes (revenue does not wait on the Google API)
+- **Concierge trial / Phase 0 (sell this now):** we draft + HIPAA-gate,
+  client approves, client pastes approved replies into their own Google
+  dashboard (or delegates access). Paid. Not automation, no ToS issue.
+- **Phase 2 pipeline (when API access lands):** same client experience,
+  we auto-ingest + post on approval. Existing trials upgrade silently —
+  no re-sell, no price reset.
+The Google API access application is a parallel track, never a gate on
+closing or billing. File it early; sell concierge meanwhile.
+
 ## Cadence
 Daily: fire due pipeline next-actions, draft/queue, content.
 Weekly: funnel + service + business metrics snapshot, recaps, pipeline

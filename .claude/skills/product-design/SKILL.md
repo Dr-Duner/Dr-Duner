@@ -44,24 +44,23 @@ All three: never expose PHI beyond the public review text; tokens
 expire; an un-actioned reply is held, never auto-posted (unless the
 practice opted into auto-approve-positives).
 
-## Operator console spec (Phase 1, single page)
-1. **Intake bar:** paste-reviews textarea OR "Upload CSV"; confirm
-   "Found N reviews" before drafting. (Phase 2: auto-fed by Google API
-   per practice — operator picks a practice queue instead of pasting.)
-2. **Review card:** reviewer name, stars, platform, date, review text;
-   practice context visible.
-3. **Two gated draft variants** (A short/warm, B fuller), each with:
-   - inline editable text box
-   - green "Why this is safe" one-liner (`hipaa-review-compliance`)
-   - **Copy** button
-   - the rating-route badge: "4–5★ → bulk-approvable" vs
-     "1–3★ → needs explicit client approval"
-   - **Send for approval** / **Skip** (Phase 1: operator marks the
-     send + later marks posted; Phase 2: send via channel, post on
-     client approval)
-4. **Status chips:** drafted / gated / awaiting-approval / approved /
-   posted / rejected.
-5. **Export CSV** (operator record).
+## Operator console spec (built — a 4-step pipeline)
+The console reads as one linear pipeline: **1 Draft → 2 Send for
+client approval → 3 (client approves on their channel) → 4 Post
+approved**. No operator self-approve anywhere — the operator only QA's
+and dispatches.
+1. **Intake bar:** practice select + paste/CSV → "1 · Draft replies";
+   confirms "Found N — M positive, K need explicit approval".
+2. **QA card:** route badge, reviewer/stars/date, review text, the two
+   gated variants as **radio-selectable** editable boxes + "✓ why safe"
+   + Copy. The operator picks/edits one; that is all they decide.
+3. **Dispatch panel** (after Send): channel + recipient, the prominent
+   **client approval link** (copy/open — operator can preview-as-client),
+   a collapsible "exactly what the client receives", and a live
+   **queue status** readout (pending/approved/posted/rejected).
+4. A sibling **/prospect** page: lead qualifier + free-sample
+   generator for outbound (`lead-generation`).
+Persisted store is the operator record (no CSV export needed).
 
 Non-negotiable rules:
 - No draft shown until it passes the compliance gate.

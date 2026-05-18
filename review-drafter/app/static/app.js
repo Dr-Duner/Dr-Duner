@@ -1,13 +1,13 @@
-// Thin client: POST input -> render cards -> collect approved -> export.
+// Operator console: draft -> QA (pick/edit a variant) -> send for
+// client approval -> post approved. The operator never self-approves;
+// the client approves on their channel. Thin client over the API.
 const $ = (s, r = document) => r.querySelector(s);
 const queue = $("#queue");
-const exportBtn = $("#exportBtn");
-const bulkBtn = $("#bulkBtn");
 const sendBtn = $("#sendBtn");
 const postBtn = $("#postBtn");
+const queueBtn = $("#queueBtn");
 const sendOut = $("#sendOut");
-const approved = []; // {author,rating,platform,date,review,reply}
-let cards = []; // {card, r, mode} for bulk approval
+let cards = []; // {card, r} — the QA'd batch
 
 $("#draftBtn").addEventListener("click", async () => {
   const fd = new FormData();
@@ -23,17 +23,18 @@ $("#draftBtn").addEventListener("click", async () => {
     const data = await res.json();
     if (!res.ok) { setStatus(data.error || "Error"); return; }
     queue.innerHTML = "";
-    approved.length = 0;
     cards = [];
-    exportBtn.disabled = true;
+    $("#dispatch").hidden = true;
     data.results.forEach(renderCard);
     const bulkable = data.results.filter(
       (d) => d.approval_mode !== "explicit").length;
-    bulkBtn.disabled = bulkable === 0;
     sendBtn.disabled = data.results.length === 0;
+    postBtn.disabled = true;
+    queueBtn.disabled = false;
     const expl = data.results.length - bulkable;
     setStatus(`Found ${data.count} review(s) — ${bulkable} positive ` +
-      `(bulk/auto), ${expl} need explicit client approval.`);
+      `(bulk/auto), ${expl} need explicit client approval. ` +
+      `Pick/edit a reply per card, then Send.`);
   } catch (e) {
     setStatus("Request failed.");
   } finally {
@@ -43,89 +44,79 @@ $("#draftBtn").addEventListener("click", async () => {
 
 function setStatus(t) { $("#status").textContent = t; }
 
+const ROUTE = {
+  explicit: "Needs explicit client approval (1–3★)",
+  bulk: "Bulk-approvable (4–5★)",
+  auto: "Auto-approve — practice opted in (4–5★)",
+};
+
 function renderCard(d) {
   const tpl = $("#cardTpl").content.cloneNode(true);
   const card = tpl.querySelector(".card");
   const r = d.review;
-  if (r.is_negative) {
-    card.classList.add("neg");
-    tpl.querySelector(".flag").hidden = false;
-  }
+  if (r.is_negative) card.classList.add("neg");
+  card.classList.add("mode-" + d.approval_mode);
+
+  const badge = document.createElement("span");
+  badge.className = "chip route " + d.approval_mode;
+  badge.textContent = ROUTE[d.approval_mode];
+  tpl.querySelector(".rev").insertBefore(badge, tpl.querySelector(".meta"));
+
   tpl.querySelector(".meta").textContent =
     `${r.author || "Anonymous"} · ${r.rating ?? "—"}★ · ${r.platform}` +
     (r.date ? ` · ${r.date}` : "");
   tpl.querySelector(".text").textContent = r.text;
 
-  const route = { explicit: "Needs explicit client approval (1–3★)",
-    bulk: "Bulk-approvable (4–5★)",
-    auto: "Auto-approve — practice opted in (4–5★)" }[d.approval_mode];
-  const badge = document.createElement("span");
-  badge.className = "chip route " + d.approval_mode;
-  badge.textContent = route;
-  card.classList.add("mode-" + d.approval_mode);
-  tpl.querySelector(".rev").insertBefore(
-    badge, tpl.querySelector(".meta"));
-
   const vbox = tpl.querySelector(".variants");
-  d.variants.forEach((v) => {
+  const gname = "v" + cards.length;
+  d.variants.forEach((v, i) => {
     const el = document.createElement("div");
     el.className = "variant";
     el.innerHTML =
-      `<h4>${v.label || "Variant"}</h4>
+      `<label class="vpick"><input type="radio" name="${gname}"
+        ${i === 0 ? "checked" : ""}> <strong>${v.label || "Variant"}</strong></label>
        <textarea>${escapeHtml(v.text)}</textarea>
        <p class="why${d.used_fallback ? " fallback" : ""}">
-         ${d.used_fallback ? "⚠ Safe fallback template (model output could not pass the gate)" : "✓ " + escapeHtml(v.why_safe)}</p>
-       <div class="vbtns">
-         <button class="copy">Copy</button>
-         <button class="approve ghost">Use this &amp; mark posted</button>
-       </div>`;
+         ${d.used_fallback
+            ? "⚠ Safe fallback template (model output could not pass the gate)"
+            : "✓ " + escapeHtml(v.why_safe)}</p>
+       <button class="copy ghost">Copy</button>`;
     const ta = el.querySelector("textarea");
     el.querySelector(".copy").onclick = () => {
       navigator.clipboard.writeText(ta.value);
       flash(el.querySelector(".copy"), "Copied");
     };
-    el.querySelector(".approve").onclick = () => {
-      recordApproved(r, ta.value);
-      finishCard(card, "posted");
-    };
     vbox.appendChild(el);
   });
 
-  tpl.querySelector(".post").onclick = () => {
-    const first = card.querySelector(".variant textarea");
-    recordApproved(r, first ? first.value : "");
-    finishCard(card, "posted");
-  };
-  tpl.querySelector(".skip").onclick = () => finishCard(card, "skipped");
   queue.appendChild(tpl);
-  cards.push({ card, r, mode: d.approval_mode });
+  cards.push({ card, r });
 }
 
-bulkBtn.addEventListener("click", () => {
-  cards.forEach(({ card, r, mode }) => {
-    if (mode === "explicit" || card.classList.contains("done")) return;
-    const first = card.querySelector(".variant textarea");
-    recordApproved(r, first ? first.value : "");
-    finishCard(card, "posted");
-  });
-  bulkBtn.disabled = true;
-});
+function chosen(card) {
+  const variants = [...card.querySelectorAll(".variant")];
+  const picked = variants.find(
+    (v) => v.querySelector('input[type=radio]').checked) || variants[0];
+  return {
+    text: picked.querySelector("textarea").value,
+    why: picked.querySelector(".why").textContent.replace(/^[✓⚠]\s*/, "").trim(),
+  };
+}
 
 function currentItems() {
   return cards.map(({ card, r }) => {
-    const ta = card.querySelector(".variant textarea");
-    const why = card.querySelector(".variant .why");
+    const c = chosen(card);
     return {
       author: r.author, rating: r.rating ?? null,
       platform: r.platform || "google", date: r.date, review: r.text,
-      reply: ta ? ta.value : "",
-      why_safe: why ? why.textContent.replace(/^✓\s*/, "").trim() : "",
+      reply: c.text, why_safe: c.why,
     };
   });
 }
 
 sendBtn.addEventListener("click", async () => {
   sendBtn.disabled = true;
+  $("#dispatch").hidden = false;
   sendOut.textContent = "Sending for client approval…";
   const practice = $("#practice").value;
   try {
@@ -134,11 +125,26 @@ sendBtn.addEventListener("click", async () => {
       body: JSON.stringify({ practice, items: currentItems() }),
     });
     const j = await res.json();
-    const link = j.approve_url
-      ? ` Client link: ${location.origin}${j.approve_url}` : "";
     sendOut.textContent =
-      `Queued ${j.queued} (auto-approved ${j.auto_approved}) via ` +
-      `${j.channel} → ${j.delivery.to || "outbox"}.` + link;
+      `Queued ${j.queued} — ${j.auto_approved} auto-approved, ` +
+      `delivered via ${j.channel} to ${j.delivery.to || "outbox"}.`;
+    if (j.approve_url) {
+      const url = location.origin + j.approve_url;
+      const a = $("#clientHref");
+      a.href = url; a.textContent = url;
+      $("#clientLink").hidden = false;
+      $("#copyLink").onclick = () => {
+        navigator.clipboard.writeText(url);
+        flash($("#copyLink"), "Copied");
+      };
+    }
+    const prev = j.delivery && j.delivery.preview;
+    if (prev) {
+      $("#preview").textContent =
+        typeof prev === "string" ? prev
+          : (prev.text || JSON.stringify(prev, null, 2));
+      $("#previewBox").hidden = false;
+    }
     postBtn.disabled = false;
   } catch (e) {
     sendOut.textContent = "Send failed.";
@@ -157,36 +163,23 @@ postBtn.addEventListener("click", async () => {
     (j.live ? " (LIVE Google)." : " (simulated — Google access pending).") +
     (j.blocked && j.blocked.length
       ? ` ${j.blocked.length} blocked by final HIPAA scan.` : "");
+  refreshQueue();
 });
 
-function recordApproved(r, reply) {
-  approved.push({
-    author: r.author, rating: r.rating ?? "", platform: r.platform,
-    date: r.date, review: r.text, reply,
-  });
-  exportBtn.disabled = approved.length === 0;
-}
+queueBtn.addEventListener("click", refreshQueue);
 
-function finishCard(card, stage) {
-  card.classList.add("done");
-  const chip = card.querySelector(".chip.stage");
-  chip.textContent = stage;
-  chip.classList.add(stage);
-  card.querySelectorAll("button, textarea").forEach((b) => b.disabled = true);
+async function refreshQueue() {
+  const practice = $("#practice").value;
+  const res = await fetch("/api/queue/" + encodeURIComponent(practice));
+  const j = await res.json();
+  const by = {};
+  j.items.forEach((i) => (by[i.status] = (by[i.status] || 0) + 1));
+  const order = ["pending", "approved", "posted", "rejected"];
+  $("#dispatch").hidden = false;
+  $("#queueOut").textContent = "Queue: " +
+    (order.filter((s) => by[s]).map((s) => `${by[s]} ${s}`).join(" · ")
+      || "empty");
 }
-
-exportBtn.addEventListener("click", async () => {
-  const res = await fetch("/api/export", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ rows: approved }),
-  });
-  const blob = await res.blob();
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "approved_replies.csv";
-  a.click();
-});
 
 function flash(btn, t) {
   const old = btn.textContent;

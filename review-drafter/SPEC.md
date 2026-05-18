@@ -205,10 +205,17 @@ CSV / pasted text
 
 ## 8. Roadmap
 
+- **Phase 0 (built; the pre-API revenue engine):** lead qualifier +
+  free-sample generator (`/prospect`, `app/leads.py`) and the
+  **concierge trial** — we draft + HIPAA-gate, the practice approves,
+  and *they paste* the approved replies into their own Google dashboard
+  (or delegate access to it). Not automation, no ToS issue, no API
+  dependency. This earns money and proves retention while the Google
+  API access application is in flight; those practices upgrade silently
+  to the Phase 2 pipeline when access lands.
 - **Phase 1 (built):** offline drafting + HIPAA gate + operator console,
   fed by manual paste/CSV. The engine + ops harness. Use it to validate
-  draft quality with 1–2 real dental offices' past reviews. NOT the
-  client-facing product.
+  draft quality with 1–2 real dental offices' past reviews.
 - **Phase 2 (built offline; live pending credentials):** the full
   approval state machine is implemented and persisted per practice
   (pending → approved → posted / rejected), with: client approval

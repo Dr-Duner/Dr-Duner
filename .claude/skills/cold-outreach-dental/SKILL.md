@@ -23,7 +23,18 @@ reference their actual (public) review situation, never patient info.
 
 Keep it ~5 sentences. The free drafted batch is the hook — show, don't
 tell. Sell the *outcome* (every review answered for you; you just tap
-approve), not a tool.
+approve), not a tool. Generate the batch + the opener line with the
+`/prospect` tool (`lead-generation`); paste the sample pack straight
+into the email — it is *their* reviews, answered and HIPAA-safe.
+
+## Closing without the Google API (concierge trial)
+Don't make the sale wait on Google API access. Sell the **concierge
+trial**: we write + HIPAA-gate, they approve, then they paste the
+approved replies into their own Google dashboard (or delegate access).
+Same pain removed (writing + compliance fear + time), no API
+dependency, paid. When API access lands they upgrade silently to
+auto-ingest + post-on-approval — no re-sell. See `lead-generation` /
+`business-operations`.
 
 ## Demo-to-close
 Deliver the free batch fast. Show: their real review → safe, on-voice
