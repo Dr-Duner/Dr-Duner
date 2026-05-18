@@ -32,11 +32,18 @@ in the same turn. Never let a decision live only in chat.
   format. The coach is the emotional spine.
 - Four coaches: Nova (Analyst), Rex (Veteran), Finn (Patient Teacher),
   Atlas (Risk Manager). Detail in `theta/lesson-flow.mmd`.
-- Palette (UPDATED 2026-05-18, Gee — was navy, now BLACK, global):
-  background **black #000000** everywhere (logo, app, all video).
-  Text = the coach's color (see DESIGN 3b-1); default text off-white
-  #eef6f3. Signal green #00c896 = Θ mark + reserved gain delta only;
-  red = reserved loss delta only. Old navy #0b1f3a is retired.
+- Palette — TWO REGISTERS (REFINED 2026-05-18, Gee). Black is the
+  BRAND/TERMINAL layer, NOT Nova's world:
+  (1) Brand/terminal = pure **black #000000**: logo, app UI, phone
+  screen, full-screen text/quote moments, closing Θ CTA lockup.
+  (2) Diegetic world = **real Aegean** (whitewashed stucco, bright
+  blue sea, sun-warm marble, dawn sky, period-accurate) — the phone
+  is the only modern object. Cut between the two registers.
+  Text = coach's color (see DESIGN 3b-1); default off-white #eef6f3.
+  Signal green #00c896 = Θ mark + reserved gain delta only; red =
+  reserved loss delta only. Old navy #0b1f3a retired. NOTE: earlier
+  "black everywhere" scene renders (Lesson 1 anchor + S1–S6) were a
+  misread of this rule — redo on the Aegean after credit top-up.
 - Coach-facing text font is **IBM Plex Mono** (LOCKED 2026-05-18) — the
   monospace computer-terminal interface voice. See DESIGN.md 3a.
 - Lesson 9 was built in Cowork, viewed in the simulator; it is the bar for

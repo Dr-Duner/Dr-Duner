@@ -27,12 +27,19 @@ Theta trade scan.
 
 ## 2. Locked Decisions
 - **LOCKED** Brand name: Theta (symbol Θ).
-- **LOCKED** Palette (UPDATED 2026-05-18, Gee — navy→BLACK, global):
-  background `#000000` everywhere (logo, app UI, all video/storyboard);
-  text in the coach's color, default off-white `#eef6f3`; signal green
-  `#00c896` = Θ mark + reserved gain delta only; red = reserved loss
-  delta only. Retired navy `#0b1f3a`. Existing navy renders to be
-  redone against black over time (cost noted, not urgent).
+- **LOCKED** Palette — TWO REGISTERS (REFINED 2026-05-18, Gee). The
+  black is the BRAND/TERMINAL layer, not the world:
+  1. **Brand/terminal layer = pure black `#000000`**: logo, app UI,
+     the phone screen, full-screen text/quote moments, and the closing
+     Θ CTA lockup. Text in coach's color, default off-white `#eef6f3`;
+     signal green `#00c896` = Θ mark + reserved gain delta only; red =
+     reserved loss delta only. Retired navy `#0b1f3a` (never use).
+  2. **Diegetic world = real Aegean, NOT black**: whitewashed stucco,
+     bright blue sea, sun-warm white marble, dawn sky, period-accurate
+     to ancient Greece. The ONLY modern object in-world is the phone.
+  Cut between registers (warm world ↔ cold black terminal card). Black
+  backdrops on scene shots were a misread — redo. Earlier all-black
+  renders (incl. Lesson 1 anchor + S1–S6) are wrong-environment.
 - **LOCKED** Four coaches: Nova (Analyst), Rex (Veteran), Finn (Patient
   Teacher), Atlas (Risk Manager). Identities in `lesson-flow.mmd`.
 - **LOCKED** Arc: Lesson 1 (Dichotomy of Control) → 2–19 (mindset + craft)
