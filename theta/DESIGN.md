@@ -49,6 +49,42 @@ After the user picks a coach, the interface IS the coach texting them in
 "our font." Open questions: chat-style bubbles vs. full-screen lines?
 Typing animation? Coach avatar still vs. short looping video? Voice/audio?
 
+### 3b-1. Home screen = the terminal  — **LOCKED** (Gee, 2026-05-18)
+The app's home/dashboard screen IS a Unix terminal readout. Same feel,
+same IBM Plex Mono text as a real `zsh` window (ref: Gee's macOS
+Terminal screenshot). Top-to-bottom order:
+1. `Last login: <Day Mon DD HH:MM:SS>` — the user's actual last
+   session timestamp, verbatim terminal style.
+2. Last-session recap: what they did + balance. Balance number is
+   **green if it grew vs. prior session, red if it shrank**.
+3. Trading stats: trades entered (count) + win rate (%).
+4. Coach block: coach's name + that day's scan, scan results listed
+   in the same mono font (e.g. `[NOVA] daily scan — DD Mon`).
+5. Bottom action prompt: paper-trade in-app, OR open brokerage to
+   place a real trade. Two clear actions on a terminal prompt line.
+Approved feel mock (text, not final art):
+```
+Last login: Tue May 18 09:42:11 on theta
+
+[trader@theta ~] % recap --last
+  closed 3 trades
+  balance  $12,480.00   +$340.00          <- green (up) / red (down)
+  ------------------------------------------------
+  trades entered .......... 47
+  win rate ................ 61%
+  ------------------------------------------------
+[NOVA] daily scan — 18 May
+  > SPY   put credit spread   risk:defined  edge:high
+  > AAPL  iron condor         risk:defined  edge:med
+  > NVDA  skip — outside plan
+  ------------------------------------------------
+[trader@theta ~] % _
+  [ ENTER PAPER TRADE ]      [ OPEN BROKERAGE ]
+```
+Ties to 3a (mono locked), 3c-1 (Θ terminal end card), and the L20
+scanner-unlock arc. Open sub-questions: live typing animation on
+load? coach line above or below the scan? paper-vs-real default.
+
 ### 3c. Game format  — DESIGN NEEDED
 What makes the lessons a "game": progress/XP, streaks, the locked scanner
 as the prize, paper-trade scoreboard, the coach's trust meter? To define.
