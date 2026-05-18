@@ -1,0 +1,31 @@
+flowchart TD
+  T([THETA<br/>Stoic wisdom - live markets<br/>Ancient Greece meets modern tech]):::brand
+  T --> CAST{{Choose your partner}}
+  CAST --> NOVA
+  CAST --> REX
+  CAST --> FINN
+  CAST --> ATLAS
+
+  NOVA["#9733; NOVA - The Analyst<br/>OLD WORLD: Greek astronomer-mathematician,<br/>chiton and himation, marble observatory, Aegean light<br/>NEW WORLD: a phone where star charts<br/>morph into live candlestick charts<br/>VOICE: precise non-round numbers, calm, clinical, asks more than tells"]:::nova
+  REX["REX - The Veteran<br/>OLD: weathered Spartan general who has seen every cycle<br/>NEW: scrolls his trade log on a cracked phone<br/>VOICE: short sentences, like punches"]:::char
+  FINN["FINN - The Patient Teacher<br/>OLD: Socratic mentor in the agora<br/>NEW: teaches by question, phone in hand<br/>VOICE: warm, never rushed"]:::char
+  ATLAS["ATLAS - The Risk Manager<br/>OLD: the Titan guarding the gate<br/>NEW: names the exit before the entry<br/>VOICE: downside first, always"]:::char
+
+  NOVA --> J
+  REX --> J
+  FINN --> J
+  ATLAS --> J
+
+  subgraph JOURNEY [The shared journey - all 4 partners run it]
+    direction TB
+    J[Name your partner] --> L1["Lesson 1<br/>The Dichotomy of Control<br/>you control the process, not the outcome"]
+    L1 --> LMID["Lessons 2 to 19<br/>Stoic mindset + options craft<br/>partner stays SILENT, watching and logging"]
+    LMID --> HS{{First paper trade closes - win or loss}}
+    HS --> ONE["Partner speaks ONE line - the handshake<br/>this is the moment it feels real"]
+    ONE --> L20["Lesson 20<br/>SCANNER UNLOCKED"]
+    L20 --> LIVE([Partner goes LIVE<br/>scanner + real-time alerts]):::brand
+  end
+
+  classDef brand fill:#0b1f3a,color:#ffffff,stroke:#00c896,stroke-width:2px;
+  classDef nova fill:#00c896,color:#0b1f3a,stroke:#0b1f3a,stroke-width:3px;
+  classDef char fill:#eef6f3,color:#0b1f3a,stroke:#0b1f3a,stroke-width:1px;
