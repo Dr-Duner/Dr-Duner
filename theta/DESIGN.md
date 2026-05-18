@@ -31,16 +31,13 @@ real-time data in a game format are the product.**
 
 ## 3. Open Decisions (need your call)
 
-### 3a. Typography  — DIRECTION SET (confirm exact family)
-- **Decided (from Cowork discussion):** the coach text — the messages the
-  customer reads after picking their agent — uses a **monospace computer-
-  terminal font**. The terminal aesthetic IS the interface voice.
-- **Open:** confirm the exact family. Common terminal monospaces:
-  *JetBrains Mono*, *IBM Plex Mono*, *SF Mono*, *Menlo*, *Fira Code*,
-  *Cascadia Code*. If the simulator used a specific one, name it here and
-  mark **LOCKED**.
-- Brand/Θ/lesson-title face (separate from coach text) still open if we
-  even want a second face — terminal-only is a valid strong choice.
+### 3a. Typography  — **LOCKED**
+- **LOCKED (Gee, 2026-05-18): coach-facing text = IBM Plex Mono.** The
+  messages the customer reads after picking their agent render in this
+  monospace computer-terminal face. The terminal aesthetic IS the
+  interface voice. Free / OFL — no licensing cost in-app.
+- Brand/Θ/lesson-title face (separate from coach text) still open — a
+  second face is optional; terminal-only is a valid strong choice.
 
 ### 3b. The coach interface (post-selection)  — DESIGN NEEDED
 After the user picks a coach, the interface IS the coach texting them in

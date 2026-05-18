@@ -9,6 +9,7 @@ Read this index and the files it points to before Theta work.
   push loop; main mirror; Stop-hook auto-save; branch SoT rule.
 - `project_kevin-working-protocol.md` — adopted working protocol
   (style, memory-capture, handoff ritual) adapted to this repo.
+- `reference_font.md` — coach-facing font LOCKED: IBM Plex Mono.
 
 ## Session records
 - `../SESSION-2026-05-18.md` — persistence architecture built.

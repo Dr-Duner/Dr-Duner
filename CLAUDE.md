@@ -33,8 +33,8 @@ in the same turn. Never let a decision live only in chat.
 - Four coaches: Nova (Analyst), Rex (Veteran), Finn (Patient Teacher),
   Atlas (Risk Manager). Detail in `theta/lesson-flow.mmd`.
 - Palette: navy #0b1f3a, signal green #00c896, off-white #eef6f3.
-- Coach-facing text uses a monospace computer-terminal font (decided in
-  Cowork; exact family TBD — see DESIGN.md 3a).
+- Coach-facing text font is **IBM Plex Mono** (LOCKED 2026-05-18) — the
+  monospace computer-terminal interface voice. See DESIGN.md 3a.
 - Lesson 9 was built in Cowork, viewed in the simulator; it is the bar for
   redoing lessons 2–19. Claude Code cannot see it — must be brought here.
 - Arc: L1 Dichotomy of Control → 2–19 mindset+craft → first paper trade →
