@@ -57,7 +57,27 @@ Typing animation? Coach avatar still vs. short looping video? Voice/audio?
 ### 3b-1. Home screen = the terminal  — **LOCKED** (Gee, 2026-05-18)
 The app's home/dashboard screen IS a Unix terminal readout. Same feel,
 same IBM Plex Mono text as a real `zsh` window (ref: Gee's macOS
-Terminal screenshot). Top-to-bottom order:
+Terminal screenshot).
+
+**APPROVED reference render (Gee: "That is perfect!", 2026-05-18):**
+job `96e246fb-6404-44f9-a844-a0cd245091c4` — black bg, mostly
+off-white text, cyan `[NOVA]` + scan, green `+delta`, amber `!`
+alert, blank-line-per-block. This image is the canonical look;
+match it for all future home-screen work.
+
+**Design principle (locked):** read like real code — the *majority*
+of text is plain off-white; color is rare and only ever means
+something (coach identity, gain/loss, system alert). Never decorate
+with color; color = signal.
+
+**Username / prompt invariant (locked):** the shell prompt is
+`[<username>@theta ~] %` where `<username>` is the user's own
+handle (replaces the `trader` placeholder). It is **identical on
+every screen and every session forever** — a constant prompt is
+part of the brand, the thing that makes the interface feel familiar
+and "theirs" the way a real terminal prompt never changes.
+
+Top-to-bottom order:
 1. `Last login: <Day Mon DD HH:MM:SS>` — the user's actual last
    session timestamp, verbatim terminal style.
 2. Last-session recap: what they did + balance. The balance figure
