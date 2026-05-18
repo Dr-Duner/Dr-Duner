@@ -20,6 +20,11 @@ then earns a single spoken line at the first real paper trade, then goes
 fully live with a real-time scanner. **The coaches' videos + characters +
 real-time data in a game format are the product.**
 
+**Brand essence (LOCKED 2026-05-18):** ancient and modern at the same
+time. Theta takes trading and makes it modern and usable today. The
+signature image is everyday Ancient Greek life interrupted by a modern
+Theta trade scan.
+
 ## 2. Locked Decisions
 - **LOCKED** Brand name: Theta (symbol Θ).
 - **LOCKED** Palette: navy `#0b1f3a`, signal green `#00c896`, off-white `#eef6f3`.
@@ -56,8 +61,8 @@ The canonical structure for the coach videos:
 3. **Everyday scene:** each coach shown individually mid–daily-life.
    - Nova: at a telescope/astronomical instrument at dawn (locked).
    - Rex: training / working out — Spartan drill (locked).
-   - Finn: teaching a small circle by question in the agora (PROPOSED).
-   - Atlas: at the city gate, shouldering a load / on watch (PROPOSED).
+   - Finn: everyday scene TBD (open — Gee defines later).
+   - Atlas: everyday scene TBD (open — Gee defines later).
 4. **Hook:** an unexpected modern smartphone BUZZES — "Theta has
    something for you." The anachronism IS the signature visual.
 5. **The read:** chibi coach checks the device — MONO text (IBM Plex
@@ -67,8 +72,12 @@ The canonical structure for the coach videos:
    §3b/§3c must be designed in lockstep — video and app are coupled.)
 7. **Trade ideas** shown.
 8. **CTA + Theta Θ logo** end card.
-Example render: `storyboard-vision-nova.png`. Open: confirm Finn/Atlas
-everyday scenes; scope (all lesson videos vs scanner-live moment).
+**Scope — LOCKED:** this is the universal spine. It is (a) the template
+for ALL lesson videos 1–19, (b) a recurring wrapper around each lesson's
+teaching middle (cold-open everyday life + buzz → lesson → Θ CTA), and
+(c) the marketing format. **Brand essence:** ancient and modern at the
+same time — Theta takes trading and makes it modern and usable today.
+Example render: `storyboard-vision-nova.png`.
 
 ### 3d. Lessons 2–19 treatment  — DRAFTED
 - **Curriculum + per-lesson storyboards drafted:** see `LESSONS.md`
