@@ -28,8 +28,11 @@ and it is briefed automatically — he does not re-explain anything.
 - Font: LOCKED (IBM Plex Mono). Persistence: SOLVED.
 
 ## 4. Next steps
+0. Storyboard VISION locked (Ancient Greece, chibi, buzz, mono, real
+   scanner UI, Θ CTA) — see `reference_storyboard-vision.md` +
+   `storyboard-vision-nova.png`. Confirm Finn/Atlas scenes + scope.
 1. Gee reviews `LESSONS.md` + `lesson-arc.png`; refine any lesson beats.
-2. Render per-lesson visual storyboards (free) Lesson-1 style on request.
+2. Re-cut lesson storyboards into the locked vision template on request.
 3. Swap provisional L9 when the Cowork original surfaces.
 4. Train the 4 coaches as Soul characters (small spend, reused everywhere).
 5. Generate one hero lesson video as the quality bar.

@@ -48,6 +48,28 @@ Typing animation? Coach avatar still vs. short looping video? Voice/audio?
 What makes the lessons a "game": progress/XP, streaks, the locked scanner
 as the prize, paper-trade scoreboard, the coach's trust meter? To define.
 
+### 3c-1. Storyboard Vision  — **LOCKED** (Gee, 2026-05-18)
+The canonical structure for the coach videos:
+1. **World:** Ancient Greece; the 4 coaches are friends/neighbors/family
+   living ordinary Greek life.
+2. **Style:** CHIBI animated characters (locked).
+3. **Everyday scene:** each coach shown individually mid–daily-life.
+   - Nova: at a telescope/astronomical instrument at dawn (locked).
+   - Rex: training / working out — Spartan drill (locked).
+   - Finn: teaching a small circle by question in the agora (PROPOSED).
+   - Atlas: at the city gate, shouldering a load / on watch (PROPOSED).
+4. **Hook:** an unexpected modern smartphone BUZZES — "Theta has
+   something for you." The anachronism IS the signature visual.
+5. **The read:** chibi coach checks the device — MONO text (IBM Plex
+   Mono) from their coach.
+6. **The scanner:** a scanner message appears, UI rendered EXACTLY as
+   the real phone app will look. (Dependency: app scanner/message UI
+   §3b/§3c must be designed in lockstep — video and app are coupled.)
+7. **Trade ideas** shown.
+8. **CTA + Theta Θ logo** end card.
+Example render: `storyboard-vision-nova.png`. Open: confirm Finn/Atlas
+everyday scenes; scope (all lesson videos vs scanner-live moment).
+
 ### 3d. Lessons 2–19 treatment  — DRAFTED
 - **Curriculum + per-lesson storyboards drafted:** see `LESSONS.md`
   (beat sheets) and `lesson-arc.png` (visual map). Built now from

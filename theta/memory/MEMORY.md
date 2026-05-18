@@ -10,6 +10,8 @@ Read this index and the files it points to before Theta work.
 - `project_kevin-working-protocol.md` — adopted working protocol
   (style, memory-capture, handoff ritual) adapted to this repo.
 - `reference_font.md` — coach-facing font LOCKED: IBM Plex Mono.
+- `reference_storyboard-vision.md` — LOCKED storyboard structure
+  (Ancient Greece, chibi, buzz, mono, real scanner UI, Θ CTA).
 
 ## Session records
 - `../SESSION-2026-05-18.md` — persistence architecture built.
