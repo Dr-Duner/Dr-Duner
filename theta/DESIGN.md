@@ -83,6 +83,13 @@ App-Store quality bar), `storyboard-frame-layout.png` (9:16 grid /
 in-app coach-UI language), `storyboard-L5-theta.png` (worked example).
 All 19 lessons re-cut onto this template in `LESSONS.md`.
 
+**Nova canonical look LOCKED 2026-05-18 (Gee):** chibi key still, job
+`a777c0e0-195e-46f0-b9ae-11b4e45c9b66` (nano_banana_2, 9:16). Telescope
+at dawn, modern phone glowing signal-green on the marble ledge, strict
+navy/green/off-white palette. This is Nova's official identity for all
+19 lessons — match it in every future Nova generation. Network policy
+blocks committing the file; re-display via job_display by that ID.
+
 ### 3d. Lessons 2–19 treatment  — DRAFTED
 - **Curriculum + per-lesson storyboards drafted:** see `LESSONS.md`
   (beat sheets) and `lesson-arc.png` (visual map). Built now from

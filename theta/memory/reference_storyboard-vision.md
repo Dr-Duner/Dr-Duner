@@ -29,4 +29,7 @@ them with the generation tool's job_display.
   nano_banana_2, 9:16, ~2 credits each:
   - Option A: job `a777c0e0-195e-46f0-b9ae-11b4e45c9b66`
   - Option B: job `47efdc27-b9b7-4b11-a869-d3f014e8a90c`
-  - Canonical pick: PENDING Gee's choice.
+  - Canonical pick: **Option A** — job
+    `a777c0e0-195e-46f0-b9ae-11b4e45c9b66` LOCKED 2026-05-18 (Gee).
+    This is Nova's official chibi identity for all 19 lessons; match
+    proportions/palette/scene to it in every future Nova generation.
