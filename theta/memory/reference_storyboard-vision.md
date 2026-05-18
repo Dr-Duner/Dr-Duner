@@ -50,3 +50,7 @@ them with the generation tool's job_display.
     (end hook LOCKED 2026-05-18 Gee: "Θ / don't predict it. trade
     it. now." — supersedes old S7 `b5b93023…` / "trading, made
     usable today"; the dropped line is retired everywhere)
+- Terminal HOME screen render (DESIGN 3b-1), 2026-05-18,
+  nano_banana_2, 9:16, 1k, ~2 cr: job
+  `c78dd19f-1930-40f3-9067-78b63c1c6b6d`. Tight block, +$ delta in
+  signal green, paper/brokerage buttons. First visual of 3b-1.
