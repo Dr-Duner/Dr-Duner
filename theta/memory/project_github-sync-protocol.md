@@ -15,6 +15,9 @@ A fresh session clones ONE branch. All Theta work lives on
 `claude/evaluate-mobile-workflow-nbDLD`. `main` has only README.md.
 A session starting on `main` would be blind.
 
-Rule until resolved: every Theta session MUST run on
-`claude/evaluate-mobile-workflow-nbDLD`. Open decision: mirror canonical
-docs to `main` as a safety net (needs Kevin's yes — pushing to main).
+RESOLVED (Kevin approved, option A): `main` is the blind-clone safety
+mirror. Every backup/handoff: push the working branch, then
+`git checkout main && git merge --ff-only <branch> && git push origin main`
+and return to the working branch. Any fresh clone — any branch — now has
+the full knowledge layer. Work still happens on
+`claude/evaluate-mobile-workflow-nbDLD`.

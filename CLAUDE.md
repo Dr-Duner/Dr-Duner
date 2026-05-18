@@ -12,9 +12,10 @@ it — ask, don't guess. A decision is not real until it is a line here.
 ## RULE 0b — GitHub sync loop
 Session start = repo auto-cloned from GitHub (knowledge arrives
 automatically). "Back it up" / "create a handoff" / end of session =
-commit + push EVERYTHING to GitHub so the next session clones it. Git is
-the only transfer channel. Every Theta session MUST run on branch
-`claude/evaluate-mobile-workflow-nbDLD` (main has no Theta work).
+commit + push EVERYTHING to GitHub so the next session clones it, AND
+fast-forward `main` to match and push it (main is the blind-clone safety
+mirror — keep it current every backup). Git is the only transfer channel.
+Work on branch `claude/evaluate-mobile-workflow-nbDLD`; main mirrors it.
 
 ## RULE 1 — Context boundary (state this if the user expects lost context)
 Claude Code has NO access to Cowork, the simulator, voice chats, or any
