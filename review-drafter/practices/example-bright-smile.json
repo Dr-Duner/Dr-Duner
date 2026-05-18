@@ -1,0 +1,14 @@
+{
+  "practice_name": "Bright Smile Dental",
+  "office_phone": "(555) 012-3456",
+  "sign_off": "— The Bright Smile Dental Team",
+  "voice_profile": {
+    "formality": 2,
+    "warmth": 5,
+    "emoji": "sparing",
+    "length": "short",
+    "always_say": ["we're always here for you"],
+    "never_say": ["unfortunately"]
+  },
+  "platforms": ["google", "yelp"]
+}

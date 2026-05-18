@@ -1,0 +1,59 @@
+:root {
+  --ink: #1a2230; --muted: #6b7686; --line: #e3e7ee;
+  --bg: #f6f8fb; --card: #fff; --accent: #1d7a5f; --warn: #b4451f;
+}
+* { box-sizing: border-box; }
+body {
+  font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink); background: var(--bg); margin: 0;
+  padding: 0 16px 80px; max-width: 860px; margin: 0 auto;
+}
+header { padding: 28px 0 12px; }
+h1 { margin: 0; font-size: 24px; }
+.tag { color: var(--muted); margin: 4px 0 0; }
+.banner {
+  background: #fff6e9; border: 1px solid #f0d8b0; color: #8a5a1a;
+  padding: 8px 12px; border-radius: 8px; font-size: 13px;
+}
+.intake { background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 16px; }
+.row { display: flex; gap: 12px; align-items: center; margin: 10px 0; flex-wrap: wrap; }
+textarea, select, input[type=file] {
+  width: 100%; font: inherit; padding: 10px; border: 1px solid var(--line);
+  border-radius: 8px; background: #fff;
+}
+select { width: auto; min-width: 200px; }
+input[type=file] { width: auto; flex: 1; }
+label { display: flex; flex-direction: column; gap: 4px; font-size: 13px;
+  color: var(--muted); }
+button {
+  font: inherit; background: var(--accent); color: #fff; border: 0;
+  padding: 10px 16px; border-radius: 8px; cursor: pointer;
+}
+button:disabled { opacity: .5; cursor: default; }
+button.ghost { background: #eef1f6; color: var(--ink); }
+.muted { color: var(--muted); font-size: 13px; }
+.card { background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 16px; margin: 14px 0; }
+.card.done { opacity: .55; }
+.meta { font-size: 13px; color: var(--muted); margin: 6px 0; }
+.text { background: #f3f5f9; padding: 10px; border-radius: 8px;
+  white-space: pre-wrap; margin: 6px 0 14px; }
+.chip { font-size: 11px; text-transform: uppercase; letter-spacing: .04em;
+  background: #e8f3ee; color: var(--accent); padding: 3px 8px;
+  border-radius: 999px; }
+.chip.posted { background: #e6efe9; color: #2c6a4f; }
+.chip.skipped { background: #eee; color: var(--muted); }
+.flag { color: var(--warn); font-weight: 600; font-size: 12px; margin-left: 8px; }
+.card.neg { border-left: 4px solid var(--warn); }
+.variant { border: 1px solid var(--line); border-radius: 8px;
+  padding: 10px; margin: 8px 0; }
+.variant h4 { margin: 0 0 6px; font-size: 13px; }
+.variant textarea { min-height: 70px; }
+.why { color: var(--accent); font-size: 12px; margin: 6px 0; }
+.fallback { color: var(--warn); }
+.vbtns { display: flex; gap: 8px; margin-top: 6px; }
+.actions { margin-top: 10px; display: flex; gap: 8px; }
+footer { position: fixed; bottom: 0; left: 0; right: 0;
+  background: #fff; border-top: 1px solid var(--line); padding: 12px;
+  text-align: center; }

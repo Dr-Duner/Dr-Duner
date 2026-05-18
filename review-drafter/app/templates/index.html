@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review Response Drafter</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Review Response Drafter</h1>
+    <p class="tag">HIPAA-safe replies, in your voice, approved in 30 seconds.</p>
+    {% if not has_api_key %}
+    <p class="banner">No API key set — showing safe fallback templates.
+      Parser &amp; HIPAA gate are fully live.</p>
+    {% endif %}
+  </header>
+
+  <section class="intake">
+    <div class="row">
+      <label>Practice
+        <select id="practice">
+          {% for p in practices %}<option value="{{ p }}">{{ p }}</option>{% endfor %}
+        </select>
+      </label>
+    </div>
+    <textarea id="pasted" rows="6"
+      placeholder="Paste reviews here (separate multiple reviews with a blank line or a line of ---). Or upload a CSV below."></textarea>
+    <div class="row">
+      <input type="file" id="csv" accept=".csv">
+      <button id="draftBtn">Draft replies</button>
+      <span id="status" class="muted"></span>
+    </div>
+  </section>
+
+  <section id="queue"></section>
+
+  <footer>
+    <button id="exportBtn" disabled>Export approved CSV</button>
+  </footer>
+
+  <template id="cardTpl">
+    <article class="card">
+      <div class="rev">
+        <span class="chip stage">drafted</span>
+        <span class="flag" hidden>needs attention</span>
+        <div class="meta"></div>
+        <p class="text"></p>
+      </div>
+      <div class="variants"></div>
+      <div class="actions">
+        <button class="post">Mark posted</button>
+        <button class="skip ghost">Skip</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

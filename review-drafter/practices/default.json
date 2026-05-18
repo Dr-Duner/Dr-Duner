@@ -1,0 +1,14 @@
+{
+  "practice_name": "Your Practice",
+  "office_phone": "",
+  "sign_off": "— The Team",
+  "voice_profile": {
+    "formality": 3,
+    "warmth": 4,
+    "emoji": "none",
+    "length": "short",
+    "always_say": [],
+    "never_say": []
+  },
+  "platforms": ["google"]
+}
