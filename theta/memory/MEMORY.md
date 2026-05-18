@@ -1,0 +1,17 @@
+# MEMORY.md — Theta canonical memory index
+
+Git-tracked, repo-based memory (portable across Mac + cloud; local
+~/.claude is NOT — git is the only channel that survives both).
+Read this index and the files it points to before Theta work.
+
+## Index
+- `project_github-sync-protocol.md` — session-start load + "back it up"
+  push loop; branch single-source-of-truth rule.
+- `project_kevin-working-protocol.md` — adopted working protocol
+  (style, memory-capture, handoff ritual) adapted to this repo.
+
+## Conventions
+- File types: `feedback_` (corrections), `user_` (preferences),
+  `project_` (durable decisions), `reference_` (facts/specs).
+- On correction or "remember this": create the type-prefixed file here,
+  add a one-line pointer above, commit + push same turn.

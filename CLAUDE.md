@@ -3,10 +3,18 @@
 This file is auto-loaded at the start of every Claude Code session in this
 repo. It is the shared memory across all Claude Code chats here.
 
-## RULE 0 — Source of truth
-Before doing anything, read `theta/DESIGN.md`. It is the living spec for the
-Theta app. If a fact isn't in this repo, you do not know it — ask, don't
-guess. A decision is not real until it is a line in `theta/DESIGN.md`.
+## RULE 0 — Source of truth (session-start load order)
+At session start, before anything: read `theta/HANDOFF.md`,
+`theta/DESIGN.md`, and `theta/memory/MEMORY.md` (+ the files it indexes).
+These are the living spec. If a fact isn't in this repo, you do not know
+it — ask, don't guess. A decision is not real until it is a line here.
+
+## RULE 0b — GitHub sync loop
+Session start = repo auto-cloned from GitHub (knowledge arrives
+automatically). "Back it up" / "create a handoff" / end of session =
+commit + push EVERYTHING to GitHub so the next session clones it. Git is
+the only transfer channel. Every Theta session MUST run on branch
+`claude/evaluate-mobile-workflow-nbDLD` (main has no Theta work).
 
 ## RULE 1 — Context boundary (state this if the user expects lost context)
 Claude Code has NO access to Cowork, the simulator, voice chats, or any
