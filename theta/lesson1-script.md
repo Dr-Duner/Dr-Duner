@@ -54,22 +54,25 @@ dawn, modern phone glowing signal-green on the ledge.
 - VO (Lyra, reading it back low and even): "You think you control the
   outcome. You don't."
 
-### SHOT 4 — TEACHING A: HOOK + STOIC · 11–20s
-- VISUAL: constellations dissolve into a live green candlestick chart.
-  Split label: PROCESS | OUTCOME. Green line-draw builds the split.
-- ON-SCREEN (mono): `Some things are up to us; some are not. —Epictetus`
-- VO (Lyra, calm): "The chart is not yours. Your method is. Two
-  thousand years ago a slave wrote that down. It still holds."
+### SHOT 4 — STOIC: PURE QUOTE CARD · 11–20s
+- VISUAL: full-frame black app card. Θ mark, then the line types in
+  (off-white mono, signal green reserved). Nothing else — no chart,
+  no columns. The app, full-frame, stating the principle.
+- ON-SCREEN (mono): `Some things are up to us; some are not.`
+  `—Epictetus`
+- VO (Lyra, calm): "Two thousand years ago a slave wrote that down.
+  It still holds. Watch."
 
-### SHOT 5 — TEACHING B: CRAFT + INTERACTIVE · 20–31s
-- VISUAL: user sorts four cards into CONTROL vs NOISE. CONTROL =
-  research / size / entry / the exit (4 marble stones). NOISE = price /
-  earnings / the storm at sea. On sort, proof columns ease in:
-  +98% lucky-bad-process vs −8% sound-process.
-- ON-SCREEN (mono): `CONTROL: research · size · entry · exit`
-  `NOISE: price · news · the storm`
-- VO (Lyra, as the user sorts): "A win can be bad investing. A loss can
-  be good. Sort what's yours from what never was."
+### SHOT 5 — CRAFT + INTERACTIVE: REAL TRADE CARD · 20–31s
+- VISUAL: a concrete trade card (one real setup). Controllable rows —
+  size · entry · exit — are signal-green and editable; user sets them.
+  Uncontrollable rows — price · earnings · the storm at sea — are
+  greyed, read-only ("not yours"). As the user fills the green rows,
+  the card arms. The dichotomy is felt by editing one, not the other.
+- ON-SCREEN (mono): green `size · entry · exit  ▮` / grey
+  `price · news · storm  —`
+- VO (Lyra, as the user fills it): "Your method is yours. The chart
+  never was. Set what you control; the rest just happens."
 
 ### SHOT 6 — SCAN: LIVE CARD (1:1 app UI) · 31–36s
 - VISUAL: a real scanner card. Editable = size / entry / exit (signal

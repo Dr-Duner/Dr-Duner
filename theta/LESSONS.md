@@ -10,8 +10,14 @@ FIXED WRAPPER (every lesson, every coach):
 1. Cold open — coach in everyday Ancient-Greek life (scene by coach).
 2. The buzz — modern phone interrupts the ancient world.
 3. The read — mono message: "THETA: I've got something for you."
-4–5. **TEACHING MIDDLE (variable):** HOOK + STOIC, then CRAFT +
-   INTERACTIVE — the per-lesson beats below.
+4. **STOIC — pure quote card (locked 2026-05-19):** the lesson's
+   Stoic line + Θ on the full-frame black app card. NO craft visuals,
+   NO PROCESS/OUTCOME columns — the principle *named*, nothing else.
+5. **CRAFT + INTERACTIVE — real trade card (locked 2026-05-19):** the
+   principle *applied* on a concrete trade card. Controllable params
+   are signal-green + editable; uncontrollable are greyed/read-only.
+   The dichotomy is taught ON a real trade, not stated abstractly.
+   (Per-lesson HOOK/CRAFT/INTERACTIVE beats below feed this card.)
 6. **SCAN:** the lesson resolves into a live scanner card, 1:1 with
    the real app UI (the per-lesson `SCAN:` line below).
 7. Θ CTA end card — "Θ / don't predict it. trade it. now." (locked 2026-05-18)

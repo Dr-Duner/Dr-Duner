@@ -60,7 +60,14 @@ Theta trade scan.
   template reuse model: per-coach wrapper (S1/S2/S3/S7) generated
   ONCE per coach and reused across all 20 of that coach's lessons;
   teaching middle (S4/S5) + SCAN card are coach-agnostic, generated
-  ONCE and reused across all 4 coaches. Top-up credits do not expire
+  ONCE and reused across all 4 coaches.
+- **S4/S5 reframe — LOCKED 2026-05-19 (Kevin).** S4 = pure Stoic
+  quote card (principle *named*: line + Θ on the black app card,
+  no craft visuals). S5 = real trade card (principle *applied*:
+  controllable params green/editable, uncontrollable greyed). The
+  old S4 PROCESS|OUTCOME columns + S4/S5 control-vs-noise card-sort
+  are retired — they made S4 redundant with S5. Template-wide for
+  all 20 lessons; see `LESSONS.md` FIXED WRAPPER 4–5. Top-up credits do not expire
   for 90 days — matches the window exactly.
 
 ## 3. Open Decisions (need your call)
