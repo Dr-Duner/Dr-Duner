@@ -10,14 +10,19 @@ FIXED WRAPPER (every lesson, every coach):
 1. Cold open — coach in everyday Ancient-Greek life (scene by coach).
 2. The buzz — modern phone interrupts the ancient world.
 3. The read — mono message: "THETA: I've got something for you."
-4. **STOIC — pure quote card (locked 2026-05-19):** the lesson's
-   Stoic line + Θ on the full-frame black app card. NO craft visuals,
-   NO PROCESS/OUTCOME columns — the principle *named*, nothing else.
-5. **CRAFT + INTERACTIVE — real trade card (locked 2026-05-19):** the
-   principle *applied* on a concrete trade card. Controllable params
-   are signal-green + editable; uncontrollable are greyed/read-only.
-   The dichotomy is taught ON a real trade, not stated abstractly.
-   (Per-lesson HOOK/CRAFT/INTERACTIVE beats below feed this card.)
+4. **QUOTE + OPEN THE PAPER TRADE (locked 2026-05-19, supersedes
+   the 2026-05-19 "pure quote card"):** the Stoic line + Θ on the
+   black app card, which transitions into the REAL paper-trade entry
+   screen where the coach picks the underlying to trade on.
+5. **CONFIRM THE ENTERED TRADE (locked 2026-05-19, supersedes the
+   2026-05-19 "real trade card"):** the real paper-trade confirmation
+   screen reading back the exact numbers the coach entered (underlying,
+   entry, exit, size, everything). The dichotomy is BAKED INTO the real
+   screen: editable fields = signal-green = what you control;
+   read-only/greyed = what you don't. Taught by what the screen lets
+   you touch, not stated abstractly. DEPENDENCY: S4/S5 == the real
+   paper-trade entry + confirmation UI (like S6/SCAN, DESIGN 3b/3c).
+   (Per-lesson HOOK/CRAFT/INTERACTIVE beats below feed this screen.)
 6. **SCAN:** the lesson resolves into a live scanner card, 1:1 with
    the real app UI (the per-lesson `SCAN:` line below).
 7. Θ CTA end card — "Θ / don't predict it. trade it. now." (locked 2026-05-18)

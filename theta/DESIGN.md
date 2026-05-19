@@ -61,12 +61,18 @@ Theta trade scan.
   ONCE per coach and reused across all 20 of that coach's lessons;
   teaching middle (S4/S5) + SCAN card are coach-agnostic, generated
   ONCE and reused across all 4 coaches.
-- **S4/S5 reframe — LOCKED 2026-05-19 (Kevin).** S4 = pure Stoic
-  quote card (principle *named*: line + Θ on the black app card,
-  no craft visuals). S5 = real trade card (principle *applied*:
-  controllable params green/editable, uncontrollable greyed). The
-  old S4 PROCESS|OUTCOME columns + S4/S5 control-vs-noise card-sort
-  are retired — they made S4 redundant with S5. Template-wide for
+- **S4/S5 reframe — LOCKED 2026-05-19 (Kevin), REVISED 2026-05-19
+  (Kevin) — paper-trade flow.** S4 = the Stoic quote, then the card
+  transitions into the REAL paper-trade ENTRY screen where the coach
+  picks the underlying to trade. S5 = the REAL paper-trade
+  CONFIRMATION screen reading back the exact numbers entered
+  (underlying/entry/exit/size). The dichotomy is BAKED INTO the real
+  screen — editable fields = signal-green = yours; read-only/greyed =
+  not yours — taught by what the screen lets you touch, not narrated.
+  Supersedes the earlier same-day "pure quote card / abstract trade
+  card" lock. The old S4 PROCESS|OUTCOME columns + control-vs-noise
+  card-sort remain retired. DEPENDENCY: S4/S5 now == real paper-trade
+  entry + confirmation UI (like S6/SCAN, see 3b/3c). Template-wide for
   all 20 lessons; see `LESSONS.md` FIXED WRAPPER 4–5. Top-up credits do not expire
   for 90 days — matches the window exactly.
 

@@ -54,25 +54,30 @@ dawn, modern phone glowing signal-green on the ledge.
 - VO (Lyra, reading it back low and even): "You think you control the
   outcome. You don't."
 
-### SHOT 4 — STOIC: PURE QUOTE CARD · 11–20s
+### SHOT 4 — QUOTE + OPEN THE PAPER TRADE · 11–20s
 - VISUAL: full-frame black app card. Θ mark, then the line types in
-  (off-white mono, signal green reserved). Nothing else — no chart,
-  no columns. The app, full-frame, stating the principle.
+  (off-white mono, signal green reserved). The quote lands, then the
+  card transitions into our REAL paper-trade entry screen and the
+  coach acts on it: picks the underlying (ticker) to trade. Dichotomy
+  is baked into the screen itself — editable fields (signal green) =
+  what you control; read-only/greyed = what you don't.
 - ON-SCREEN (mono): `Some things are up to us; some are not.`
-  `—Epictetus`
+  `—Epictetus` → then the live paper-trade entry screen, underlying
+  field selected (green/editable), market fields greyed.
 - VO (Lyra, calm): "Two thousand years ago a slave wrote that down.
-  It still holds. Watch."
+  It still holds. Watch — I'll only touch what's mine."
 
-### SHOT 5 — CRAFT + INTERACTIVE: REAL TRADE CARD · 20–31s
-- VISUAL: a concrete trade card (one real setup). Controllable rows —
-  size · entry · exit — are signal-green and editable; user sets them.
-  Uncontrollable rows — price · earnings · the storm at sea — are
-  greyed, read-only ("not yours"). As the user fills the green rows,
-  the card arms. The dichotomy is felt by editing one, not the other.
-- ON-SCREEN (mono): green `size · entry · exit  ▮` / grey
-  `price · news · storm  —`
-- VO (Lyra, as the user fills it): "Your method is yours. The chart
-  never was. Set what you control; the rest just happens."
+### SHOT 5 — CONFIRM THE ENTERED TRADE · 20–31s
+- VISUAL: the real paper-trade confirmation screen, reading back the
+  exact numbers the coach entered — underlying, entry, exit, size,
+  everything — in signal green (the inputs that were theirs). The
+  uncontrollable rows — price · earnings · the storm at sea — stay
+  greyed/read-only. The green-vs-grey on the real screen IS the lesson:
+  taught by what the screen let the coach touch, not narrated.
+- ON-SCREEN (mono): confirmation rows, green `underlying · entry ·
+  exit · size = <entered values>` / grey `price · news · storm  —`
+- VO (Lyra, on confirm): "Your method is yours. The chart never was.
+  I set what I control; the rest just happens."
 
 ### SHOT 6 — SCAN: LIVE CARD (1:1 app UI) · 31–36s
 - VISUAL: a real scanner card. Editable = size / entry / exit (signal
