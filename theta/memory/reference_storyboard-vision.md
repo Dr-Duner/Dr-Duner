@@ -120,6 +120,14 @@ them with the generation tool's job_display.
       IBM Plex Mono), Lyra reacts in the warm Aegean around it.
     - S7: regenerate as v3 = v2's clean correct text/hook at v1's
       bigger Θ scale.
+  - **v3 redos GENERATED 2026-05-19 (pending Gee verdict):**
+    - S4 v3 clean PROCESS|OUTCOME split, black app register
+      (chosen direction; 1st gen failed, retried):
+      `8af19b07-091c-4cb6-a9ad-991ae07e54de`
+    - S5 v3 sort on phone screen + Lyra in Aegean:
+      `847e2f80-7c7b-4a83-8ad8-82c33c3e9de8`
+    - S7 v3 big Θ + clean hook:
+      `625fa509-e079-4f28-b8ad-4031dcdde522`
   Old navy S1–S7 (`8cc62c94…`/`f8b262ee…`/`21d422dd…`/`2cef1c82…`/
   `29324721…`/`8b8179a2…`/`649619ad…`) and the all-black scrap set
   remain retired.
