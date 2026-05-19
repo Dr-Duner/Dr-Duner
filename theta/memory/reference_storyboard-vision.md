@@ -58,13 +58,15 @@ them with the generation tool's job_display.
   scene frames — anchor `1e1e016f`, S1 `e206e9c3`, S2 `b9f4867e`,
   S3 `b646b750`, S4 `e2fd6c12`, S5 `6d259ad6`, S6 `cb5f48ab`.
   (a777c0e0 stays the face/proportions source of truth.)
-- **Lesson 1 CORRECT redo — TODO after credit top-up (~16 cr).**
+- **Lesson 1 CORRECT redo — IN PROGRESS (funded, 2026-05-19).**
   Two registers per shot:
-  - New Aegean identity anchor: same face/proportions/outfit as
-    a777c0e0, environment = whitewashed Cycladic stucco, bright
-    blue Aegean sea, sun-warm white marble terrace, dawn sky,
-    period-accurate ancient Greece; the phone is the only modern
-    object. Generate FIRST, then ref it for the scene frames.
+  - **CANONICAL LYRA IDENTITY ANCHOR — LOCKED 2026-05-19 (Gee):
+    job `9af9b0c3-298b-43c8-b2f0-62d1af490395`.** Full-color real
+    Aegean (whitewashed Cycladic stucco, bright blue sea, sun-warm
+    marble, dawn), phone the only modern/black-green object. This
+    is Lyra's official identity for the WHOLE product — ref it for
+    every Lyra scene frame, all 20 lessons. (a777c0e0 = navy-era
+    face/proportions source only; 9af9b0c3 supersedes it on-spec.)
   - S1 cold-open, S2 buzz, S5 sort, S7 coach-land = Aegean world.
   - PHONE-SCREEN INVARIANT (Gee 2026-05-18): whenever the phone
     screen is shown it must be PIXEL-FAITHFUL to the real shipping
