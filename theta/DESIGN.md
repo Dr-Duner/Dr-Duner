@@ -51,6 +51,17 @@ Theta trade scan.
 - **LOCKED** Arc: Lesson 1 (Dichotomy of Control) → 2–19 (mindset + craft)
   → first paper trade closes → coach's one line → Lesson 20 scanner unlock.
 - **LOCKED** Lesson 1 video concept: see `lesson1-storyboard.png`.
+- **LOCKED** Production scope & budget (Gee, 2026-05-19): **Premium
+  full product** — all 20 lessons, ALL 4 coaches, fully animated at
+  Kling-grade motion. Target: finish inside the 90-day window.
+  Budget plan ≈ **1,500 credits** total; funded by a **2,000-credit
+  top-up ($95)** plus the ~600 credits from monthly resets across the
+  window (200/mo, anchor ~the 10th). Cost is controlled by the
+  template reuse model: per-coach wrapper (S1/S2/S3/S7) generated
+  ONCE per coach and reused across all 20 of that coach's lessons;
+  teaching middle (S4/S5) + SCAN card are coach-agnostic, generated
+  ONCE and reused across all 4 coaches. Top-up credits do not expire
+  for 90 days — matches the window exactly.
 
 ## 3. Open Decisions (need your call)
 
