@@ -101,14 +101,25 @@ them with the generation tool's job_display.
       `5606932e-80cc-4499-8b97-db755ccc78f9`
     - S7 Θ CTA (black brand card):
       `76ac35f4-1554-423d-80e5-d6691414dc41`
-  - **v2 alternates (2026-05-19, tightened text + face), per-shot
-    A/B pending Gee pick:** S1 `179535c2-4063-4858-8c6c-7a540e85c46a`,
-    S2 `14ac24a0-cdfb-4bc4-83db-d295e866d537`, S3
-    `19dd0773-1055-4459-80ea-d9698ca52d63`, S4
-    `f7b44c44-a9ee-474f-8186-86a2dcf5eae8`, S5
-    `f778a953-deb3-435a-b6c2-2859748df6f8`, S6
-    `3c6a267c-2378-42bc-88ad-c24e9784bdf3`, S7
-    `cc9c25c3-6011-4d08-93b5-2e9f1d7288c8`. Final per-shot pick TBD.
+  - **v2 alternates (2026-05-19, tightened text + face):** S1
+    `179535c2`, S2 `14ac24a0`, S3 `19dd0773`, S4 `f7b44c44`, S5
+    `f778a953`, S6 `3c6a267c`, S7 `cc9c25c3`.
+  - **GEE PER-SHOT VERDICT 2026-05-19 (LOCKED picks):**
+    - S1 = v2 `179535c2-4063-4858-8c6c-7a540e85c46a`
+    - S2 = v1 `d1f92463-39a5-42e3-bde8-0675c23973ec`
+    - S3 = v1 `3bcdffa9-9b99-4109-b13c-3646a4031063`
+    - S6 = v1 `5606932e-80cc-4499-8b97-db755ccc78f9`
+  - **REDO QUEUE (Gee 2026-05-19):**
+    - S4: overloaded ("makes no sense") — a 9s morph crushed into
+      one frame. Redesign to a single clear frame; direction TBD
+      (options: clean PROCESS|OUTCOME split / sky→chart thesis /
+      pure quote card / cut S4 from template).
+    - S5: register violation — modern trading words were carved in
+      ancient marble. MOVE to the BLACK APP REGISTER: the
+      CONTROL-vs-NOISE sort happens on the phone screen (black,
+      IBM Plex Mono), Lyra reacts in the warm Aegean around it.
+    - S7: regenerate as v3 = v2's clean correct text/hook at v1's
+      bigger Θ scale.
   Old navy S1–S7 (`8cc62c94…`/`f8b262ee…`/`21d422dd…`/`2cef1c82…`/
   `29324721…`/`8b8179a2…`/`649619ad…`) and the all-black scrap set
   remain retired.
