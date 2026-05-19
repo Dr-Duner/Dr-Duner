@@ -87,8 +87,23 @@ them with the generation tool's job_display.
   - S7 closing Θ CTA = cut from Aegean coach-land to a pure-black
     brand card for the locked lockup "Θ / don't predict it. trade
     it. now." (hook still LOCKED, unchanged).
+  - **GENERATED 2026-05-19, two-register on locked anchor 9af9b0c3
+    (PENDING GEE REVIEW — prototype quality bar for all 80 videos):**
+    - S1 cold-open (Aegean): `263a22ee-881e-4056-8d42-18602fd0c10b`
+    - S2 the buzz (Aegean): `d1f92463-39a5-42e3-bde8-0675c23973ec`
+    - S3 the read (black app screen + Aegean edge):
+      `3bcdffa9-9b99-4109-b13c-3646a4031063`
+    - S4 teaching A (black screen + Aegean inset):
+      `15f91bad-bf67-478a-8027-37f63df2c4c0`
+    - S5 teaching B sort (Aegean, marble stones):
+      `bdfad99b-fede-4917-9e9b-7037808f20f1`
+    - S6 the scan (full black terminal card):
+      `5606932e-80cc-4499-8b97-db755ccc78f9`
+    - S7 Θ CTA (black brand card):
+      `76ac35f4-1554-423d-80e5-d6691414dc41`
   Old navy S1–S7 (`8cc62c94…`/`f8b262ee…`/`21d422dd…`/`2cef1c82…`/
-  `29324721…`/`8b8179a2…`/`649619ad…`) remain retired.
+  `29324721…`/`8b8179a2…`/`649619ad…`) and the all-black scrap set
+  remain retired.
 - Terminal HOME screen render (DESIGN 3b-1), 2026-05-18,
   nano_banana_2, 9:16, 1k, ~2 cr: job
   `c78dd19f-1930-40f3-9067-78b63c1c6b6d`. Tight block, +$ delta in
