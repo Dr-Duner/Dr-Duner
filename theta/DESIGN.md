@@ -17,8 +17,10 @@ Theta teaches Stoic discipline applied to live options markets. The user
 picks one of four coaches (a character with an ancient-world identity and a
 modern phone). The coach is the emotional spine: silent-but-watching early,
 then earns a single spoken line at the first real paper trade, then goes
-fully live with a real-time scanner. **The coaches' videos + characters +
-real-time data in a game format are the product.**
+live as the user's strategy coach inside the SaaS scanner running their
+own strategy. **The coaches' videos + characters + the strategy SaaS
+(scanner + journal + adherence + behavioral coaching) are the product.**
+See §2.5 for the locked product/compliance architecture.
 
 **Brand essence (LOCKED 2026-05-18):** ancient and modern at the same
 time. Theta takes trading and makes it modern and usable today. The
@@ -49,7 +51,11 @@ Theta trade scan.
 - **LOCKED** Four coaches: Lyra (Analyst), Nestor (Veteran), Chiron (Patient
   Teacher), Atlas (Risk Manager). Identities in `lesson-flow.mmd`.
 - **LOCKED** Arc: Lesson 1 (Dichotomy of Control) → 2–19 (mindset + craft)
-  → first paper trade closes → coach's one line → Lesson 20 scanner unlock.
+  → first paper trade closes → coach's one line → **Lesson 20 unlocks the
+  SaaS tier — the user runs their own strategy through the scanner.**
+  L20 does NOT unlock real-time data and does NOT switch primary action
+  to brokerage; the SaaS surface is the new home, and the user keeps
+  access to the scanner of their own strategy forever (see §2.5).
 - **LOCKED** Lesson 1 video concept: see `lesson1-storyboard.png`.
 - **LOCKED** Production scope & budget (Gee, 2026-05-19): **Premium
   full product** — all 20 lessons, ALL 4 coaches, fully animated at
@@ -62,6 +68,119 @@ Theta trade scan.
   teaching middle (S4/S5) + SCAN card are coach-agnostic, generated
   ONCE and reused across all 4 coaches. Top-up credits do not expire
   for 90 days — matches the window exactly.
+
+## 2.5 Compliance & Product Architecture (LOCKED 2026-05-20, Gee)
+
+This section captures the product/legal architecture that emerged from
+the compliance investigation. Every item here is load-bearing on the
+rest of the design. Full reasoning in `compliance/COMPLIANCE.md`;
+decision file `compliance/decisions/2026-05-20_compliance-arch.md`.
+
+### A. Two-tier product model
+- **Tier 1 — Education on-ramp.** Curriculum L1–L19, paper-trade
+  simulator on templated setups, strategy-teacher LLM coach for lesson
+  content. Lower-priced or free; the "game" surface.
+- **Tier 2 — Theta SaaS (the ongoing business).** Strategy builder,
+  scanner running the user's own strategy, paper-trade with realistic
+  frictions, backtesting, strategy versioning, trade journal +
+  adherence scoring (CSV import → eventual Schwab read-only OAuth),
+  behavioral analytics, LLM coach (data + mechanics + adherence +
+  behavioral), risk calc / Greeks viz / position sizing, economic
+  calendar with strategy overlay, deep-link to Schwab for execution.
+- **L20 (corrected, supersedes earlier framing):** L20 is the milestone
+  where the user has built their own strategy. It unlocks Tier 2 — the
+  SaaS scanner + journal + coach on their strategy. It does **NOT**
+  unlock real-time data and does **NOT** make brokerage the primary
+  action. The scanner of the user's own strategy stays available
+  inside the SaaS subscription forever.
+
+### B. The LLM coach contract
+- The coach provides: **data + mechanics + strategy-fit check +
+  behavioral inquiry.** Never a verdict on whether a trade is good
+  or bad.
+- The coach is a **strategy teacher**, not a pick generator. Teaches
+  the why and how of options strategies; never selects trades.
+- The user owns every decision; the coach asks more than tells.
+- Numerical work is done by deterministic tools (Black-Scholes /
+  binomial pricer, Greeks, P&L). The LLM only narrates the numbers
+  the tools return.
+- Memory: stateful for the user's stated strategy rules; stateless
+  for holdings. Brokerage data (when aggregated) feeds the journal
+  and adherence scorer only — never the LLM coach or the scanner.
+- Full architecture in `theta/ai/PEDAGOGY.md`.
+
+### C. The scanner contract ("tool of the user")
+- The scanner only ever runs **the user's own strategy.** No Theta
+  picks. No editorial overlay. No "top picks" / "best setups" /
+  "Lyra's favorites" / "Theta Score" ranking. The user defines every
+  parameter that becomes a specific number.
+- Output is deterministic and explainable. Any user can ask "why is
+  TICKER on my list?" and get a literal filter trace.
+- No timing language. The scanner says "matches your filter as of
+  [timestamp]," never "now is the time."
+- Entry and exit prices are math from the user's rules; the scanner
+  is calculating, not choosing.
+- Safety constraints (refusing undefined-risk configurations, warning
+  on high-risk parameters) are tool features, not advice.
+
+### D. Data tier
+- **15-minute delayed data, throughout Theta, forever.** This is a
+  feature: it makes Theta structurally an education tool rather than
+  an execution tool — the legal posture AND the right pedagogical
+  posture for strategies with 45+ DTE horizons. Real-time happens at
+  the user's broker, not in Theta. Marketing line: *"Theta uses
+  15-minute data because we don't trade the second — we trade the
+  strategy."*
+
+### E. Paper-trade simulator
+- Realistic fills: buys at ask, sells at bid (or worse). Never
+  mid-quote. Multi-leg spreads fill at realistic combined prices.
+- Realistic frictions: commissions, fees, assignment, early-exercise
+  risk warnings, slippage on wide spreads.
+- Mandatory hypothetical-performance disclaimer on every paper-trade
+  view and every shared/exported P&L.
+
+### F. Brokerage relationship
+- **Deep-link only.** Theta never places orders, never holds funds,
+  never receives transaction-based compensation.
+- **Read-only OAuth aggregation is acceptable** for the journal and
+  adherence scorer — eventually, once Reg S-P safeguards are in place
+  and Schwab developer approval is granted. CSV import is the
+  bootstrap-day-one approach.
+- **No broker referral fees.** Day one and into the foreseeable
+  future — keeps us out of the Cash Solicitation Rule / finder-fee
+  regime.
+
+### G. Hard outs (red lines we don't cross even if asked)
+- No order execution via Theta.
+- No fund holding.
+- No personalized trade recommendations from the LLM coach.
+- No specific-ticker calls in coach videos or marketing.
+- No editorial overlay on the scanner.
+- No pre-canned strategies users select with one click.
+- No track-record or return claims about Theta or its users.
+- **No strategy marketplace** (peer-to-peer strategy publishing —
+  each publisher becomes a de facto adviser; platform liability).
+- **No copy-trading.**
+- **No cash-prize leaderboards for paper-trade returns.** Adherence-
+  score leaderboards are acceptable — they reward discipline, not P&L.
+- No marketing of "AI" until every claim is defensible.
+- No availability outside the US on day one.
+
+### H. Geography
+- US only, geofenced via App Store / Play Store country restrictions,
+  IP block, payment-country check, and ToS clause. See
+  `compliance/COMPLIANCE.md §5.9`.
+
+### I. Pedagogy as moat
+The strategy-teacher LLM is the real defensible product as AI
+commoditizes. The architecture (curriculum graph, deterministic
+math, RAG content library, voice/character enforcement, mastery
+model + spaced repetition, self-improvement loop, model-agnostic
+principles, democratization toolkit) lives in `theta/ai/PEDAGOGY.md`
+and is the next major build after this lock.
+
+---
 
 ## 3. Open Decisions (need your call)
 
@@ -172,9 +291,17 @@ scanner-unlock arc. Sub-questions RESOLVED (Gee, 2026-05-18):
   blinking cursor block at the top (after `Last login:`) and at the
   bottom prompt line. Calm, alive at both ends.
 - Order: recap → stats → coach scan → action (as mocked). LOCKED.
-- Bottom action default = **adaptive**: paper-trade is primary
-  until the scanner unlocks at L20; after L20, open-brokerage
-  becomes the primary action, paper stays available.
+- Bottom action default = **adaptive** (REVISED 2026-05-20, supersedes
+  earlier "open-brokerage primary" framing — see §2.5):
+  - **Pre-L20 (education tier):** paper-trade against the lesson's
+    templated setup is the primary action; "open brokerage" is
+    available but secondary.
+  - **Post-L20 (SaaS tier):** the scanner of the user's own strategy
+    becomes the primary surface; paper-trade against scanner output
+    is the primary action; Schwab deep-link is secondary, used when
+    the user is ready to take a paper-tested trade live.
+  - Theta itself is always delayed-data / education; real-time and
+    execution live at the broker, not inside Theta.
 
 **Scanner block spec — real feed, terminal-skinned (Gee, 2026-05-18).**
 Source = the existing "Capital Mind" Telegram bot daily-scan feed.
