@@ -23,6 +23,29 @@ Read this index and the files it points to before Theta work.
   curriculum graph, deterministic math, RAG content library, voice
   contract, mastery model + spaced repetition, self-improvement
   loop, model-agnostic principles, democratization toolkit.
+- `../ai/lyra-system-prompt.md` — DRAFT drop-in system prompt for
+  the Lyra coach LLM. Consolidates character, voice (locked per
+  lesson1-script.md), the strategy-teacher contract, refusal
+  patterns, tool-use instructions, Stoic frame. Uses [PRODUCT]
+  placeholder pending counsel-cleared rebrand. Same template
+  applies to Nestor / Chiron / Atlas with voice swaps.
+- `../ai/llm-refusal-taxonomy.md` — DRAFT 16 user-input patterns
+  the coach must refuse + redirect language for each in Lyra
+  voice. The enforcement layer on the strategy-teacher contract.
+- `../ai/deterministic-math-tools.md` — DRAFT tool-surface schema
+  the LLM is allowed to call: market data (delayed), pricing,
+  Greeks, strategy payoff, breakevens, IV rank, position sizing,
+  adherence scoring, backtesting, journal analytics. The LLM
+  narrates these tools' outputs; never computes math itself.
+- `../ai/worked-examples.md` — DRAFT 12 in-bounds vs out-of-bounds
+  prompt/response pairs (golden examples for the evals harness).
+  Covers concept teaching, user trade ideas, verdict refusal,
+  predictions, "best strategy," portfolio reading, jailbreaks,
+  tax, backtests, off-topic, urgency.
+- `../ai/coach-handoff-protocol.md` — DRAFT state-load + voice-
+  handoff spec for when users switch coaches (Lyra ↔ Nestor ↔
+  Chiron ↔ Atlas). What persists vs. what is coach-local; first-
+  message pattern; edge cases.
 - `../compliance/decisions/2026-05-20_compliance-arch.md` — the
   major architecture lock from the strategy-teacher + tool-of-the-
   user investigation. Two-tier product, LLM contract, scanner
