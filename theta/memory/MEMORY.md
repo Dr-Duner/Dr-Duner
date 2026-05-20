@@ -14,6 +14,10 @@ Read this index and the files it points to before Theta work.
   (Ancient Greece, chibi, buzz, mono, real scanner UI, Θ CTA).
 - `../lesson1-script.md` — Lesson 1 FINAL shooting script: per-shot VO
   + Lyra voice direction LOCKED (kind but deeper, warm low female).
+- `../compliance/COMPLIANCE.md` — LIVING regulatory investigation
+  (parallel to DESIGN.md). US securities + options + brokerage +
+  international + privacy + app-store layers; 12 red flags pulled
+  from current design; threshold questions pending Gee.
 
 ## Session records
 - `../SESSION-2026-05-18.md` — persistence architecture built.
