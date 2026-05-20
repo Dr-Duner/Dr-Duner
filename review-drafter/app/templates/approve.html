@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ practice }} — Approve replies</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="client">
+  <header class="client-hd">
+    <h1>{{ practice }}</h1>
+    <p class="tag">We wrote and HIPAA-checked these Google review
+      replies in your voice. Approve what you're happy with — nothing
+      goes live until you do.</p>
+    {% if positives or explicit %}
+    <p class="summary">
+      {% if positives %}<span class="pill pos">{{ positives|length }} positive</span>{% endif %}
+      {% if explicit %}<span class="pill neg">{{ explicit|length }} need your OK</span>{% endif %}
+    </p>
+    {% endif %}
+  </header>
+
+  <main>
+  <p id="msg" class="banner" hidden></p>
+
+  {% if positives %}
+  <section>
+    <div class="sec-hd">
+      <h2>Positive reviews</h2>
+      <button id="allPos" class="primary">Approve all {{ positives|length }}</button>
+    </div>
+    {% for c in positives %}
+    <article class="card" data-id="{{ c.id }}">
+      <p class="meta">{{ c.rating }}★ · {{ c.author }}</p>
+      <p class="text">“{{ c.review }}”</p>
+      <p class="reply">{{ c.reply }}</p>
+      <p class="why">✓ {{ c.why_safe }}</p>
+    </article>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if explicit %}
+  <section>
+    <div class="sec-hd"><h2>Needs your OK</h2></div>
+    <p class="muted">These are lower-rated or mixed — we never auto-send
+      these. Read, tweak if you like, then decide.</p>
+    {% for c in explicit %}
+    <article class="card neg" data-id="{{ c.id }}">
+      <p class="meta">{{ c.rating }}★ · {{ c.author }}</p>
+      <p class="text">“{{ c.review }}”</p>
+      <label class="fld">Your reply (edit if you want — we re-check it):
+        <textarea class="reply-edit">{{ c.reply }}</textarea>
+      </label>
+      <p class="why">✓ {{ c.why_safe }}</p>
+      <div class="vbtns">
+        <button class="approve primary">Approve</button>
+        <button class="saveedit ghost">Save edit &amp; approve</button>
+        <button class="reject ghost">Reject</button>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if not positives and not explicit %}
+  <div class="card empty">
+    <h2>All caught up</h2>
+    <p>Nothing is waiting on you right now. We'll text/email you when
+      the next batch is ready.</p>
+  </div>
+  {% endif %}
+  </main>
+
+  {% if positives %}
+  <div class="stickybar" id="sticky">
+    <button id="allPos2" class="primary">Approve all {{ positives|length }} positive</button>
+  </div>
+  {% endif %}
+
+  <script>
+    const TOKEN = {{ token|tojson }};
+    const msg = document.getElementById("msg");
+    function say(t) { msg.hidden = false; msg.textContent = t; }
+    async function act(payload) {
+      const r = await fetch("/approve/" + TOKEN, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      return r.json();
+    }
+    function done(card, label) {
+      card.classList.add("done");
+      card.querySelectorAll("button,textarea").forEach((e) => e.disabled = true);
+      if (label) say(label);
+    }
+    document.querySelectorAll(".card.neg").forEach((card) => {
+      const id = card.dataset.id;
+      const ta = card.querySelector(".reply-edit");
+      card.querySelector(".approve").onclick = async () => {
+        const j = await act({ action: "approve", item: id });
+        j.ok ? done(card, "Approved — we'll post it.") : say(j.error);
+      };
+      card.querySelector(".saveedit").onclick = async () => {
+        const e = await act({ action: "edit", item: id, text: ta.value });
+        if (!e.ok) {
+          say("Edit blocked by the HIPAA check: " +
+            (e.violations || [e.error]).join("; ") + " — adjust and retry.");
+          return;
+        }
+        const j = await act({ action: "approve", item: id });
+        j.ok ? done(card, "Edited & approved.") : say(j.error);
+      };
+      card.querySelector(".reject").onclick = async () => {
+        const j = await act({ action: "reject", item: id });
+        j.ok ? done(card, "Rejected — we won't post it.") : say(j.error);
+      };
+    });
+    async function approveAllPositives(btn) {
+      btn.disabled = true;
+      const j = await act({ action: "approve_all_positives" });
+      if (j.ok) {
+        document.querySelectorAll("section:first-of-type .card")
+          .forEach((c) => done(c, ""));
+        say("Approved " + j.approved + " positive reply(ies). Done — "
+          + "you can close this.");
+        document.querySelectorAll("#allPos,#allPos2")
+          .forEach((b) => (b.disabled = true));
+        const s = document.getElementById("sticky");
+        if (s) s.hidden = true;
+      }
+    }
+    document.querySelectorAll("#allPos,#allPos2").forEach((b) =>
+      b && (b.onclick = () => approveAllPositives(b)));
+  </script>
+</body>
+</html>

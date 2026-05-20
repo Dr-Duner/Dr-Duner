@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review Response Drafter</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Review Drafter — Operator Console</h1>
+    <p class="tag">We draft + HIPAA-gate here; the client approves
+      before anything posts (4–5★ bulk/auto, 1–3★ explicit). Pipeline:
+      <strong>draft → QA → send for approval → post</strong>.</p>
+    <p><a href="/prospect">Prospecting tool (lead qualifier + free sample) →</a></p>
+    {% if not has_api_key %}
+    <p class="banner">No API key set — showing safe fallback templates.
+      Parser &amp; HIPAA gate are fully live.</p>
+    {% endif %}
+  </header>
+
+  <main>
+  <section class="intake">
+    <div class="row">
+      <label>Practice
+        <select id="practice">
+          {% for p in practices %}<option value="{{ p }}">{{ p }}</option>{% endfor %}
+        </select>
+      </label>
+    </div>
+    <textarea id="pasted" rows="6"
+      placeholder="Paste reviews here (separate multiple reviews with a blank line or a line of ---). Or upload a CSV below."></textarea>
+    <div class="row">
+      <input type="file" id="csv" accept=".csv">
+      <button id="draftBtn">1 · Draft replies</button>
+      <span id="status" class="muted"></span>
+    </div>
+  </section>
+
+  <section id="queue"></section>
+
+  <footer class="pipeline">
+    <button id="sendBtn" disabled>2 · Send batch for client approval</button>
+    <button id="postBtn" class="ghost" disabled>4 · Post approved</button>
+    <button id="queueBtn" class="ghost" disabled>Refresh queue status</button>
+  </footer>
+  <div id="dispatch" class="card" hidden>
+    <p id="sendOut"></p>
+    <p id="clientLink" hidden>3 · Client approves here:
+      <a id="clientHref" target="_blank"></a>
+      <button id="copyLink" class="ghost">Copy link</button></p>
+    <details id="previewBox" hidden>
+      <summary>Preview exactly what the client receives</summary>
+      <pre id="preview"></pre>
+    </details>
+    <p id="queueOut" class="muted"></p>
+  </div>
+
+  <template id="cardTpl">
+    <article class="card">
+      <div class="rev">
+        <span class="chip stage">drafted</span>
+        <div class="meta"></div>
+        <p class="text"></p>
+      </div>
+      <div class="variants"></div>
+    </article>
+  </template>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

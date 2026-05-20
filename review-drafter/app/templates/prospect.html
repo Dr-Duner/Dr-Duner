@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prospecting — Lead qualifier &amp; free-sample weapon</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Prospecting</h1>
+    <p class="tag">Qualify a dental practice from its public Google
+      profile, then generate the free-sample reply pack to paste into
+      cold outreach. No Google API needed — this is the funnel.</p>
+    <p><a href="/">← Operator console</a></p>
+  </header>
+
+  <main>
+  <section class="intake">
+    <div class="row">
+      <label>Practice name
+        <input id="pname" type="text" placeholder="Bright Smile Dental">
+      </label>
+      <label>Voice profile
+        <select id="practice">
+          {% for p in practices %}<option value="{{ p }}">{{ p }}</option>{% endfor %}
+        </select>
+      </label>
+    </div>
+    <p class="muted">Public signals (read these off their Google
+      listing by eye — all public, non-clinical):</p>
+    <div class="row">
+      <label>Total reviews <input id="rc" type="number" value="0" min="0"></label>
+      <label>Avg rating <input id="ar" type="number" value="0" step="0.1" min="0" max="5"></label>
+      <label>Recent unanswered <input id="ur" type="number" value="0" min="0"></label>
+      <label>Unanswered 1–2★ <input id="un" type="number" value="0" min="0"></label>
+      <label class="chk"><input id="rb" type="checkbox"> Replies look robotic</label>
+    </div>
+    <textarea id="pasted" rows="6"
+      placeholder="Paste 3–6 of the prospect's real Google reviews (blank line or --- between them). The sample replies to THESE."></textarea>
+    <div class="row">
+      <input type="file" id="csv" accept=".csv">
+      <button id="go">Qualify &amp; generate sample</button>
+      <span id="status" class="muted"></span>
+    </div>
+  </section>
+
+  <section id="result" hidden>
+    <div class="card" id="scoreCard">
+      <h2><span id="tier"></span> · <span id="score"></span>/100</h2>
+      <ul id="reasons"></ul>
+      <p><strong>Outreach opener:</strong> <span id="opener"></span></p>
+    </div>
+    <div class="card">
+      <div class="row">
+        <h2>Free-sample pack</h2>
+        <button id="copy" class="ghost">Copy markdown</button>
+      </div>
+      <p id="safeNote" class="why"></p>
+      <pre id="sample"></pre>
+    </div>
+  </section>
+  </main>
+
+  <script>
+    const $ = (s) => document.querySelector(s);
+    $("#go").addEventListener("click", async () => {
+      const fd = new FormData();
+      fd.append("practice", $("#practice").value);
+      fd.append("practice_name", $("#pname").value);
+      fd.append("pasted", $("#pasted").value);
+      fd.append("review_count", $("#rc").value || 0);
+      fd.append("avg_rating", $("#ar").value || 0);
+      fd.append("unanswered_recent", $("#ur").value || 0);
+      fd.append("unanswered_negative", $("#un").value || 0);
+      fd.append("robotic_replies", $("#rb").checked ? "true" : "false");
+      const f = $("#csv").files[0];
+      if (f) fd.append("file", f);
+      $("#status").textContent = "Working…";
+      $("#go").disabled = true;
+      try {
+        const r = await fetch("/api/sample", { method: "POST", body: fd });
+        const j = await r.json();
+        if (!r.ok) { $("#status").textContent = j.error || "Error"; return; }
+        $("#result").hidden = false;
+        $("#tier").textContent = j.tier;
+        $("#tier").className = "tier-" + j.tier;
+        $("#score").textContent = j.score;
+        $("#reasons").innerHTML =
+          j.reasons.map((x) => `<li>${x}</li>`).join("") ||
+          "<li>No strong public pain signal — likely COLD.</li>";
+        $("#opener").textContent = j.opener;
+        $("#sample").textContent = j.sample.markdown;
+        $("#safeNote").textContent = j.sample.all_passed
+          ? `✓ All ${j.sample.count} sample replies passed the HIPAA gate.`
+          : `⚠ Some replies fell back to a safe template (no API key / model could not pass the gate).`;
+        $("#status").textContent = "";
+      } catch (e) {
+        $("#status").textContent = "Request failed.";
+      } finally {
+        $("#go").disabled = false;
+      }
+    });
+    $("#copy").addEventListener("click", () => {
+      navigator.clipboard.writeText($("#sample").textContent);
+      $("#copy").textContent = "Copied";
+      setTimeout(() => ($("#copy").textContent = "Copy markdown"), 1200);
+    });
+  </script>
+</body>
+</html>

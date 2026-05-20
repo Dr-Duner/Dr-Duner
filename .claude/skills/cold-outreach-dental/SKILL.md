@@ -1,0 +1,59 @@
+---
+name: cold-outreach-dental
+description: Use when doing direct sales outreach to dental practices — cold email/DM sequences to office managers, objection handling, pricing presentation, and demo-to-close flow for the Review Response Drafter.
+---
+
+# Cold Outreach — Dental
+
+Turn interest into paying practices. Personal, low-volume, high-signal.
+
+## Targeting
+Practices with visible review pain: recent unanswered negative
+reviews, or many reviews / few owner replies. That gap IS the pitch —
+reference their actual (public) review situation, never patient info.
+
+## First touch (email or DM) — structure
+1. One specific, true observation about their public Google profile
+   ("noticed your last few Google reviews don't have replies yet").
+2. The wedge: generic tools risk HIPAA; we're built dental-safe.
+3. The offer: "I'll write replies for your last 10 Google reviews,
+   free, in your practice's voice — show you exactly what we'd post.
+   Want to see them?"
+4. Tiny ask. No attachment, no pitch deck.
+
+Keep it ~5 sentences. The free drafted batch is the hook — show, don't
+tell. Sell the *outcome* (every review answered for you; you just tap
+approve), not a tool. Generate the batch + the opener line with the
+`/prospect` tool (`lead-generation`); paste the sample pack straight
+into the email — it is *their* reviews, answered and HIPAA-safe.
+
+## Closing without the Google API (concierge trial)
+Don't make the sale wait on Google API access. Sell the **concierge
+trial**: we write + HIPAA-gate, they approve, then they paste the
+approved replies into their own Google dashboard (or delegate access).
+Same pain removed (writing + compliance fear + time), no API
+dependency, paid. When API access lands they upgrade silently to
+auto-ingest + post-on-approval — no re-sell. See `lead-generation` /
+`business-operations`.
+
+## Demo-to-close
+Deliver the free batch fast. Show: their real review → safe, on-voice
+reply → why-safe note. Then: "Grant us Google access once; we write &
+post every review, you just get a quick approve (and we can bundle the
+positives). $X/mo." Free week → monthly.
+
+## Objection handling
+- "We reply ourselves." → "Stop — that's the point. You grant access
+  once, we handle every review HIPAA-safe in your voice, you do
+  nothing. Free week to see it?"
+- "Is this safe / HIPAA?" → lead asset: the compliance one-pager; offer
+  their counsel review our rules. This is a *strength*, lean in.
+- "Too expensive." → reframe vs. staff hours + one HIPAA misstep cost.
+- "Sounds robotic." → show the voice-matched variant vs. a generic
+  tool's. Let the draft win it.
+- "Not now." → "I'll send your batch anyway, no strings." Stay warm.
+
+## Rules
+- Low volume, researched, personal. No spam blasts (reputation niche).
+- Never reference any patient/clinical detail, only public profile facts.
+- The product demos itself — every touch ends in "want the free batch?"
