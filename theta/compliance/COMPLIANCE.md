@@ -8,16 +8,34 @@ business, and international-app regulation. Every row gets a citation
 where possible and a status: **OPEN / NEEDS COUNSEL / CLOSED**.
 
 ## 0. Locked answers (2026-05-20, Gee)
-Captured in `decisions/2026-05-20_initial-bootstrap-scope.md`.
+Captured in `decisions/2026-05-20_initial-bootstrap-scope.md` plus
+`decisions/2026-05-20_compliance-arch.md` (the major architecture
+lock that came out of the strategy-teacher + tool-of-the-user
+investigation).
 - **Geography day-one:** US ONLY, geofenced. Closes RF-07.
-- **Coaches:** LLM-driven, interactive. Highest-risk lever under
-  bootstrap. Mitigated by hard refusal taxonomy (see decision file).
-- **Legal budget:** Bootstrap. Compliance is *engineering and
-  content*, not retainer, until trigger events fire (see decision
-  file §"Trigger event to revisit").
-- **Characterization:** Unresolved — design treats as (B) until
-  counsel says otherwise. Anything we ship must be defensible under
-  (B) the publisher / impersonal-newsletter scope.
+- **Coaches:** LLM-driven, interactive, **strategy teachers — not
+  pick generators.** Contract: data + mechanics + strategy-fit
+  check + behavioral inquiry. Never a verdict. Numerical work in
+  deterministic tools; LLM narrates only. Pedagogy architecture in
+  `theta/ai/PEDAGOGY.md`.
+- **Legal budget:** Bootstrap. Compliance is engineering + content,
+  not retainer, until trigger events fire (see initial bootstrap
+  decision file).
+- **Characterization (RESOLVED 2026-05-20):** Theta is a strategy
+  **tool + strategy education** product, sold as SaaS. The LLM
+  teaches strategies (education); the scanner runs the user's own
+  strategy (tool of the user); the paper-trade simulator lets the
+  user test their strategy; the journal + adherence scorer tracks
+  their discipline (analytics). Does NOT require investment adviser
+  or broker-dealer registration under settled SaaS-tool precedent —
+  Finviz, TradingView, OptionStrat, Options Profit Calculator,
+  Edgewonk, Tradervue, tastylive education arm, OptionAlpha pre-RIA
+  era. See §1 (resolved) and §17 (the middle-position playbook).
+- **Data tier:** 15-minute delayed, throughout Theta, forever. Real-
+  time lives at the user's broker, not inside Theta. Pedagogically
+  fits the 45+ DTE strategy focus where the lag is functionally
+  invisible. Marketing line: *"Theta uses 15-minute data because we
+  don't trade the second — we trade the strategy."*
 
 > **Bright line.** Theta sells a *product* about *securities* to *users*
 > who *trade real money*. That sentence is the regulatory perimeter.
@@ -28,8 +46,25 @@ Captured in `decisions/2026-05-20_initial-bootstrap-scope.md`.
 
 ---
 
-## 1. Characterization (everything cascades from this)
-Which of these is Theta — pick one, write it into §2 of `DESIGN.md`:
+## 1. Characterization (RESOLVED 2026-05-20)
+**Resolution:** Theta is a **strategy SaaS tool + strategy education
+product** — option (E) hybrid, the *narrowest* defensible read:
+**education + strategy builder + scanner-as-tool-of-the-user +
+paper-trade simulator + journal/analytics + Schwab deep-link**.
+None of these components, individually or in combination, requires
+investment-adviser or broker-dealer registration under settled
+commercial precedent. The teaching is education (not advice); the
+scanner runs the *user's* logic (not Theta's); the paper-trade
+environment doesn't touch real money; the journal is analytics on
+the user's own data; the deep-link is a hyperlink, not order
+routing. Locked in `DESIGN.md §2.5` and the architecture decision
+file `decisions/2026-05-20_compliance-arch.md`.
+
+The options A–D below remain as historical reference and as guard-
+rails: any future feature must check itself against them to make
+sure it doesn't drift into (C) RIA or (D) BD territory.
+
+Original framing (kept for reference):
 
 - (A) **Pure education** — courses + paper-trade simulator, NO live
   signals on real tickers, NO portfolio read. Lowest regulatory burden.
@@ -453,20 +488,20 @@ perimeter for non-resident financial promotion.
 
 ## 13. Highest-priority red flags from `DESIGN.md` / `LESSONS.md`
 
-| ID | Section | Issue | Severity |
-|----|---------|-------|----------|
-| RF-01 | `§3b-1` `holdings (n)` block + `pipeline buy signals` | User-portfolio-aware buy signals = personalized investment advice; breaks publisher's exemption; RIA registration territory. | BLOCKER for US launch as currently designed. |
-| RF-02 | `LESSONS.md` L4 / L14 / L15 / L16 | Specific options strategies recommended in-product (vertical spreads, premium-selling, 0DTE) without ODD delivery. | HIGH. |
-| RF-03 | `§3b-1` `schwab token` + `OPEN BROKERAGE` button | Brokerage credential handled + execution funneled; Reg S-P + Schwab ToS + §3(a)(4) gray zone. | HIGH. |
-| RF-04 | Gamification: XP / streaks / scanner-as-prize / coach intercepts | SEC DEP scrutiny, MA Robinhood precedent, NY proposed law. Some intercepts are defense — must be documented as such. | MEDIUM, design-fixable. |
-| RF-05 | Four "AI coaches" framing (DESIGN.md §3b, §3b-1) | If AI, Reg PDA + EU AI Act exposure; if scripted, AI-washing if marketed as AI. Must lock and disclose. | MEDIUM. |
-| RF-06 | "Capital Mind" upstream feed | Re-publishing third-party advice; upstream license + their reg status + exchange data license unknown. | HIGH. |
-| RF-07 | Cross-border by default (no geofence) | UK s.21 (criminal), MiFID II, ASIC AFSL, CIRO exposure on day one. | BLOCKER for global launch. |
-| RF-08 | No risk disclosure track in storyboards (`storyboard-production-template.png`) | Options risk warning, "education not advice," "past performance," "results not typical" not yet in any frame or screen. | HIGH. |
-| RF-09 | Subscription model implied; not yet spec'd | ROSCA + CA ARL + FTC Click-to-Cancel; design constraint. | MEDIUM. |
-| RF-10 | "Coach goes live" + paper-trade handshake + L20 unlock | Reinforces influencer / guru pattern under SEC influencer enforcement (SEC v. Constantinescu et al., Dec 2022). Reframe as competency unlock + appropriateness gate. | MEDIUM. |
-| RF-11 | No 18+ age gate spec'd | COPPA + options-eligibility (18+) + UK High-Risk Investment rules require adult appropriateness. | MEDIUM, design-fixable. |
-| RF-12 | "Theta" trademark not searched in IC 036 | Possible prior-user blocking commercial use in financial services. | MEDIUM. |
+| ID | Section | Issue | Status (2026-05-20) |
+|----|---------|-------|--------------------|
+| RF-01 | `§3b-1` `holdings (n)` block + `pipeline buy signals` | User-portfolio-aware buy signals = personalized investment advice; breaks publisher's exemption. | **RESOLVED BY DESIGN.** Scanner runs only the user's own strategy (tool of the user); aggregated brokerage data feeds journal/adherence only, never the scanner or LLM. See DESIGN.md §2.5 C. |
+| RF-02 | `LESSONS.md` L4 / L14 / L15 / L16 | Specific options strategies recommended in-product (vertical spreads, premium-selling, 0DTE) without ODD delivery. | **RESOLVED BY DESIGN.** Strategies are *taught* (education), not recommended; user builds their own. ODD link in every options lesson as belt-and-suspenders. DESIGN.md §2.5 B / I + PEDAGOGY.md. |
+| RF-03 | `§3b-1` `schwab token` + `OPEN BROKERAGE` button | Brokerage credential + execution funneled; Reg S-P + Schwab ToS + §3(a)(4) gray zone. | **RESOLVED BY DESIGN.** Deep-link only; no order placement; read-only OAuth aggregation (post-bootstrap) with Reg S-P safeguards; no broker referral fees. DESIGN.md §2.5 F. |
+| RF-04 | Gamification: XP / streaks / scanner-as-prize / coach intercepts | SEC DEP scrutiny, MA Robinhood precedent, NY proposed law. | **RESOLVED BY DESIGN.** Reframed as competency gate + behavioral coaching; adherence-score leaderboards only (no return-based). Intercepts (revenge-trade L6, naked blocker L14, 0DTE blocker L15) documented as defenses. DESIGN.md §2.5 G. |
+| RF-05 | Four "AI coaches" framing | If AI, Reg PDA + EU AI Act exposure; if scripted, AI-washing if marketed as AI. | **OPEN.** Coaches are LLM-driven (locked); rule: don't market as "AI" — market as the coaches' characters teaching strategy. PEDAGOGY.md captures the architecture (model-agnostic, deterministic math, voice contract). Marketing copy still needs review for AI-washing exposure. |
+| RF-06 | "Capital Mind" upstream feed | Re-publishing third-party advice; upstream license + their reg status. | **RESOLVED BY DESIGN.** Scanner runs the user's own strategy, not Capital Mind picks. Theta needs only clean delayed-data feeds (IEX, Polygon delayed, Tradier, Schwab developer API). Capital Mind drops out of the architecture. |
+| RF-07 | Cross-border by default (no geofence) | UK s.21 (criminal), MiFID II, ASIC AFSL, CIRO exposure on day one. | **RESOLVED.** US-only geofence via App Store / Play Store country restrictions + IP block + payment-country check + ToS clause. DESIGN.md §2.5 H. |
+| RF-08 | No risk-disclosure track in storyboards | Options risk warning, "education not advice," "past performance," "results not typical" not yet in any frame or screen. | **OPEN.** Risk Disclosure modal copy, persistent footer, ODD links in lessons still need drafting. Next deliverable. |
+| RF-09 | Subscription auto-renewal compliance | ROSCA + CA ARL + FTC Click-to-Cancel. | **OPEN.** Mostly handled by Apple/Google billing flows; ToS work still required. Web checkout (if any) needs explicit auto-renewal disclosure + cancel-from-app. |
+| RF-10 | "Coach goes live" + paper-trade handshake + L20 unlock framing | Reinforces influencer/guru pattern under SEC influencer enforcement. | **RESOLVED BY DESIGN.** L20 unlocks the SaaS tier (user's own strategy in the scanner), not "live tips." Coach teaches forever; never picks. DESIGN.md §2.5 A (L20 corrected). |
+| RF-11 | No 18+ age gate spec'd | COPPA + options-eligibility (18+) + Stoic discipline alignment. | **OPEN.** Implementation work — date-of-birth gate at signup, refuse under 18. Straightforward; not yet built. |
+| RF-12 | "Theta" trademark not searched in IC 036 | Possible prior-user blocking commercial use in financial services. | **OPEN.** DIY USPTO TESS pass next; clearance opinion ($500–$1.5k) before public launch. |
 
 ---
 
@@ -504,4 +539,92 @@ Every entry above is **OPEN** or **NEEDS COUNSEL** by default. None
 ## 16. Decisions log
 Per `theta/memory/MEMORY.md` convention; one file per resolved
 issue in `theta/compliance/decisions/` named
-`<YYYY-MM-DD>_<short-slug>.md`.
+`<YYYY-MM-DD>_<short-slug>.md`. Major locks to date:
+- `2026-05-20_initial-bootstrap-scope.md` — threshold answers + the
+  20-item bootstrap playbook.
+- `2026-05-20_compliance-arch.md` — the strategy-tool + strategy-
+  education architecture; characterization resolved; eight red flags
+  closed by design.
+
+---
+
+## 17. The middle-position playbook
+*Where Theta lives between the user and their broker, legally.*
+
+Execution sits at the broker (Schwab). Everything around execution
+— the days and weeks of strategy design, decision-making, record-
+keeping, and reflection — is the open ground where Theta operates.
+Brokers are bad at all of it. That's the gap.
+
+### Three zones around execution
+- **Pre-trade.** Strategy design, scanning the user's strategy,
+  idea analysis (data + mechanics + adherence + behavioral), paper-
+  trade testing, behavioral pressure-test. Theta's home base.
+- **Post-trade.** Trade journal, adherence scoring against the
+  user's own rules, behavioral analytics, retrospective coaching.
+  The biggest untapped value real estate; the long-term SaaS moat.
+- **Companion.** Two apps open — Theta on the left showing the
+  user's strategy and journal; Schwab on the right showing the
+  order ticket. The user integrates in their head. No legal issue.
+
+### Surfaces Theta can legitimately claim
+Each has commercial precedent as unregistered SaaS:
+
+| Surface | Description | Commercial precedent |
+|---------|-------------|----------------------|
+| Strategy builder | User constructs strategy from atomic components | Tastylive research, thinkorswim Scan |
+| Scanner | Runs user's strategy on delayed data, returns matches | Finviz, TradingView, Trade Ideas, TC2000 |
+| Paper-trade simulator | Delayed-data trades with realistic frictions | thinkorswim PaperMoney, Tastytrade Paper, Webull Paper |
+| Backtesting | User's strategy across historical data, with hypothetical-performance disclaimers | TradingView Pine Script, Backtrader, Quantrocket |
+| Strategy versioning | Track every iteration of the user's strategy | No mainstream analog — Theta-original |
+| Risk calc / Greeks viz | Payoff diagrams, breakeven, position sizing | OptionStrat, Options Profit Calculator |
+| Trade journal | Manual or CSV import → eventual OAuth read-only | Edgewonk, Tradervue, Trademetria, Chartlog |
+| Adherence scoring | User's actual trades vs. user's stated rules | No mainstream analog — Theta-original |
+| Behavioral analytics | Patterns in the user's own behavior over time | No mainstream analog at this depth — Theta-original |
+| Economic calendar | Public events with strategy overlay | Earnings Whispers, Investing.com calendar |
+| Tax-aware exports | Format for tax software, wash-sale flags (educational only) | TaxBit (crypto), TurboTax import tools |
+| LLM coach | Strategy teacher + retrospective coach over all of the above | No analog — Theta-original |
+
+### The Schwab read-only OAuth pattern (the killer middle play)
+**Pattern:** user authorizes OAuth read-only access → Theta pulls
+trade history → journal auto-populates → adherence scoring runs on
+real trades → coach reviews real behavior. Theta never writes back.
+
+**Precedent:** Mint, YNAB, Personal Capital (the aggregator
+business, not their RIA arm), Empower, Copilot Money, Monarch.
+Plaid intermediates this exact pattern for hundreds of fintechs.
+None of these are broker-dealers. Read-only data aggregation is
+regulatorily settled.
+
+**Compliance overhead:**
+- Schwab Developer Portal application + approval.
+- Reg S-P / GLBA safeguards (privacy notice, encryption at rest,
+  access logging, incident response — see §3.1 and §4 above).
+- The cardinal rule: **aggregated data feeds the journal/adherence
+  scorer ONLY.** The LLM coach and the scanner do not see it.
+  Cross-pollinating ("we noticed you're long NVDA, here's an iron
+  condor on NVDA") moves us from aggregator to adviser. Hard wall
+  in the architecture.
+
+**Bootstrap sequencing:**
+1. Day one: CSV import. User exports Schwab activity, drops into
+   Theta. No Schwab dependency. Edgewonk built $7M+ ARR on CSV-
+   only.
+2. Once we have product traction: apply for Schwab read-only OAuth,
+   pass security review, ship integration. Paid-tier feature.
+
+### Bright lines (re-stated in middle-position context)
+- No order placement (broker line).
+- No fund holding (broker + MSB line).
+- No cross-pollination of aggregated brokerage data into the LLM
+  coach or the scanner.
+- No editorial overlay on scanner output.
+- No pre-canned strategies users select one-click.
+- No broker referral fees (Cash Solicitation Rule / finder fees).
+- No strategy marketplace where users sell each other strategies.
+- No copy-trading.
+- No cash-prize leaderboards for paper-trade returns.
+
+These are restated from DESIGN.md §2.5 G because they are *the*
+constraints that keep Theta inside the middle-position SaaS box and
+out of the BD / RIA boxes.
