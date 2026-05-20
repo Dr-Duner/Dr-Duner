@@ -1,11 +1,15 @@
 # Lesson 1 — The Dichotomy of Control · FINAL SHOOTING SCRIPT
 
-Status: storyboard + voiceover **locked** 2026-05-18 (Gee).
-Structure is the LOCKED release cut (`lesson1-release-cut.mmd/.png`) —
-this file adds the **voiceover script** and **voice direction** on top
-of it. 9:16, ~40s, chibi 2.5D, App-Store quality. Palette ONLY black
-`#000000` / signal green `#00c896` / off-white `#eef6f3`. Coach-facing
-on-screen text = IBM Plex Mono.
+Status: **REWRITTEN 2026-05-20 (Gee)** to the app-execution wrapper —
+this is now the 7-shot app demo + coach frame. Supersedes the earlier
+"S4/S5 reframe" iterations from 2026-05-19. The whole structure now
+mirrors `LESSONS.md` FIXED WRAPPER (locked 2026-05-20).
+Structure: `lesson1-release-cut.mmd/.png`. This file adds the
+**voiceover script** and **voice direction** on top of it. 9:16,
+~40s, App-Store quality. Palette ONLY black `#000000` / signal green
+`#00c896` / off-white `#eef6f3`. Coach-facing on-screen text = IBM
+Plex Mono. Art direction (chibi vs. stylized adult) currently
+**unlocked**, A/B test pending — see `lyra-art-direction-ab.md`.
 
 ## Lyra — visual identity (LOCKED)
 Every frame matches the locked key still: job
@@ -27,75 +31,103 @@ dawn, modern phone glowing signal-green on the ledge.
 ## Per-shot script (VO + on-screen mono)
 
 ### SHOT 1 — COLD OPEN: LYRA'S MORNING · 0–4s
-- VISUAL: wide, chibi Lyra at the bronze telescope, marking stars on a
-  wax tablet, unaware. 8% slow push-in, idle breathing, light motes.
+- VISUAL: wide, Lyra at the bronze telescope on the white marble
+  terrace over the Aegean, marking stars on a wax tablet, unaware.
+  8% slow push-in, idle breathing, light motes. *Full-color Aegean.*
 - AUDIO: soft sea + dawn birds. No music yet.
 - VO (Lyra, quiet, almost to herself): "Every morning I measure the
   sky. And every morning the sky ignores me."
 
-### SHOT 2 — THE BUZZ · 4–7s
-- VISUAL: cut tighter — modern phone on the marble ledge, dark screen →
-  single green pulse. Lyra's head snaps, surprise pop. Light-streak wipe.
-- AUDIO: ambient ducks; one clean modern buzz (the hook).
-- VO: (none — let the buzz land.)
+### SHOT 2 — THE NOTIFICATION · 4–7s
+- VISUAL: cut tighter — modern phone on the marble ledge, dark screen
+  → it lights up with a real lock-screen push notification. The
+  notification card is the only black/green thing in frame.
+  Light-streak wipe transition into shot 3.
+- ON-SCREEN (the push card, IBM Plex Mono):
+  ```
+  Θ  THETA          now
+  [LYRA] daily scan — matches your strategy
+  "Some things are up to us; some are not."
+  ```
+  Banner uses signal green `#00c896` only on the Θ mark; everything
+  else off-white on black.
+- AUDIO: ambient ducks; one clean modern buzz.
+- VO: (none — let the notification land. This IS how you get notified.)
 
-### SHOT 3 — THE READ (mono) · 7–11s
-- VISUAL: phone fills frame, Lyra's chibi face at the edge. The screen
-  is the REAL app terminal — pixel-faithful to the canonical home
-  screen (DESIGN §3b-1, approved render `96e246fb`): IBM Plex Mono,
-  pure black, the constant `[<username>@theta ~] %` prompt, off-white
-  majority text, blank-line-per-block readable spacing, cyan `[LYRA]`
-  tag. This is exactly what the user sees when a THETA message lands —
-  not a bespoke title card. Message types into the terminal flow.
-- ON-SCREEN (in the terminal, after the prompt line):
-  `[LYRA] msg — 18 May` (cyan tag), then off-white:
-  `> THETA: you think you control the outcome.`
-  `> you don't.`  (signal green stays reserved for +delta only)
-- VO (Lyra, reading it back low and even): "You think you control the
-  outcome. You don't."
+### SHOT 3 — THE SCANNER (terminal home screen) · 7–13s
+- VISUAL: Lyra picks up the phone, taps. The phone fills the frame;
+  the screen is the REAL app terminal home (DESIGN §3b-1, approved
+  render `96e246fb`). Pixel-faithful: IBM Plex Mono, pure black,
+  constant `[<username>@theta ~] %` prompt, off-white majority text,
+  cyan `[LYRA]` tag, readable blank-line-per-block spacing. The
+  `[LYRA] scan — 18 May` block surfaces the day's trades that match
+  the user's strategy — pipeline rows, holdings, vspreads. The cursor
+  blinks. **This is sell point #1 — trades, surfaced for the user.**
+- ON-SCREEN: the canonical scanner block from DESIGN §3b-1 — header,
+  holdings, vspreads, pipeline — with a clear `[ PAPER TRADE ]`
+  action button at the bottom.
+- VO (Lyra, reading it back low and even): "Your scan. Today, on your
+  strategy. Pick one — these are yours to take."
 
-### SHOT 4 — QUOTE + OPEN THE PAPER TRADE · 11–20s
-- VISUAL: full-frame black app card. Θ mark, then the line types in
-  (off-white mono, signal green reserved). The quote lands, then the
-  card transitions into our REAL paper-trade entry screen and the
-  coach acts on it: picks the underlying (ticker) to trade. Dichotomy
-  is baked into the screen itself — editable fields (signal green) =
-  what you control; read-only/greyed = what you don't.
-- ON-SCREEN (mono): `Some things are up to us; some are not.`
-  `—Epictetus` → then the live paper-trade entry screen, underlying
-  field selected (green/editable), market fields greyed.
-- VO (Lyra, calm): "Two thousand years ago a slave wrote that down.
-  It still holds. Watch — I'll only touch what's mine."
+### SHOT 4 — THE ENTRY (paper-trade entry screen) · 13–22s
+- VISUAL: Lyra taps a pipeline row (e.g. `MCO` or whichever lesson-1
+  example). Transition to the paper-trade entry screen — same
+  terminal aesthetic, IBM Plex Mono, black background. Three rows
+  fill in via tap, not type: **underlying**, **stop**, **take-profit**.
+  Editable rows render signal-green; market rows (price · news ·
+  earnings) stay greyed/read-only. No chains. No greeks. No math
+  visible. **Sell point #2 begins — this is how dead-easy it is.**
+- ON-SCREEN (mono, after the prompt):
+  ```
+  [LYRA] new paper trade
+    underlying       ▮ MCO
+    stop             ▮ $420.00
+    take-profit      ▮ $470.00
+    price            — (live)
+    news             — (not yours)
+  ```
+  Editable rows in signal green, greyed rows visibly read-only.
+- VO (Lyra, calm, three short beats — one per tap): "Underlying.
+  Stop. Take-profit. The rest isn't mine to set."
 
-### SHOT 5 — CONFIRM THE ENTERED TRADE · 20–31s
-- VISUAL: the real paper-trade confirmation screen, reading back the
-  exact numbers the coach entered — underlying, entry, exit, size,
-  everything — in signal green (the inputs that were theirs). The
-  uncontrollable rows — price · earnings · the storm at sea — stay
-  greyed/read-only. The green-vs-grey on the real screen IS the lesson:
-  taught by what the screen let the coach touch, not narrated.
-- ON-SCREEN (mono): confirmation rows, green `underlying · entry ·
-  exit · size = <entered values>` / grey `price · news · storm  —`
-- VO (Lyra, on confirm): "Your method is yours. The chart never was.
-  I set what I control; the rest just happens."
+### SHOT 5 — THE REVIEW (paper-trade review screen) · 22–28s
+- VISUAL: Lyra taps Review. The screen lands on the paper-trade
+  review — the same terminal, now showing every value she entered,
+  read back, with a clear non-removable `PAPER TRADE` badge in the
+  header. Honest framing on-screen — no implication of real money.
+  Defined risk is pre-filled from the entry. Lyra's small approving
+  glance to camera.
+- ON-SCREEN (mono):
+  ```
+  [LYRA] review              [ PAPER TRADE ]
+    underlying       MCO
+    stop             $420.00
+    take-profit      $470.00
+    size             1 contract
+    max risk         $138.00     (defined)
+  ```
+- VO (Lyra, on confirm): "There's the trade I built. Nothing the
+  market does next changes the work I just did."
 
-### SHOT 6 — SCAN: LIVE CARD (1:1 app UI) · 31–36s
-- VISUAL: a real scanner card. Editable = size / entry / exit (signal
-  green). Read-only + dimmed = price / news ("not yours"). Defined risk
-  pre-filled. Lyra: small approving glance to camera.
-- ON-SCREEN: the shipping scanner card UI EXACTLY as the app renders
-  it (DESIGN §3b-1 + ref `96e246fb`): same terminal, constant
-  `[<username>@theta ~] %` prompt, `[LYRA] scan — 18 May` in cyan,
-  off-white scan rows, amber `!` for any alert, green only on a
-  `+delta`, `[ PAPER TRADE ] [ OPEN BROKERAGE ]` action line. The
-  in-video screen and the real app are the same screen.
-- VO (Lyra, low, sure): "This is the only part you touch. Make it
-  deserve the trade."
+### SHOT 6 — THE SEND + Θ LOGO · 28–34s
+- VISUAL: Lyra taps **SEND**. The screen flashes the `PAPER TRADE
+  SENT` confirmation — green Θ mark draws on in candlesticks, terminal
+  prints the timestamp. Subtle motion: the order tag drops into a
+  list, then the Θ logo lands center-frame. **Sell point #2 paid off —
+  that easy.**
+- ON-SCREEN (mono):
+  ```
+  [LYRA] sent — 18 May 09:42:11    [ PAPER TRADE ]
+    Θ  paper order placed
+    MCO  stop 420.00  tp 470.00  size 1
+  ```
+  Then a clean cut to the Θ mark, green-on-black, full frame.
+- VO (Lyra, quiet): "Sent. Now I let it be what it's going to be."
 
-### SHOT 7 — COACH LAND + Θ CTA · 36–40s
-- VISUAL: Lyra sets the phone down, returns to the telescope; camera
-  pulls back — ancient + modern in one frame. Θ draws on in green
-  candlesticks.
+### SHOT 7 — COACH LAND + Θ CTA · 34–40s
+- VISUAL: pull back — Lyra sets the phone down, returns to the
+  telescope; the marble terrace, the Aegean, the dawn. Ancient +
+  modern in one frame. Θ draws on in green candlesticks.
 - ON-SCREEN (end hook, locked 2026-05-18): `Θ` / `don't predict it. trade it. now.`
 - VO (Lyra, the one line — softest, lands it): "You don't control the
   price. You control whether you deserved the trade."

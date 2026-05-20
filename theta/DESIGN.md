@@ -62,18 +62,42 @@ Theta trade scan.
   teaching middle (S4/S5) + SCAN card are coach-agnostic, generated
   ONCE and reused across all 4 coaches.
 - **S4/S5 reframe — LOCKED 2026-05-19 (Kevin), REVISED 2026-05-19
-  (Kevin) — paper-trade flow.** S4 = the Stoic quote, then the card
-  transitions into the REAL paper-trade ENTRY screen where the coach
-  picks the underlying to trade. S5 = the REAL paper-trade
-  CONFIRMATION screen reading back the exact numbers entered
-  (underlying/entry/exit/size). The dichotomy is BAKED INTO the real
-  screen — editable fields = signal-green = yours; read-only/greyed =
-  not yours — taught by what the screen lets you touch, not narrated.
-  Supersedes the earlier same-day "pure quote card / abstract trade
-  card" lock. The old S4 PROCESS|OUTCOME columns + control-vs-noise
-  card-sort remain retired. DEPENDENCY: S4/S5 now == real paper-trade
-  entry + confirmation UI (like S6/SCAN, see 3b/3c). Template-wide for
-  all 20 lessons; see `LESSONS.md` FIXED WRAPPER 4–5. Top-up credits do not expire
+  (Kevin) — paper-trade flow. SUPERSEDED 2026-05-20 by the
+  "Lesson = app demo = promo" lock below — see that entry. The
+  S4/S5-only framing is no longer authoritative; the whole 7-shot
+  wrapper now reflects the app-execution spine.**
+- **Lesson = app demo = promo — LOCKED 2026-05-20 (Gee).**
+  Kevin's plausibility-check conversation collapsed the false
+  promo-vs-lesson split. The L1 cut (and every lesson's wrapper)
+  is simultaneously: the lesson, the product demo, and the
+  elevator pitch. It shows the three pillars in 40s — **coach
+  relationship** (Lyra opens + closes), **scanner** (the terminal
+  home screen with the daily `[COACH] scan` block; trades surface
+  matching the user's strategy), **frictionless paper-trade
+  execution** (notification → scanner → pick underlying/stop/TP →
+  review → send → Θ). Two initial sell points: (1) the scanner
+  surfacing trades matching the user's strategy, (2) how dead-easy
+  execution is once the scanner has shown them. The lessons that
+  *generate* the strategy parameters live elsewhere in the arc and
+  are OUT OF SCOPE for the wrapper. Template-wide for all 20
+  lessons; see new FIXED WRAPPER in `LESSONS.md`.
+- **Execution path — LOCKED 2026-05-20 (Gee): PAPER-TRADE ONLY at
+  launch.** The "send" beat in every lesson video and in the app
+  v1 is a *simulated* order, not a real broker order. On-screen
+  `PAPER TRADE` badge is non-removable. Phase 2 (real-money
+  execution via broker partnership or hand-off) is a separate
+  decision deferred to post-launch. See `COMPLIANCE.md` for the
+  full posture and the rules this locks in for marketing copy
+  and on-screen framing.
+- **Coach art direction — UNLOCKED 2026-05-20 (Gee): chibi vs.
+  stylized adult pending Lyra A/B render-off.** CLAUDE.md and
+  §3c-1 still describe chibi 2.5D, but the lock is on hold until
+  the A/B test resolves. Gee's intent — "practical, intelligent,
+  interesting — not cutesy" coaches users *bond with about money*
+  — may not match chibi proportions. Test plan + criteria + cost
+  in `lyra-art-direction-ab.md`. Awaiting credit go-ahead to
+  generate Variant A (chibi, locked) and Variant B (stylized
+  adult) Lyra key stills and pick on evidence. Top-up credits do not expire
   for 90 days — matches the window exactly.
 
 ## 3. Open Decisions (need your call)
@@ -275,6 +299,37 @@ TTS/talent step composited over animation. Full script per shot:
 User has several marketing ideas. Capture them here as raw bullets, shape
 into a plan after the product spine is set.
 - (add ideas here)
+
+### 3f. Strategic backlog — surfaced 2026-05-20, not yet decided
+Plausibility-check considerations raised in chat that need their own
+decisions before they bite. Park here so they don't get lost.
+
+1. **Coach AI / relationship layer (between lessons).** Gee's intent
+   is users bond with the coach and keep coming back. Pre-rendered
+   video alone won't bond. Realistic build: pre-rendered lessons +
+   LLM-backed in-character chat with the same coach (Lyra/Nestor/
+   etc. as Claude personas with locked system prompts, eventually
+   voice). Real AI infra line item + per-user inference cost. This
+   is where the moat lives — no other options app has it. Decision
+   needed before app v1 architecture is set.
+2. **Real-time options data path.** A scanner against live chains
+   needs OPRA feed access (direct or via polygon.io / dxFeed /
+   Tradier). $thousands/mo at low scale, more at consumer scale.
+   At launch (paper-trade only) we can plausibly use 15-min delayed
+   data and dodge the licensing cost — decide explicitly.
+3. **Phase 2 — real-money execution.** Three real paths (introducing
+   broker, BD registration, broker hand-off). See `COMPLIANCE.md`
+   §5 for trade-offs. Defer the decision but start the attorney
+   conversation early.
+4. **Defensible wedge.** Closest comp is Option Alpha (scanner +
+   automation + education) — Theta's differentiator over them is
+   the bonded coach. Lose the coach and Theta is Option Alpha. Lose
+   the ease and it's Tastytrade Lite. Lose the scanner and it's
+   Headspace. Wedge = **coach × ease × scanner**; protect all three.
+5. **Production scope = venture-scale.** Mobile app team + data
+   infra + (eventually) broker integration + coach AI infra +
+   compliance + 20-lesson production pipeline. Not a side project.
+   Plan the team and the round accordingly.
 
 ## 4. Capability / Skill Map (what we actually have)
 - **Soul character training** — train each coach once as a reusable

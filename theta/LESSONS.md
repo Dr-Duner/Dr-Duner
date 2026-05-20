@@ -6,27 +6,62 @@ Font = IBM Plex Mono; palette black/green; ~40s, 9:16, chibi, App-Store
 quality. The wrapper is FIXED for all 19; only the teaching middle and
 the scanner card change per lesson.
 
-FIXED WRAPPER (every lesson, every coach):
-1. Cold open — coach in everyday Ancient-Greek life (scene by coach).
-2. The buzz — modern phone interrupts the ancient world.
-3. The read — mono message: "THETA: I've got something for you."
-4. **QUOTE + OPEN THE PAPER TRADE (locked 2026-05-19, supersedes
-   the 2026-05-19 "pure quote card"):** the Stoic line + Θ on the
-   black app card, which transitions into the REAL paper-trade entry
-   screen where the coach picks the underlying to trade on.
-5. **CONFIRM THE ENTERED TRADE (locked 2026-05-19, supersedes the
-   2026-05-19 "real trade card"):** the real paper-trade confirmation
-   screen reading back the exact numbers the coach entered (underlying,
-   entry, exit, size, everything). The dichotomy is BAKED INTO the real
-   screen: editable fields = signal-green = what you control;
-   read-only/greyed = what you don't. Taught by what the screen lets
-   you touch, not stated abstractly. DEPENDENCY: S4/S5 == the real
-   paper-trade entry + confirmation UI (like S6/SCAN, DESIGN 3b/3c).
-   (Per-lesson HOOK/CRAFT/INTERACTIVE beats below feed this screen.)
-6. **SCAN:** the lesson resolves into a live scanner card, 1:1 with
-   the real app UI (the per-lesson `SCAN:` line below).
-7. Θ CTA end card — "Θ / don't predict it. trade it. now." (locked 2026-05-18)
-COACH LAND closes the read just before the CTA.
+FIXED WRAPPER — **REWRITTEN 2026-05-20 (Gee)** — supersedes the earlier
+S4/S5 reframes. Every lesson is now an **app-execution demo wrapped
+by the coach**: maximum UI, two initial sell points (scanner; ease of
+execution), paper-trade-only at launch. The lessons that *generate*
+the strategy parameters the scanner uses live elsewhere in the arc
+and are OUT OF SCOPE for this wrapper — the wrapper shows the trade
+flow, not the strategy derivation. (See DESIGN.md "Lesson = app demo
+= promo" lock 2026-05-20.)
+
+1. **COLD OPEN — coach in ancient life** (per coach; ~0–4s). Full-
+   color Aegean; coach unaware. Establishes the human you're about
+   to bond with.
+2. **THE NOTIFICATION** (~4–7s). Cut tighter — the modern phone on
+   the marble ledge. Lock-screen Θ push notification arrives.
+   On-screen: the lesson's Stoic line + a "matches your strategy"
+   tag. *This is how users get notified.*
+3. **THE SCANNER — terminal home screen** (~7–13s). Coach picks up
+   the phone, unlocks → the real app terminal home (DESIGN §3b-1).
+   The `[COACH] scan — DD Mon` block surfaces trades that match the
+   user's strategy. **SELL POINT #1.** (Per-lesson `SCAN:` line below
+   defines which trades surface for that lesson.)
+4. **THE ENTRY — paper-trade entry screen** (~13–22s). Coach taps a
+   pipeline row / `[ PAPER TRADE ]` → paper-trade entry screen.
+   Coach picks underlying, sets stop, sets take-profit. Taps only.
+   No math, no chain, no greeks. Dichotomy is BAKED INTO the screen:
+   editable fields = signal-green = what you control; read-only/
+   greyed = what you don't. **SELL POINT #2 begins.**
+5. **THE REVIEW — paper-trade review screen** (~22–28s). All entered
+   numbers shown back — underlying, entry, exit, size — with a
+   non-removable `PAPER TRADE` badge. Honest framing on-screen.
+6. **THE SEND + Θ LOGO** (~28–34s). Coach taps send → `PAPER TRADE
+   SENT` animation; Θ logo lands in green candlesticks. **SELL
+   POINT #2 paid off — that easy.**
+7. **COACH LAND + Θ CTA** (~34–40s). Coach back in ancient frame
+   (telescope/drill/etc.); one line that names the lesson's truth;
+   Θ end card — "Θ / don't predict it. trade it. now."
+   (locked 2026-05-18).
+
+DEPENDENCY: S3 / S4 / S5 / S6 all == real shipping app UI (DESIGN
+§3b-1 terminal home + paper-trade entry/review/sent screens). The
+in-video screen and the real app must be the same screen, or the
+demo lies. Paper-trade screens must be designed in lockstep with the
+videos.
+
+Per-lesson swap surface:
+- **S1 cold open** — coach-specific scene (Lyra telescope / Nestor
+  drill / Chiron TBD / Atlas TBD).
+- **S2 notification** — the lesson's Stoic line in the push body.
+- **S3 SCAN line** — which trades surface for this lesson's strategy
+  (defined per-lesson below in `SCAN:`).
+- **S4 entry parameters** — which fields the coach fills (the
+  lesson's strategy expressed as a concrete trade).
+- **S7 coach line** — the per-lesson one line + the coach in their
+  closing ancient frame.
+S2 notification UI, S5 review screen, S6 send + Θ logo are **constant
+across all 20 lessons × 4 coaches** — generate once, reuse.
 
 ## Coach model
 Lessons are coach-agnostic templates. `[COACH]` = the partner Gee's
