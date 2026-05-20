@@ -27,6 +27,22 @@ Read this index and the files it points to before Theta work.
   major architecture lock from the strategy-teacher + tool-of-the-
   user investigation. Two-tier product, LLM contract, scanner
   contract, 15-min delayed data forever, deep-link only, red lines.
+- `../compliance/marketing-rules.md` — public-facing copy rules
+  (forbidden + approved language, AI-washing avoidance, FTC
+  endorsement compliance, pre-publication checklist). RF-05 control.
+- `../compliance/trademark-tess-pass-2026-05-20.md` — DIY trademark
+  first-pass; surfaces the descriptiveness concern + Theta Trading
+  Co. competitor. RF-12 partial; counsel clearance pending. See
+  also `COMPLIANCE.md §0.1` for the alert callout.
+- `../legal/risk-disclosure.md` — first-launch Risk Disclosure modal
+  draft (plain-English summary + full disclosure + UX rules).
+- `../legal/persistent-disclaimers.md` — 12 catalogued disclaimer
+  strings keyed to each disclaimed surface (D-1 through D-12).
+- `../legal/subscription-terms.md` — ROSCA + CA ARL + FTC Click-to-
+  Cancel compliant subscription draft + in-app cancel UX spec.
+- `../legal/age-gate-spec.md` — 18+ age-gate implementation spec
+  (DOB-first signup, refusal screens R-1 and R-2, 24h cool-down,
+  COPPA posture).
 
 ## Session records
 - `../SESSION-2026-05-18.md` — persistence architecture built.

@@ -46,6 +46,28 @@ investigation).
 
 ---
 
+## 0.1. ALERT — Trademark finding (2026-05-20)
+DIY trademark pass surfaced two converging concerns with the bare
+"Theta" name in the options-trading space:
+1. **Descriptiveness (Trademark Act §2(e)(1)).** "Theta" is the
+   standard industry term for the option Greek measuring time
+   decay. USPTO is likely to reject a bare THETA word mark for
+   options-related goods/services as merely descriptive.
+2. **Existing competitor: Theta Trading Co.** (Burlington, ON,
+   founded 2019, "Stock Options Academy," 1,300+ students). Holds
+   at minimum common-law trademark rights in our direct field.
+
+**Implication:** the design assets and product spec are unaffected
+(keep building), but the brand strategy needs to evolve toward
+either a stylized Θ design mark + a distinctive compound word
+mark, or a different primary name with "Theta" as a sub-theme.
+Full analysis + recommendations:
+`compliance/trademark-tess-pass-2026-05-20.md`. Counsel clearance
+opinion required before public launch, app-store filing, or
+extensive marketing.
+
+---
+
 ## 1. Characterization (RESOLVED 2026-05-20)
 **Resolution:** Theta is a **strategy SaaS tool + strategy education
 product** — option (E) hybrid, the *narrowest* defensible read:
@@ -494,14 +516,14 @@ perimeter for non-resident financial promotion.
 | RF-02 | `LESSONS.md` L4 / L14 / L15 / L16 | Specific options strategies recommended in-product (vertical spreads, premium-selling, 0DTE) without ODD delivery. | **RESOLVED BY DESIGN.** Strategies are *taught* (education), not recommended; user builds their own. ODD link in every options lesson as belt-and-suspenders. DESIGN.md §2.5 B / I + PEDAGOGY.md. |
 | RF-03 | `§3b-1` `schwab token` + `OPEN BROKERAGE` button | Brokerage credential + execution funneled; Reg S-P + Schwab ToS + §3(a)(4) gray zone. | **RESOLVED BY DESIGN.** Deep-link only; no order placement; read-only OAuth aggregation (post-bootstrap) with Reg S-P safeguards; no broker referral fees. DESIGN.md §2.5 F. |
 | RF-04 | Gamification: XP / streaks / scanner-as-prize / coach intercepts | SEC DEP scrutiny, MA Robinhood precedent, NY proposed law. | **RESOLVED BY DESIGN.** Reframed as competency gate + behavioral coaching; adherence-score leaderboards only (no return-based). Intercepts (revenge-trade L6, naked blocker L14, 0DTE blocker L15) documented as defenses. DESIGN.md §2.5 G. |
-| RF-05 | Four "AI coaches" framing | If AI, Reg PDA + EU AI Act exposure; if scripted, AI-washing if marketed as AI. | **OPEN.** Coaches are LLM-driven (locked); rule: don't market as "AI" — market as the coaches' characters teaching strategy. PEDAGOGY.md captures the architecture (model-agnostic, deterministic math, voice contract). Marketing copy still needs review for AI-washing exposure. |
+| RF-05 | Four "AI coaches" framing | If AI, Reg PDA + EU AI Act exposure; if scripted, AI-washing if marketed as AI. | **DRAFTED 2026-05-20.** `compliance/marketing-rules.md` is the operative control: forbidden phrases + approved language + mandatory disclosure + pre-publication checklist. Lead with character (Lyra/Nestor/Chiron/Atlas), not technology. Apply checklist before publishing any public-facing copy. |
 | RF-06 | "Capital Mind" upstream feed | Re-publishing third-party advice; upstream license + their reg status. | **RESOLVED BY DESIGN.** Scanner runs the user's own strategy, not Capital Mind picks. Theta needs only clean delayed-data feeds (IEX, Polygon delayed, Tradier, Schwab developer API). Capital Mind drops out of the architecture. |
 | RF-07 | Cross-border by default (no geofence) | UK s.21 (criminal), MiFID II, ASIC AFSL, CIRO exposure on day one. | **RESOLVED.** US-only geofence via App Store / Play Store country restrictions + IP block + payment-country check + ToS clause. DESIGN.md §2.5 H. |
-| RF-08 | No risk-disclosure track in storyboards | Options risk warning, "education not advice," "past performance," "results not typical" not yet in any frame or screen. | **OPEN.** Risk Disclosure modal copy, persistent footer, ODD links in lessons still need drafting. Next deliverable. |
-| RF-09 | Subscription auto-renewal compliance | ROSCA + CA ARL + FTC Click-to-Cancel. | **OPEN.** Mostly handled by Apple/Google billing flows; ToS work still required. Web checkout (if any) needs explicit auto-renewal disclosure + cancel-from-app. |
+| RF-08 | No risk-disclosure track in storyboards | Options risk warning, "education not advice," "past performance," "results not typical" not yet in any frame or screen. | **DRAFTED 2026-05-20.** `legal/risk-disclosure.md` (full modal copy, scrollable + accept-required on first launch) + `legal/persistent-disclaimers.md` (12 catalogued footer/banner/disclaimer strings for every disclaimed surface, including ODD link). Counsel review pending before production use. |
+| RF-09 | Subscription auto-renewal compliance | ROSCA + CA ARL + FTC Click-to-Cancel. | **DRAFTED 2026-05-20.** `legal/subscription-terms.md` — six required disclosures at point of purchase, affirmative consent, post-purchase confirmation, in-app cancel routing, renewal reminders, plan-change notice, governing-law placeholders. Apple/Google handle most flows; in-app cancel UX still needs implementation. |
 | RF-10 | "Coach goes live" + paper-trade handshake + L20 unlock framing | Reinforces influencer/guru pattern under SEC influencer enforcement. | **RESOLVED BY DESIGN.** L20 unlocks the SaaS tier (user's own strategy in the scanner), not "live tips." Coach teaches forever; never picks. DESIGN.md §2.5 A (L20 corrected). |
-| RF-11 | No 18+ age gate spec'd | COPPA + options-eligibility (18+) + Stoic discipline alignment. | **OPEN.** Implementation work — date-of-birth gate at signup, refuse under 18. Straightforward; not yet built. |
-| RF-12 | "Theta" trademark not searched in IC 036 | Possible prior-user blocking commercial use in financial services. | **OPEN.** DIY USPTO TESS pass next; clearance opinion ($500–$1.5k) before public launch. |
+| RF-11 | No 18+ age gate spec'd | COPPA + options-eligibility (18+) + Stoic discipline alignment. | **DRAFTED 2026-05-20.** `legal/age-gate-spec.md` — full implementation spec: DOB-first signup, branch logic, refusal screens R-1 (13–17) and R-2 (<13) with no PII collection, 24-hour device cool-down on refusal, engineering acceptance criteria. Implementation pending. |
+| RF-12 | "Theta" trademark not searched | Possible prior-user blocking commercial use in financial services. | **PARTIAL RESOLUTION 2026-05-20.** DIY first-pass complete: see `compliance/trademark-tess-pass-2026-05-20.md`. **Material finding:** bare "Theta" has descriptiveness concerns (Trademark Act §2(e)(1) — theta = generic options term) AND existing direct competitor Theta Trading Co. (Stock Options Academy, ~1,300+ students). Recommendation: shift trademark strategy to (a) stylized Θ design mark + (b) distinctive compound word mark, or (c) rebrand if counsel clearance fails. Counsel clearance opinion ($500–$1.5k) required before public launch. |
 
 ---
 
