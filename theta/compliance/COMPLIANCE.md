@@ -7,6 +7,18 @@ the role of someone who knows banking, brokerage, options, small
 business, and international-app regulation. Every row gets a citation
 where possible and a status: **OPEN / NEEDS COUNSEL / CLOSED**.
 
+## 0. Locked answers (2026-05-20, Gee)
+Captured in `decisions/2026-05-20_initial-bootstrap-scope.md`.
+- **Geography day-one:** US ONLY, geofenced. Closes RF-07.
+- **Coaches:** LLM-driven, interactive. Highest-risk lever under
+  bootstrap. Mitigated by hard refusal taxonomy (see decision file).
+- **Legal budget:** Bootstrap. Compliance is *engineering and
+  content*, not retainer, until trigger events fire (see decision
+  file §"Trigger event to revisit").
+- **Characterization:** Unresolved — design treats as (B) until
+  counsel says otherwise. Anything we ship must be defensible under
+  (B) the publisher / impersonal-newsletter scope.
+
 > **Bright line.** Theta sells a *product* about *securities* to *users*
 > who *trade real money*. That sentence is the regulatory perimeter.
 > The faster we lock characterization (§1), geography (§5.9), and the
