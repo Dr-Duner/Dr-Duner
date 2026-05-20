@@ -64,11 +64,18 @@ stylized Θ as a potential design-mark element). The four coaches,
 Stoic framing, palette, typography, curriculum, and compliance
 architecture all unchanged.
 
-The product / app / company will take a new primary name —
-likely framed as "the place / school where the coaches teach"
-(e.g., Stoa, Praxis, Agora candidates). Full decision and
-sequencing in `compliance/decisions/2026-05-20_rebrand-decision.md`.
-DIY clearance + counsel clearance + filing pending name selection.
+**Round 2 clearance (2026-05-20):** STOA and KAIROS ruled OUT
+(both heavily taken in fintech / trading-app space; STOA also
+clashes with an existing Stoic-philosophy meditation app; KAIROS
+clashes with multiple AI trading apps including a Feb-2026
+a16z-funded retail prediction-markets product). **GNOMON is the
+surviving viable candidate** — finance presence exists (Gnomon
+Alpha CTA institutional fund; Gnomon Capital PE) but at a
+different audience tier from retail options education; the
+well-known Gnomon School is in a different industry
+(VFX/animation). Counsel clearance opinion is the next step.
+Full Round 2 analysis: `compliance/trademark-tess-pass-2026-05-20.md`.
+Full decision sequencing: `compliance/decisions/2026-05-20_rebrand-decision.md`.
 
 ---
 

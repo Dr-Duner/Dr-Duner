@@ -221,6 +221,158 @@ must be queried directly (and was not accessible to me in this
 session due to USPTO blocking automated fetches). This document
 is intended as input to a counsel review, not a substitute.
 
+---
+
+## Round 2 — Focused clearance on STOA, KAIROS, GNOMON (2026-05-20)
+Following the rebrand decision (`decisions/2026-05-20_rebrand-
+decision.md`) and the Round 1 brainstorm, Gee asked for focused
+clearance on three top candidates. Methodology: web search of
+public commercial use + USPTO references that surface in indexed
+results. Direct USPTO TSDR queries remained blocked (HTTP 403);
+findings here are sufficient to identify blockers but **not a
+substitute** for a counsel-led clearance opinion.
+
+### STOA — BLOCKED (recommend rule out)
+Multiple direct collisions in our exact space:
+- **Stoa** (US fintech, Phoenix, AZ) — investment management
+  software for fix-and-flip real estate, raised $250M+. Direct
+  fintech.
+- **Stoa** (UK fintech) — rewards/perks platform expanding to US
+  for SMEs ("$1 trillion idle cash opportunity"). Direct fintech.
+- **STOA Capital Partners** — financial advisory firm.
+- **STOA Capital** (commercial real estate finance) — explicitly
+  markets itself as "derived from the Ancient Greek, Stoa
+  Poikile, or the Painted Porch." Same brand frame we'd be using.
+- **Stoa School** (India) — MBA alternative business education;
+  backed by Zerodha founder (Indian brokerage) and other fintech
+  notables. Direct overlap with our education space.
+- **STOA Network** (crypto / DeFi token, ticker STA).
+- **STOA Financial Limited** (UK).
+- **Stoa** (meditation app) — Stoic meditation app, *uses the same
+  Ancient-Greek-Stoic-philosophy brand frame* we'd be using. iOS
+  + Android live.
+- stoa.com appears to be an active server (HTTP 403 from generic
+  fetcher = owner has access controls in place; not a parked
+  domain).
+
+**Verdict:** STOA is blocked. The combination of multiple finance
+companies, an education company backed by a brokerage founder,
+and a meditation app already running the same Ancient-Greek-Stoic
+philosophy frame makes this both legally risky and brand-confusing.
+
+### KAIROS — BLOCKED (recommend rule out)
+Even denser collisions than STOA, all directly in our space:
+- **Kairos AI** (kairos-ai.io) — AI research agent for hedge funds
+  and portfolio managers. Exact functional overlap with Theta's
+  LLM coach.
+- **Kairos** (prediction-markets platform) — cross-platform tool
+  for prediction-market traders; **raised $2.5M from a16z crypto
+  in February 2026**. Recent, active, retail-trader-facing.
+- **tradewithkairos.com** ("Kairos AI — Best AI Trading App with
+  Smart Alerts & Real-Time Signals") — direct retail trading app.
+- **Kairos Wealth** — Italian Kairos Partners SGR app (live on
+  Google Play).
+- **Kairos Market** (kariosmarket.com) — multi-asset trading
+  platform across Web/iOS/Android/Windows/Mac. Forex, crypto,
+  stocks, commodities.
+- **Kairos Crypto Capital Management** — crypto AI trading bot.
+- **Kairos Capital** (hedge fund) — GameFi + AI focus.
+- **Kairos Dynamics** — AI + behavioral insights for markets.
+- **Kairos Algorithms** — algorithmic trading.
+- **Kairos Ventures** — venture capital.
+- USPTO marks: **KAIROS CAPITAL PARTNERS** (abandoned), **KAIROS
+  TRAINING CULTURE** (education), KAIROS RESTORATIVE WELLNESS.
+- kairos.com appears to be an active server.
+
+**Verdict:** KAIROS is blocked. The most recently funded (a16z
+crypto, Feb 2026) is a retail-trader product using the name in
+our exact category. AI trading apps using "Kairos" are everywhere.
+
+### GNOMON — VIABLE WITH CAVEATS (recommend take to counsel)
+Finance presence exists but is at a different audience tier:
+- **Gnomon Alpha LLC** (Chicago) — CFTC-registered CTA/CPO,
+  quantitative systematic global macro alternative investment
+  manager. **Closest collision** — they're in the
+  futures/commodities trading space, but as an institutional
+  alternative-investment manager, not a retail options-education
+  app. Founded 2017; ~5 employees; formerly Trident Capital
+  Management.
+- **Gnomon Capital Group** (Liechtenstein) — private equity firm
+  investing in fintech / software / data networking. Different
+  segment (PE vs. consumer SaaS), different geography (EU base).
+- **Gnomon Capital Ltd.** — separate UK-listed entity.
+- **Gnomon School** (Hollywood) — VFX/animation school called
+  "the MIT of visual effects" by Fast Company. Acquired by
+  Groupe GDH. *Different industry entirely* (entertainment
+  industry training). Brand-confusion risk only.
+- No "Gnomon" trading app found on iOS or Google Play in retail
+  options/finance categories.
+- gnomon.com appears to be an active server.
+
+**Verdict:** Gnomon is the only one of the three with a plausible
+path. The closest competitor (Gnomon Alpha) is an institutional
+CTA, not a retail education app — meaningful distance in audience,
+distribution channel, and regulatory category. Counsel should
+evaluate (a) whether Gnomon Alpha would oppose a retail-options-
+education filing in IC 041/042/009, (b) whether the Gnomon School
+trademark in entertainment-services IC 041 creates a confusion
+issue, (c) whether gnomon.com is acquirable (different from the
+USPTO question).
+
+### Comparative summary
+
+| Candidate | Direct fintech collisions | Same brand frame? | Domain | Verdict |
+|---|---|---|---|---|
+| STOA | 6+ (real estate fintech, UK fintech, advisory, Stoa School, meditation app, etc.) | YES (Stoa meditation app uses Stoic philosophy framing) | Owned | **BLOCKED** |
+| KAIROS | 8+ (Kairos AI, Kairos prediction markets, Kairos Market, etc.) | YES (multiple AI trading apps) | Owned | **BLOCKED** |
+| GNOMON | 2 (Gnomon Alpha CTA, Gnomon Capital PE) | NO (institutional, not retail education) | Owned | **VIABLE — TAKE TO COUNSEL** |
+
+### Why Gnomon also fits the brand
+- Greek word *γνώμων* = "indicator, interpreter, one who knows" —
+  the pointer on a sundial that tells time. Pairs beautifully
+  with Theta (the option Greek for time decay). The user reads
+  what the gnomon is telling them about time.
+- Geometric and architectural — fits the IBM Plex Mono terminal
+  aesthetic and the locked black/signal-green palette.
+- Distinctive — uncommon enough to register, common enough that
+  some users will know what it means.
+- Pronunciation note: classical English pronunciation is
+  /ˈnoʊmɒn/ (silent G, "NOH-mon"); many modern speakers say
+  "guh-NOH-mon." Marketing should pick a pronunciation and stick.
+
+### Recommended next steps
+1. **Stop work on STOA and KAIROS.** Document them as cleared-out
+   in this pass.
+2. **Take GNOMON to a trademark attorney** for a real clearance
+   opinion. Estimated $500–$1,500. Specifically ask:
+   - Conflict risk vs. Gnomon Alpha LLC (CTA) and Gnomon Capital
+     (PE) — likelihood-of-confusion analysis under TTAB *du Pont*
+     factors.
+   - Conflict risk vs. Gnomon School (entertainment-industry
+     education) for IC 041.
+   - Recommended classes for Theta's filing (likely 009 + 041 +
+     042; 036 only if we ever expand to actual financial services).
+3. **In parallel,** check gnomon.com / .app / .io / .co domain
+   availability + acquisition cost. Counsel should help if
+   gnomon.com is owned but unused.
+4. **If counsel clears Gnomon,** file intent-to-use (1(b))
+   application at USPTO to lock the priority date. $350/class
+   as of Jan 2025. Likely two or three classes = $700–$1,050.
+
+### If counsel does NOT clear Gnomon
+Return to brainstorm. Likely directions:
+- More obscure Greek-philosophy concepts (TELOS, HEXIS, AGON,
+  AGOGE, APATHEIA, SOPHROSYNE, PHRONESIS) — each needs its own
+  Round 2 search; some may also be blocked.
+- Latin-Stoic alternatives (GRAVITAS, VIRTUS).
+- Coined Greek-flavored marks (highest distinctiveness, weakest
+  recognition; e.g., STOICA, PRAXEIA, THETONIA).
+- Move off the Greek-philosophy frame entirely.
+
+---
+
 ## Versioning
-Current version: **0.1 — 2026-05-20.** Bump on every material
-update (new conflict found, counsel response, USPTO action).
+Current version: **0.2 — 2026-05-20** (added Round 2 focused
+clearance on STOA / KAIROS / GNOMON; STOA and KAIROS ruled out;
+GNOMON identified as the only candidate of the three with a
+plausible path to counsel clearance).
