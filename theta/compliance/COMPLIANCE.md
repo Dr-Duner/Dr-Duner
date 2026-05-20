@@ -57,14 +57,18 @@ DIY trademark pass surfaced two converging concerns with the bare
    founded 2019, "Stock Options Academy," 1,300+ students). Holds
    at minimum common-law trademark rights in our direct field.
 
-**Implication:** the design assets and product spec are unaffected
-(keep building), but the brand strategy needs to evolve toward
-either a stylized Θ design mark + a distinctive compound word
-mark, or a different primary name with "Theta" as a sub-theme.
-Full analysis + recommendations:
-`compliance/trademark-tess-pass-2026-05-20.md`. Counsel clearance
-opinion required before public launch, app-store filing, or
-extensive marketing.
+**RESOLUTION DIRECTION (Gee, 2026-05-20):** **Rebrand the primary
+product name.** "Theta" is preserved as an internal sub-theme
+(the actual Greek measuring time decay, the L5 lesson, the
+stylized Θ as a potential design-mark element). The four coaches,
+Stoic framing, palette, typography, curriculum, and compliance
+architecture all unchanged.
+
+The product / app / company will take a new primary name —
+likely framed as "the place / school where the coaches teach"
+(e.g., Stoa, Praxis, Agora candidates). Full decision and
+sequencing in `compliance/decisions/2026-05-20_rebrand-decision.md`.
+DIY clearance + counsel clearance + filing pending name selection.
 
 ---
 

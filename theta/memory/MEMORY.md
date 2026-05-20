@@ -27,6 +27,11 @@ Read this index and the files it points to before Theta work.
   major architecture lock from the strategy-teacher + tool-of-the-
   user investigation. Two-tier product, LLM contract, scanner
   contract, 15-min delayed data forever, deep-link only, red lines.
+- `../compliance/decisions/2026-05-20_rebrand-decision.md` — the
+  decision to rebrand the primary product name; "Theta" preserved
+  as internal sub-theme (the option Greek, the L5 lesson, the Θ
+  design mark). Coaches, Stoic frame, palette, curriculum, and
+  compliance architecture unchanged. New name PENDING.
 - `../compliance/marketing-rules.md` — public-facing copy rules
   (forbidden + approved language, AI-washing avoidance, FTC
   endorsement compliance, pre-publication checklist). RF-05 control.
