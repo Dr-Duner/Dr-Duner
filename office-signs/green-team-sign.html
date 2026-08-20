@@ -724,15 +724,35 @@ function flash(btn, msg){
   btn.textContent = msg;
   setTimeout(function(){ btn.textContent = was; }, 1600);
 }
+// Published on claude.ai the page saves through the viewer's own save prompt;
+// opened as a local file it falls back to a plain browser download.
+var downloader = (window.claude && window.claude.use)
+  ? window.claude.use("downloads").catch(function(){ return null; })
+  : Promise.resolve(null);
+
+function anchorSave(blob){
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url; a.download = fileName();
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+}
+
 $("btnPng").addEventListener("click", function(){
   var btn = this;
   toBlob(function(blob){
     if(!blob){ flash(btn, "Couldn't save"); return; }
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement("a");
-    a.href = url; a.download = fileName();
-    document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+    downloader.then(function(dl){
+      if(dl && dl.save){
+        dl.save({filename:fileName(), data:blob})
+          .then(function(){ flash(btn, "Saved ✓"); })
+          .catch(function(err){
+            flash(btn, (err && err.code === "declined") ? "Save canceled" : "Couldn't save");
+          });
+      }else{
+        anchorSave(blob);
+      }
+    });
   });
 });
 $("btnCopy").addEventListener("click", function(){
