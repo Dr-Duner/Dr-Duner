@@ -1,0 +1,770 @@
+<title>Green Team Sign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Chewy&family=Comic+Neue:wght@700&family=Figtree:wght@400;500;600;800&family=Fredoka:wght@500;600;700&display=swap">
+
+<style>
+:root{
+  --ground:#eef5f1;
+  --surface:#ffffff;
+  --surface-2:#f6faf8;
+  --line:#d3e3da;
+  --ink:#12302a;
+  --ink-soft:#4d6b62;
+  --accent:#0e9b6c;
+  --accent-ink:#075c40;
+  --accent-wash:#dcf1e7;
+  --shadow:0 1px 2px rgba(18,48,42,.06), 0 8px 24px rgba(18,48,42,.08);
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0d1815;
+    --surface:#16231f;
+    --surface-2:#1b2b26;
+    --line:#2a3f38;
+    --ink:#e7f2ed;
+    --ink-soft:#9db4ab;
+    --accent:#3fd39a;
+    --accent-ink:#8ce8c1;
+    --accent-wash:#1d3a30;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0d1815;
+  --surface:#16231f;
+  --surface-2:#1b2b26;
+  --line:#2a3f38;
+  --ink:#e7f2ed;
+  --ink-soft:#9db4ab;
+  --accent:#3fd39a;
+  --accent-ink:#8ce8c1;
+  --accent-wash:#1d3a30;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{margin:0;text-wrap:balance}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+.wrap{max-width:1240px;margin:0 auto;padding:22px 18px 64px}
+
+header.top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:18px}
+header.top h1{font-family:"Baloo 2",cursive;font-weight:800;font-size:29px;letter-spacing:-.01em;line-height:1.15}
+header.top p{margin:0;color:var(--ink-soft);font-size:14px;max-width:62ch}
+
+.layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(320px,1fr);gap:18px;align-items:start}
+@media (max-width:900px){.layout{grid-template-columns:1fr}}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+
+/* ---- stage ---- */
+.stage{padding:14px;position:sticky;top:14px}
+@media (max-width:900px){.stage{position:static}}
+.canvas-shell{position:relative;background:var(--surface-2);border-radius:10px;overflow:hidden;border:1px dashed var(--line)}
+.canvas-shell.dragover{border-color:var(--accent);background:var(--accent-wash)}
+canvas#sign{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
+canvas#sign.dragging{cursor:grabbing}
+.stage-foot{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-top:12px}
+.hint{color:var(--ink-soft);font-size:13px}
+
+.btnrow{display:flex;flex-wrap:wrap;gap:8px}
+button{
+  background:var(--surface);border:1px solid var(--line);border-radius:9px;
+  padding:8px 13px;font-weight:600;font-size:14px;cursor:pointer;
+  transition:background .12s ease,border-color .12s ease,transform .12s ease;
+}
+button:hover{background:var(--surface-2);border-color:var(--accent)}
+button:active{transform:translateY(1px)}
+button.primary{background:var(--accent);border-color:var(--accent);color:#04231a;font-weight:800}
+button.primary:hover{filter:brightness(1.06)}
+button.ghost{background:transparent}
+button.icon{padding:5px 9px;font-size:13px;line-height:1.1;font-weight:700;color:var(--ink-soft)}
+button.icon:hover{color:var(--ink)}
+button.icon[disabled]{opacity:.3;cursor:default}
+button.icon[disabled]:hover{background:var(--surface);border-color:var(--line);color:var(--ink-soft)}
+
+/* ---- panel ---- */
+.panel{padding:4px 0 8px}
+section.blk{padding:14px 16px;border-bottom:1px solid var(--line)}
+section.blk:last-child{border-bottom:0}
+section.blk > h2{
+  font-size:11.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--accent-ink);margin-bottom:10px;
+}
+.sub{color:var(--ink-soft);font-size:13px;margin:-4px 0 10px}
+
+.rows{display:flex;flex-direction:column;gap:8px}
+.row{
+  display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:7px 8px;
+}
+.row.sel{border-color:var(--accent)}
+.row input[type="text"]{
+  width:100%;min-width:0;background:var(--surface);border:1px solid var(--line);
+  border-radius:7px;padding:7px 9px;font-weight:600;
+}
+.swatches{display:flex;gap:4px;align-items:center}
+.swatches label{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase}
+input[type="color"]{
+  width:30px;height:26px;padding:0;border:1px solid var(--line);border-radius:6px;background:var(--surface);cursor:pointer;
+}
+input[type="color"]:disabled{opacity:.35;cursor:default}
+.rowtools{display:flex;gap:3px}
+
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.field:last-child{margin-bottom:0}
+.field > .lbl{font-size:13px;font-weight:600;display:flex;justify-content:space-between;gap:10px}
+.field .val{color:var(--ink-soft);font-weight:500;font-variant-numeric:tabular-nums}
+input[type="range"]{width:100%;accent-color:var(--accent)}
+input[type="text"].wide,select{
+  width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-weight:600;
+}
+.check{display:flex;gap:9px;align-items:flex-start;font-size:14px;cursor:pointer}
+.check input{margin-top:3px;accent-color:var(--accent);width:16px;height:16px}
+.check span small{display:block;color:var(--ink-soft);font-size:12.5px;font-weight:400;line-height:1.35}
+
+.seg{display:flex;gap:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:4px}
+.seg button{flex:1;border:0;background:transparent;padding:7px 8px;border-radius:7px;font-size:13.5px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#04231a;font-weight:800}
+
+.drop{
+  border:1.5px dashed var(--line);border-radius:11px;background:var(--surface-2);
+  padding:14px;text-align:center;color:var(--ink-soft);font-size:13.5px;
+}
+.drop strong{display:block;color:var(--ink);font-size:14.5px;margin-bottom:3px}
+.drop .btnrow{justify-content:center;margin-top:10px}
+input[type="file"]{display:none}
+
+.note{
+  background:var(--accent-wash);border:1px solid var(--line);border-radius:11px;
+  padding:11px 13px;font-size:13px;color:var(--ink);
+}
+.note b{font-weight:800}
+
+#printArea{display:none}
+@media print{
+  body{background:#fff}
+  .wrap{display:none}
+  #printArea{display:block;margin:0}
+  #printArea img{width:100%;height:auto}
+  @page{margin:8mm;size:landscape}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Green Team Sign</h1>
+    <p>Load the team picture, retype the names, save a fresh copy. The picture never leaves this device.</p>
+  </header>
+
+  <div class="layout">
+    <div class="card stage">
+      <div class="canvas-shell" id="shell">
+        <canvas id="sign" width="1408" height="768" tabindex="0" aria-label="Team sign preview. Drag a text block to move it; arrow keys nudge it."></canvas>
+      </div>
+      <div class="stage-foot">
+        <span class="hint">Drag the names on the sign to move them &middot; arrow keys nudge</span>
+        <div class="btnrow">
+          <button id="btnPng" class="primary">Save PNG</button>
+          <button id="btnCopy">Copy image</button>
+          <button id="btnPrint" class="ghost">Print</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card panel">
+      <section class="blk">
+        <h2>Team picture</h2>
+        <div class="drop" id="drop">
+          <strong id="dropTitle">Drop the picture here</strong>
+          <span id="dropSub">PNG or JPG &middot; stays on this device</span>
+          <div class="btnrow">
+            <button id="btnPick">Choose file</button>
+            <button id="btnClear" class="ghost">Remove</button>
+          </div>
+        </div>
+        <input type="file" id="file" accept="image/*">
+      </section>
+
+      <section class="blk">
+        <h2>Who's on the team</h2>
+        <p class="sub">Top color fills the letters, second color outlines them.</p>
+        <div class="rows" id="rows"></div>
+        <div class="btnrow" style="margin-top:10px">
+          <button id="btnAdd">+ Add a name</button>
+        </div>
+      </section>
+
+      <section class="blk">
+        <h2>Team name</h2>
+        <label class="check" style="margin-bottom:10px">
+          <input type="checkbox" id="titleOn">
+          <span>Retype the team name
+            <small>Covers the lettering on the picture so you can change it &mdash; leave off to keep the original.</small>
+          </span>
+        </label>
+        <input type="text" class="wide" id="titleText" value="GREEN TEAM" aria-label="Team name">
+        <div class="swatches" style="margin-top:8px">
+          <label>Fill<input type="color" id="titleFill" value="#9fd6ab"></label>
+          <label>Line<input type="color" id="titleStroke" value="#4a8a5f"></label>
+          <label class="check" style="margin-left:6px;align-items:center"><input type="checkbox" id="titleUseStroke" checked><span style="font-size:13px">Outline</span></label>
+        </div>
+      </section>
+
+      <section class="blk">
+        <h2>Layout</h2>
+        <div class="seg" id="seg" role="group" aria-label="Which block to adjust" style="margin-bottom:12px">
+          <button data-b="roster" aria-pressed="true">Names</button>
+          <button data-b="title" aria-pressed="false">Team name</button>
+        </div>
+        <div class="field">
+          <span class="lbl">Lettering font <span class="val" id="fontVal">Baloo 2</span></span>
+          <select id="font">
+            <option value="Baloo 2">Baloo 2 &mdash; rounded storybook</option>
+            <option value="Fredoka">Fredoka &mdash; chunky and friendly</option>
+            <option value="Comic Neue">Comic Neue &mdash; classic comic</option>
+            <option value="Chewy">Chewy &mdash; bouncy marker</option>
+          </select>
+        </div>
+        <div class="field">
+          <span class="lbl">Block width <span class="val" id="wVal">32%</span></span>
+          <input type="range" id="w" min="12" max="90" value="32">
+        </div>
+        <div class="field">
+          <span class="lbl">Text size <span class="val" id="sVal">100%</span></span>
+          <input type="range" id="s" min="45" max="100" value="100">
+        </div>
+        <label class="check">
+          <input type="checkbox" id="patch" checked>
+          <span>Cover what's underneath
+            <small>Paints a soft patch in the paper's own color so the old typing disappears.</small>
+          </span>
+        </label>
+      </section>
+
+      <section class="blk">
+        <div class="note" id="saveNote"><b>Saved on this device.</b> Names and colors come back next time you open this page.</div>
+        <div class="btnrow" style="margin-top:10px">
+          <button id="btnReset" class="ghost">Start over</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div id="printArea"><img id="printImg" alt="Team sign"></div>
+
+<script>
+(function(){
+"use strict";
+
+var DEFAULTS = {
+  font: "Baloo 2",
+  imgSrc: null,
+  sel: "roster",
+  roster: {
+    on:true, cx:0.502, cy:0.565, w:0.32, scale:1, patch:true,
+    lines:[
+      {text:"Dr. Woody",  fill:"#d5342b", stroke:"#f5c518", useStroke:true},
+      {text:"Erin RDH",   fill:"#f5c518", stroke:"#d5342b", useStroke:true},
+      {text:"Jazlyn DA",  fill:"#12256b", stroke:"#ffffff", useStroke:false},
+      {text:"Miranda DA", fill:"#12256b", stroke:"#ffffff", useStroke:false},
+      {text:"Abri DA",    fill:"#12256b", stroke:"#ffffff", useStroke:false}
+    ]
+  },
+  title: {
+    on:false, cx:0.507, cy:0.215, w:0.66, scale:1, patch:true,
+    lines:[{text:"GREEN TEAM", fill:"#9fd6ab", stroke:"#4a8a5f", useStroke:true}]
+  }
+};
+
+var KEY = "greenTeamSign.v1";
+var state = load();
+var img = null;
+
+var cv = document.getElementById("sign");
+var ctx = cv.getContext("2d", {willReadFrequently:true});
+var bgData = null;              // pixels of the background only, for color sampling
+var bgTried = false;
+var $ = function(id){ return document.getElementById(id); };
+
+/* ---------------- state ---------------- */
+function clone(o){ return JSON.parse(JSON.stringify(o)); }
+
+function load(){
+  var s = clone(DEFAULTS);
+  try{
+    var raw = localStorage.getItem(KEY);
+    if(raw){
+      var p = JSON.parse(raw);
+      ["font","imgSrc","sel"].forEach(function(k){ if(p[k]!=null) s[k]=p[k]; });
+      ["roster","title"].forEach(function(k){
+        if(p[k]){
+          ["on","cx","cy","w","scale","patch"].forEach(function(f){ if(p[k][f]!=null) s[k][f]=p[k][f]; });
+          if(Array.isArray(p[k].lines) && p[k].lines.length) s[k].lines = p[k].lines;
+        }
+      });
+    }
+  }catch(e){}
+  return s;
+}
+
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify(state)); }
+  catch(e){
+    // picture too big for storage: keep the words, drop the picture
+    var lean = clone(state); lean.imgSrc = null;
+    try{ localStorage.setItem(KEY, JSON.stringify(lean)); }catch(e2){}
+  }
+}
+
+function block(k){ return state[k]; }
+function sel(){ return state[state.sel]; }
+
+/* ---------------- picture ---------------- */
+function setImage(src, andSave){
+  if(!src){ img = null; state.imgSrc = null; sizeCanvas(); render(); if(andSave!==false) save(); updateDrop(); return; }
+  var i = new Image();
+  i.onload = function(){
+    img = i; state.imgSrc = src;
+    sizeCanvas(); render(); updateDrop();
+    if(andSave!==false) save();
+  };
+  i.onerror = function(){ state.imgSrc = null; updateDrop(); };
+  i.src = src;
+}
+
+function sizeCanvas(){
+  bgData = null; bgTried = false;
+  var W = 1408, H = 768;
+  if(img){
+    W = img.naturalWidth; H = img.naturalHeight;
+    var MAX = 2200;
+    if(W > MAX){ H = Math.round(H * MAX / W); W = MAX; }
+  }
+  cv.width = W; cv.height = H;
+}
+
+function updateDrop(){
+  $("dropTitle").textContent = img ? "Picture loaded" : "Drop the picture here";
+  $("dropSub").textContent  = img ? (cv.width + " × " + cv.height + " · stays on this device")
+                                  : "PNG or JPG · stays on this device";
+}
+
+function readFile(f){
+  if(!f || !/^image\//.test(f.type)) return;
+  var r = new FileReader();
+  r.onload = function(){ setImage(r.result); };
+  r.readAsDataURL(f);
+}
+
+/* ---------------- drawing ---------------- */
+function fontStack(){ return '800 100px "' + state.font + '", "Baloo 2", cursive'; }
+
+function metrics(b){
+  // returns {size, lineH, widths, boxW, totalH}
+  var W = cv.width;
+  var boxW = b.w * W;
+  ctx.font = fontStack();
+  var widths = b.lines.map(function(l){ return Math.max(1, ctx.measureText(l.text || " ").width); });
+  var maxW = Math.max.apply(null, widths);
+  var fit = boxW / maxW * 100;
+  var size = fit * b.scale;
+  var lineH = size * 1.16;
+  return {size:size, lineH:lineH, widths:widths, boxW:boxW, totalH:lineH * b.lines.length};
+}
+
+function rectOf(b){
+  var m = metrics(b);
+  var W = cv.width, H = cv.height;
+  var padX = m.size * 0.42, padY = m.size * 0.26;
+  var w = m.boxW * b.scale + padX * 2;
+  var h = m.totalH + padY * 2;
+  return {x: b.cx * W - w / 2, y: b.cy * H - h / 2, w:w, h:h, m:m};
+}
+
+function sampleColor(r){
+  if(!bgData) return "#fdfbf4";
+  var px = bgData.data, W = bgData.width, H = bgData.height;
+  var picks = [];
+  for(var gy=0; gy<7; gy++){
+    for(var gx=0; gx<7; gx++){
+      var x = Math.round(r.x + r.w * (gx + 0.5) / 7);
+      var y = Math.round(r.y + r.h * (gy + 0.5) / 7);
+      if(x<0||y<0||x>=W||y>=H) continue;
+      var i = (y * W + x) * 4;
+      picks.push([px[i], px[i+1], px[i+2], 0.2126*px[i] + 0.7152*px[i+1] + 0.0722*px[i+2]]);
+    }
+  }
+  if(!picks.length) return "#fdfbf4";
+  picks.sort(function(a,b){ return a[3] - b[3]; });
+  var p = picks[Math.min(picks.length - 1, Math.round(picks.length * 0.72))];
+  return "rgb(" + p[0] + "," + p[1] + "," + p[2] + ")";
+}
+
+function drawBackground(){
+  var W = cv.width, H = cv.height;
+  ctx.clearRect(0,0,W,H);
+  if(img){
+    ctx.drawImage(img, 0, 0, W, H);
+  }else{
+    var g = ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0, "#cfe8f7"); g.addColorStop(1, "#e7f4ec");
+    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+    // a plain paper card so the sign is usable before a picture is loaded
+    var pw = W * 0.46, ph = H * 0.66, px = (W - pw) / 2, py = (H - ph) / 2 + H * 0.04;
+    ctx.save();
+    ctx.shadowColor = "rgba(20,50,40,.18)"; ctx.shadowBlur = W * 0.02; ctx.shadowOffsetY = H * 0.012;
+    ctx.fillStyle = "#fdfbf4";
+    ctx.beginPath();
+    if(ctx.roundRect) ctx.roundRect(px, py, pw, ph, W * 0.012); else ctx.rect(px, py, pw, ph);
+    ctx.fill();
+    ctx.restore();
+  }
+}
+
+function drawBlock(b, showChrome){
+  if(!b.on || !b.lines.length) return;
+  var r = rectOf(b), m = r.m;
+
+  if(b.patch){
+    ctx.save();
+    var blur = Math.max(5, m.size * 0.16);
+    if("filter" in ctx) ctx.filter = "blur(" + blur.toFixed(1) + "px)";
+    ctx.fillStyle = sampleColor(r);
+    ctx.fillRect(r.x + blur, r.y + blur, r.w - blur * 2, r.h - blur * 2);
+    ctx.restore();
+  }
+
+  ctx.save();
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.lineJoin = "round";
+  ctx.miterLimit = 2;
+  ctx.font = '800 ' + m.size.toFixed(2) + 'px "' + state.font + '", "Baloo 2", cursive';
+  var cx = b.cx * cv.width;
+  var top = b.cy * cv.height - m.totalH / 2;
+  b.lines.forEach(function(l, i){
+    var y = top + m.lineH * (i + 0.5);
+    var t = l.text || "";
+    if(l.useStroke){
+      ctx.strokeStyle = l.stroke;
+      ctx.lineWidth = m.size * 0.13;
+      ctx.strokeText(t, cx, y);
+    }
+    ctx.fillStyle = l.fill;
+    ctx.fillText(t, cx, y);
+  });
+  ctx.restore();
+
+  if(showChrome && state.sel === keyOf(b)){
+    ctx.save();
+    ctx.setLineDash([Math.max(6, cv.width*0.006), Math.max(5, cv.width*0.005)]);
+    ctx.lineWidth = Math.max(2, cv.width * 0.0022);
+    ctx.strokeStyle = "rgba(14,155,108,.95)";
+    ctx.strokeRect(r.x, r.y, r.w, r.h);
+    ctx.restore();
+  }
+}
+
+function keyOf(b){ return b === state.roster ? "roster" : "title"; }
+
+function render(showChrome){
+  if(showChrome === undefined) showChrome = true;
+  drawBackground();
+  if(!bgTried){
+    bgTried = true;
+    try{ bgData = ctx.getImageData(0, 0, cv.width, cv.height); }catch(e){ bgData = null; }
+  }
+  drawBlock(state.title, showChrome);
+  drawBlock(state.roster, showChrome);
+}
+
+/* ---------------- roster editor ---------------- */
+function rowEl(line, i){
+  var row = document.createElement("div");
+  row.className = "row";
+
+  var t = document.createElement("input");
+  t.type = "text"; t.value = line.text; t.setAttribute("aria-label", "Name " + (i+1));
+  t.addEventListener("input", function(){ line.text = t.value; render(); save(); });
+
+  var sw = document.createElement("div");
+  sw.className = "swatches";
+  sw.appendChild(colorField("Fill", line.fill, function(v){ line.fill = v; render(); save(); }));
+  var strokeInput;
+  var strokeWrap = colorField("Line", line.stroke, function(v){ line.stroke = v; render(); save(); });
+  strokeInput = strokeWrap.querySelector("input");
+  strokeInput.disabled = !line.useStroke;
+  sw.appendChild(strokeWrap);
+
+  var ol = document.createElement("label");
+  ol.className = "check"; ol.style.alignItems = "center"; ol.style.marginLeft = "2px";
+  var olc = document.createElement("input");
+  olc.type = "checkbox"; olc.checked = !!line.useStroke;
+  olc.setAttribute("aria-label", "Outline name " + (i+1));
+  olc.addEventListener("change", function(){
+    line.useStroke = olc.checked; strokeInput.disabled = !olc.checked; render(); save();
+  });
+  ol.appendChild(olc);
+  sw.appendChild(ol);
+
+  var tools = document.createElement("div");
+  tools.className = "rowtools";
+  tools.appendChild(iconBtn("↑", "Move up", i === 0, function(){ move(i, -1); }));
+  tools.appendChild(iconBtn("↓", "Move down", i === state.roster.lines.length - 1, function(){ move(i, 1); }));
+  tools.appendChild(iconBtn("×", "Remove", state.roster.lines.length < 2, function(){
+    state.roster.lines.splice(i, 1); drawRows(); render(); save();
+  }));
+
+  row.appendChild(t); row.appendChild(sw); row.appendChild(tools);
+  return row;
+}
+
+function colorField(label, value, onChange){
+  var l = document.createElement("label");
+  l.appendChild(document.createTextNode(label));
+  var c = document.createElement("input");
+  c.type = "color"; c.value = toHex(value);
+  c.addEventListener("input", function(){ onChange(c.value); });
+  l.appendChild(c);
+  return l;
+}
+
+function toHex(v){ return /^#[0-9a-f]{6}$/i.test(v) ? v : "#000000"; }
+
+function iconBtn(glyph, label, disabled, fn){
+  var b = document.createElement("button");
+  b.className = "icon"; b.textContent = glyph; b.title = label;
+  b.setAttribute("aria-label", label);
+  if(disabled) b.disabled = true;
+  b.addEventListener("click", fn);
+  return b;
+}
+
+function move(i, d){
+  var L = state.roster.lines, j = i + d;
+  if(j < 0 || j >= L.length) return;
+  var tmp = L[i]; L[i] = L[j]; L[j] = tmp;
+  drawRows(); render(); save();
+}
+
+function drawRows(){
+  var host = $("rows");
+  host.textContent = "";
+  state.roster.lines.forEach(function(l, i){ host.appendChild(rowEl(l, i)); });
+}
+
+/* ---------------- panel wiring ---------------- */
+function syncPanel(){
+  var b = sel();
+  $("w").value = Math.round(b.w * 100);
+  $("wVal").textContent = Math.round(b.w * 100) + "%";
+  $("s").value = Math.round(b.scale * 100);
+  $("sVal").textContent = Math.round(b.scale * 100) + "%";
+  $("patch").checked = !!b.patch;
+  $("font").value = state.font;
+  $("fontVal").textContent = state.font;
+  Array.prototype.forEach.call($("seg").children, function(btn){
+    btn.setAttribute("aria-pressed", btn.dataset.b === state.sel ? "true" : "false");
+  });
+  var t = state.title.lines[0];
+  $("titleOn").checked = state.title.on;
+  $("titleText").value = t.text;
+  $("titleFill").value = toHex(t.fill);
+  $("titleStroke").value = toHex(t.stroke);
+  $("titleStroke").disabled = !t.useStroke;
+  $("titleUseStroke").checked = !!t.useStroke;
+}
+
+$("seg").addEventListener("click", function(e){
+  var btn = e.target.closest("button[data-b]");
+  if(!btn) return;
+  state.sel = btn.dataset.b;
+  if(state.sel === "title" && !state.title.on){ state.title.on = true; }
+  syncPanel(); render(); save();
+});
+
+$("w").addEventListener("input", function(){
+  sel().w = +this.value / 100; $("wVal").textContent = this.value + "%"; render(); save();
+});
+$("s").addEventListener("input", function(){
+  sel().scale = +this.value / 100; $("sVal").textContent = this.value + "%"; render(); save();
+});
+$("patch").addEventListener("change", function(){ sel().patch = this.checked; render(); save(); });
+$("font").addEventListener("change", function(){
+  state.font = this.value; $("fontVal").textContent = this.value;
+  loadFonts().then(function(){ render(); });
+  save();
+});
+
+$("titleOn").addEventListener("change", function(){ state.title.on = this.checked; render(); save(); });
+$("titleText").addEventListener("input", function(){ state.title.lines[0].text = this.value; render(); save(); });
+$("titleFill").addEventListener("input", function(){ state.title.lines[0].fill = this.value; render(); save(); });
+$("titleStroke").addEventListener("input", function(){ state.title.lines[0].stroke = this.value; render(); save(); });
+$("titleUseStroke").addEventListener("change", function(){
+  state.title.lines[0].useStroke = this.checked;
+  $("titleStroke").disabled = !this.checked;
+  render(); save();
+});
+
+$("btnAdd").addEventListener("click", function(){
+  var last = state.roster.lines[state.roster.lines.length - 1] || DEFAULTS.roster.lines[2];
+  state.roster.lines.push({text:"New name", fill:last.fill, stroke:last.stroke, useStroke:last.useStroke});
+  drawRows(); render(); save();
+  var inputs = $("rows").querySelectorAll('input[type="text"]');
+  var el = inputs[inputs.length - 1];
+  if(el){ el.focus(); el.select(); }
+});
+
+$("btnReset").addEventListener("click", function(){
+  if(!confirm("Start over with the original names and colors? The picture stays loaded.")) return;
+  var keep = state.imgSrc;
+  state = clone(DEFAULTS); state.imgSrc = keep;
+  drawRows(); syncPanel(); render(); save();
+});
+
+/* ---------------- picture input ---------------- */
+$("btnPick").addEventListener("click", function(){ $("file").click(); });
+$("file").addEventListener("change", function(){ readFile(this.files[0]); this.value = ""; });
+$("btnClear").addEventListener("click", function(){ setImage(null); });
+
+var shell = $("shell");
+["dragenter","dragover"].forEach(function(ev){
+  shell.addEventListener(ev, function(e){ e.preventDefault(); shell.classList.add("dragover"); });
+  $("drop").addEventListener(ev, function(e){ e.preventDefault(); shell.classList.add("dragover"); });
+});
+["dragleave","drop"].forEach(function(ev){
+  shell.addEventListener(ev, function(e){ e.preventDefault(); shell.classList.remove("dragover"); });
+  $("drop").addEventListener(ev, function(e){ e.preventDefault(); shell.classList.remove("dragover"); });
+});
+function onDrop(e){
+  e.preventDefault(); shell.classList.remove("dragover");
+  if(e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) readFile(e.dataTransfer.files[0]);
+}
+shell.addEventListener("drop", onDrop);
+$("drop").addEventListener("drop", onDrop);
+window.addEventListener("paste", function(e){
+  var items = (e.clipboardData && e.clipboardData.items) || [];
+  for(var i=0;i<items.length;i++){
+    if(items[i].type.indexOf("image/") === 0){ readFile(items[i].getAsFile()); break; }
+  }
+});
+
+/* ---------------- drag on canvas ---------------- */
+var drag = null;
+function toCanvas(e){
+  var r = cv.getBoundingClientRect();
+  return {x:(e.clientX - r.left) * cv.width / r.width, y:(e.clientY - r.top) * cv.height / r.height};
+}
+function hit(p){
+  var order = [state[state.sel], state.roster, state.title];
+  for(var i=0;i<order.length;i++){
+    var b = order[i];
+    if(!b || !b.on) continue;
+    var r = rectOf(b);
+    if(p.x >= r.x && p.x <= r.x + r.w && p.y >= r.y && p.y <= r.y + r.h) return b;
+  }
+  return null;
+}
+cv.addEventListener("pointerdown", function(e){
+  var p = toCanvas(e), b = hit(p);
+  if(!b) return;
+  state.sel = keyOf(b);
+  syncPanel();
+  drag = {b:b, dx: b.cx * cv.width - p.x, dy: b.cy * cv.height - p.y};
+  cv.classList.add("dragging");
+  cv.setPointerCapture(e.pointerId);
+  render();
+});
+cv.addEventListener("pointermove", function(e){
+  if(!drag) return;
+  var p = toCanvas(e);
+  drag.b.cx = Math.min(1, Math.max(0, (p.x + drag.dx) / cv.width));
+  drag.b.cy = Math.min(1, Math.max(0, (p.y + drag.dy) / cv.height));
+  render();
+});
+["pointerup","pointercancel"].forEach(function(ev){
+  cv.addEventListener(ev, function(){ if(drag){ drag = null; cv.classList.remove("dragging"); save(); } });
+});
+cv.addEventListener("keydown", function(e){
+  var step = e.shiftKey ? 0.02 : 0.004, b = sel(), used = true;
+  if(e.key === "ArrowLeft") b.cx -= step;
+  else if(e.key === "ArrowRight") b.cx += step;
+  else if(e.key === "ArrowUp") b.cy -= step;
+  else if(e.key === "ArrowDown") b.cy += step;
+  else used = false;
+  if(used){ e.preventDefault(); render(); save(); }
+});
+
+/* ---------------- output ---------------- */
+function toBlob(cb){
+  render(false);
+  cv.toBlob(function(b){ render(true); cb(b); }, "image/png");
+}
+function fileName(){
+  var t = (state.title.lines[0].text || "team").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  return (t || "team") + "-sign.png";
+}
+function flash(btn, msg){
+  var was = btn.textContent;
+  btn.textContent = msg;
+  setTimeout(function(){ btn.textContent = was; }, 1600);
+}
+$("btnPng").addEventListener("click", function(){
+  var btn = this;
+  toBlob(function(blob){
+    if(!blob){ flash(btn, "Couldn't save"); return; }
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = fileName();
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+  });
+});
+$("btnCopy").addEventListener("click", function(){
+  var btn = this;
+  if(!(navigator.clipboard && window.ClipboardItem)){ flash(btn, "Not supported here"); return; }
+  toBlob(function(blob){
+    if(!blob){ flash(btn, "Couldn't copy"); return; }
+    navigator.clipboard.write([new ClipboardItem({"image/png": blob})])
+      .then(function(){ flash(btn, "Copied ✓"); })
+      .catch(function(){ flash(btn, "Couldn't copy"); });
+  });
+});
+$("btnPrint").addEventListener("click", function(){
+  render(false);
+  $("printImg").src = cv.toDataURL("image/png");
+  render(true);
+  setTimeout(function(){ window.print(); }, 120);
+});
+
+/* ---------------- boot ---------------- */
+function loadFonts(){
+  if(!document.fonts || !document.fonts.load) return Promise.resolve();
+  return document.fonts.load('800 100px "' + state.font + '"').catch(function(){});
+}
+
+drawRows();
+syncPanel();
+updateDrop();
+render();
+loadFonts().then(function(){ render(); });
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ render(); });
+if(state.imgSrc) setImage(state.imgSrc, false);
+
+})();
+</script>
