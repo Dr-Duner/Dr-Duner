@@ -153,3 +153,23 @@ Balance 198 → this is ~2.5 episodes at full spend.
 **Reuse model** (per DESIGN.md template logic): dentist anchor, title
 card, and end card generate ONCE and carry across every episode.
 Episodes 2+ should land nearer **~45 credits**.
+
+---
+
+## Generated assets (job IDs — re-display via show_generation_by_ids)
+
+Per repo convention: the image host is blocked by network policy, so
+generated media cannot be curled into the repo. Job IDs are the
+persistence mechanism.
+
+- **Dentist identity anchor candidates**, 2026-08-22, nano_banana_flash,
+  9:16, 1k, 3 credits for the pair (198 → 195):
+  - Option A: job `751e190c-c123-4b47-a8e6-d97761070f3e`
+  - Option B: job `cb674cb8-649b-4b26-8772-3981202b6f24`
+  - **Canonical pick: PENDING KEVIN.** Once chosen, this is the
+    dentist's official identity for every episode — reference it in
+    all later generations to hold proportions, palette, and mask.
+
+**Actual cost observed:** 1.5 cr per still (cheaper than the ~2 cr
+estimate). Revised EP01 projection: 9 stills ≈ 14 cr + 9 clips ≈ 54 cr
+= **~68 credits**.
