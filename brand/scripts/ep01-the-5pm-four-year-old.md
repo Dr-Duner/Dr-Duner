@@ -201,4 +201,24 @@ estimate). Revised EP01 projection: 9 stills ≈ 14 cr + 9 clips ≈ 54 cr
   - Purpose: validate character consistency off the anchor, the warm
     palette, and whether the light alone carries the argument before
     committing to the remaining seven shots.
+  - **Verdict: S1 APPROVED (Kevin). S9 v1 REJECTED** — floor colour
+    drifted from the S1 room, which pulled the whole frame cool and
+    clinical. Retired.
+- **S9 v2 (floor-matched)**, 2026-08-22, 16:9, dual reference =
+  anchor A `751e190c` (character) + S1 `f6fc4688` (room):
+  - Option A: job `68326a3d-d2fb-4189-a499-998004d15b0f`
+  - Option B: job `49f62637-f1ae-4c69-88e9-35e1b868e67a`
   - **Verdict: PENDING KEVIN.**
+
+## Technique note — matched-pair shots
+
+**Reference the previous FRAME, not just the character.** The anchor
+holds the dentist's identity but says nothing about the room, so a
+second shot of the same set will invent its own floor, and one drifting
+surface is enough to flip the emotional register from warm to clinical.
+
+For any shot that must match another: pass BOTH the character anchor and
+the approved frame as `image_references`, and name the surfaces
+explicitly in the prompt (floor tone, wall colour, cabinet wood). S1 is
+now the room-of-record for EP01 — every other operatory shot references
+it.
