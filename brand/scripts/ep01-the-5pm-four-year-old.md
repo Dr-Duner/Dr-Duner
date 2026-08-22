@@ -296,8 +296,9 @@ of the method. Rules going forward:
   changed; room, framing and shadowless lighting inherited from the
   plate (here the reference carrying its lighting is *wanted*):
   - Option A: job `f1951fb2-eb8b-4d03-8e60-741fcff8e822`
-  - Option B: job `1e15df54-25fd-413c-b30f-a8113d1bfa1d`
-  - **Verdict: PENDING KEVIN.**
+  - **Option B: job `1e15df54-25fd-413c-b30f-a8113d1bfa1d` — CHOSEN
+    (Kevin, 2026-08-22). This is the S9 8am bookend and the plate the
+    5pm frame derives from.**
   - Note (Kevin): a wide open mouth on a chibi child reads as a scream,
     not cooperation. Any open-mouth frame must be specified as a
     laughing grin — corners up, apple cheeks, crescent eyes — or the
