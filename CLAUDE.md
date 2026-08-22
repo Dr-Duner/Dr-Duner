@@ -22,6 +22,16 @@ Claude Code has NO access to Cowork, the simulator, voice chats, or any
 other Claude session/product. It only sees this git repo. Lesson 9 and
 other work built in Cowork are invisible here unless brought into the repo.
 
+## RULE 1b — Discontinued: SOAPscribe (do not resurrect)
+**SOAPscribe is DISCONTINUED.** Kevin stopped building it. Do not refer
+to it as current, do not use it as an example, do not propose work on
+it, do not ask whether it is still active. It is not.
+Root cause of recurrence: ~16 SOAPscribe skills are still live in the
+claude.ai account (`soap-note-engine`, `dentrix-*`, `pediatric-dental-
+wedge`, `bola-ai-teardown`, `cdt-coding-*`, etc.) and re-inject it as
+live context every session until deleted at claude.ai → Settings →
+Skills. Repo-side, this rule overrides them.
+
 ## RULE 2 — Persist immediately
 When the user makes a decision, write it into `theta/DESIGN.md` and commit
 in the same turn. Never let a decision live only in chat.
