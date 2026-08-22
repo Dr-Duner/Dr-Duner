@@ -1,6 +1,13 @@
 # Personal Brand Strategy
 *Drafted 2026-08-22 · pseudonymous · scope: social + search*
 
+**Channel name: Blame the Dentist** (pending handle availability check on
+YouTube + Reddit). Chosen over the tooth-pun family, which is saturated
+— "Tooth Be Told" alone has four active properties — and which signals
+dental-insider content to a parent audience. Carries the "dentist"
+keyword, encodes the actual conflict, and inverts into the point as the
+audience grows.
+
 ## The claim
 
 > Twenty years in a pediatric dental chair. Your kid isn't bad at the
@@ -46,6 +53,32 @@ had doesn't exist. The job is preparation, not compliance.
 
 This is arguable, which is the point. Plenty of parents and some
 clinicians believe a child should comply because the adult said so.
+
+## Tone
+
+**Ironic frame, sincere content.** The name carries the joke so the
+videos don't have to press it. Each piece is genuinely useful; the
+wrapper is dry.
+
+**The rule: the joke is on the dentist or the situation, never on the
+viewer.** A parent arriving after a bad visit often already suspects
+they failed. Irony aimed at them produces defensiveness and a closed
+tab; shame does not change booking behavior. Irony aimed at the dentist
+lets them laugh along, and the conclusion lands on its own without ever
+being pointed at them. Same information, opposite outcome.
+
+Give them a shared enemy that isn't each other: the 5pm slot, the myth
+that children are small adults, the cheerful advice that omits all of
+this.
+
+| | Wrong | Right |
+|---|---|---|
+| The 5pm slot | "You booked a 5pm filling for a four-year-old. What did you think would happen?" | "It's my fault, obviously. I'm the one who scheduled a four-year-old for a filling at the exact hour his nervous system clocks out. Oh — I didn't? Huh." |
+| The helicopter | "Stop hovering over me while I work." | "I've had a parent lean in close enough that I was functionally doing dentistry on two people. I cannot think of another job where this happens. Pilots don't have this." |
+
+The setup implicates the dentist; the reveal does the work. This is the
+register no practice-branded channel can copy, because a named practice
+cannot be wry about its own customers.
 
 ## Proof
 
