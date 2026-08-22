@@ -191,3 +191,14 @@ persistence mechanism.
 **Actual cost observed:** 1.5 cr per still (cheaper than the ~2 cr
 estimate). Revised EP01 projection: 9 stills ≈ 14 cr + 9 clips ≈ 54 cr
 = **~68 credits**.
+
+- **Bookend pair test**, 2026-08-22, nano_banana_2 (routed flash), 16:9,
+  1k, identity ref = anchor A `751e190c`:
+  - S1 · 5pm, low gold, kid slumped: job
+    `f6fc4688-fdcd-42ad-82cf-56a6bbc83188`
+  - S9 · 8am, bright white-gold, same chair, kid calm: job
+    `1c328307-c94f-4001-92e3-f6c5505bebe0`
+  - Purpose: validate character consistency off the anchor, the warm
+    palette, and whether the light alone carries the argument before
+    committing to the remaining seven shots.
+  - **Verdict: PENDING KEVIN.**
