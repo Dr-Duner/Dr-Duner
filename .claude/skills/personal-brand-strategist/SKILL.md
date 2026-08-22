@@ -129,6 +129,23 @@ authentic self, unlock, empower, best-in-class, transformative, cutting-edge.*
 
 If the repo has a banned-words list, honor that too.
 
+## Regulated professions
+
+When the person works under a legal or professional confidentiality
+regime — clinicians under HIPAA, lawyers under privilege, teachers under
+FERPA — that regime governs every piece of content this strategy
+produces. Treat it as the floor, not a variable: assume it applies, say
+so, and design within it. Composite and illustrative cases only, never
+identifiable ones.
+
+Asking "are you allowed to talk about your patients?" reads as not
+understanding their job, because the answer is always no and they know
+it. Ask instead about the layer *above* the regime, which genuinely does
+vary: employer communication policy, licensing-board advertising rules,
+and whether being publicly identifiable as an employee of their
+organization creates exposure that confidentiality law does not itself
+cover.
+
 ## Notes
 
 Keep the person's own words wherever possible. In the interview transcript

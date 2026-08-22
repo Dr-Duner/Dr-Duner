@@ -32,6 +32,14 @@ wedge`, `bola-ai-teardown`, `cdt-coding-*`, etc.) and re-inject it as
 live context every session until deleted at claude.ai → Settings →
 Skills. Repo-side, this rule overrides them.
 
+## RULE 1c — HIPAA governs all clinical content (non-negotiable)
+Kevin is a practicing pediatric dentist. Every patient interaction is
+covered by HIPAA, by law, always. Any content, strategy, example, post,
+or draft touching a patient encounter must be de-identified and must
+never carry PHI. Do NOT ask whether HIPAA applies or treat it as a
+variable — it is the floor. Composite/illustrative cases only: never a
+real identifiable patient, parent, date, chart, or location detail.
+
 ## RULE 2 — Persist immediately
 When the user makes a decision, write it into `theta/DESIGN.md` and commit
 in the same turn. Never let a decision live only in chat.
