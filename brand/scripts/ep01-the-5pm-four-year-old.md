@@ -267,3 +267,26 @@ never contradict each other — a shadowed floor with an alert child, or a
 bright floor with a slumped one, breaks the argument the light is making.
 An 8am room is lit from overhead plus window fill and casts nothing on
 the floor; it is not a low sun from the other side.
+
+- **APPROVED PLATE (Kevin, 2026-08-22): job
+  `f3d8a3da-efd2-488f-aa8b-ca71d4fe789a`.** Generated with the character
+  anchor only (S1 dropped as reference), room described in text, light
+  specified as fully diffused overcast illumination rather than as an
+  absence of shadows. This is now the room-and-light plate of record —
+  pass it as `image_references` for subsequent shots.
+
+### Cost discipline (Kevin, 2026-08-22)
+
+Four consecutive regenerations of the same frame burned ~12 credits and
+did not fix the problem, because each attempt varied the prompt instead
+of the method. Rules going forward:
+
+1. **Do not re-roll a prompt more than once.** If one revision does not
+   fix it, the method is wrong, not the wording — change the approach or
+   stop and ask.
+2. **Negation does not work.** Never ask for the absence of something.
+   Describe the positive condition that produces it.
+3. **A reference image overrides the prompt.** Never pass a reference
+   that contains the exact thing being asked to remove.
+4. **Wait for the instruction.** When Kevin is mid-direction, generate
+   nothing until the direction is complete.
