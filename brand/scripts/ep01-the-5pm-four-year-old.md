@@ -308,3 +308,19 @@ of the method. Rules going forward:
 generated and approved FIRST, then the 5pm frame is derived from it by
 ADDING low sun, long shadows and a sleeping child. Never the reverse —
 adding light to a clean frame works, subtracting it does not.
+
+- **S1 5pm bookend, derived from the approved 8am plate**, 2026-08-22,
+  16:9, dual reference = anchor A + 8am bookend `1e15df54`. Room, floor,
+  framing and cast inherited; only the sun and the child's state added:
+  - first / left: job `26e1349e-aab9-4aa3-a291-dcef3a3ae29c`
+  - second / right: job `ec0fd7f7-2b0e-45a1-903d-278c57c387fb`
+  - **Verdict: PENDING KEVIN.**
+
+**Cast decision (2026-08-22):** the third figure beside the chair is
+**the dad**, not a staff member. He is in the story (S4), staff are not,
+and keeping the same three people in the room at both ends of the day
+makes the bookend cut sharper — only the hour changed.
+
+**Labelling convention:** the generation widget shows no letters, so
+options are referred to by position — *first / left*, *second / right* —
+plus something visible in the frame. Never "Option A/B".
