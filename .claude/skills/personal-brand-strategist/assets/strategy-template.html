@@ -1,0 +1,184 @@
+<title>Brand Strategy</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f7f7f5;
+    --border: #e3e3df;
+    --text: #1a1a18;
+    --muted: #6b6b66;
+    --accent: #2f6f5e;
+    --accent-soft: #e8f1ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14141a;
+      --surface: #1c1c24;
+      --border: #2e2e38;
+      --text: #ececf0;
+      --muted: #9a9aa4;
+      --accent: #6ec4a8;
+      --accent-soft: #1e2f2a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14141a;
+    --surface: #1c1c24;
+    --border: #2e2e38;
+    --text: #ececf0;
+    --muted: #9a9aa4;
+    --accent: #6ec4a8;
+    --accent-soft: #1e2f2a;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 3rem 1.25rem 5rem;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; }
+
+  header { border-bottom: 2px solid var(--accent); padding-bottom: 1.25rem; margin-bottom: 2.5rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.2; margin: 0 0 .4rem; letter-spacing: -.02em; }
+  .date { color: var(--muted); font-size: .85rem; }
+
+  .claim {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.4rem;
+    margin: 0 0 2.5rem;
+    border-radius: 0 6px 6px 0;
+  }
+  .claim p { margin: 0; font-size: 1.2rem; line-height: 1.45; font-weight: 500; }
+  .claim .label {
+    display: block; font-size: .7rem; text-transform: uppercase;
+    letter-spacing: .1em; color: var(--accent); margin-bottom: .5rem; font-weight: 700;
+  }
+
+  h2 {
+    font-size: 1.05rem; text-transform: uppercase; letter-spacing: .08em;
+    color: var(--accent); margin: 2.5rem 0 .75rem; font-weight: 700;
+  }
+  h3 { font-size: 1rem; margin: 1.5rem 0 .4rem; }
+  p, li { color: var(--text); }
+  ul, ol { padding-left: 1.3rem; }
+  li { margin-bottom: .4rem; }
+  strong { font-weight: 650; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card .example {
+    border-top: 1px dashed var(--border);
+    margin-top: .9rem; padding-top: .9rem;
+    color: var(--muted); font-size: .92rem;
+  }
+
+  .weeks { list-style: none; padding: 0; margin: 1rem 0; }
+  .weeks li {
+    display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem;
+    padding: .8rem 0; border-bottom: 1px solid var(--border); margin: 0;
+  }
+  .weeks .w { color: var(--accent); font-weight: 700; font-size: .85rem; }
+
+  .cols { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .95rem; }
+  th, td { text-align: left; padding: .6rem .5rem; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; }
+  .scroll { overflow-x: auto; }
+
+  .note { color: var(--muted); font-size: .92rem; font-style: italic; }
+  footer { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Personal Brand Strategy — [NAME]</h1>
+    <div class="date">Drafted [DATE]</div>
+  </header>
+
+  <div class="claim">
+    <span class="label">The claim</span>
+    <p>[ONE SENTENCE — the thing to be known for.]</p>
+  </div>
+
+  <h2>Who this is for</h2>
+  <p>[The specific audience, concrete enough to picture one person.]</p>
+  <p class="note">Deliberately excludes: [who this is not for].</p>
+
+  <h2>The wedge</h2>
+  <p>[Why this person, on this topic, credibly.]</p>
+
+  <h2>Point of view</h2>
+  <p>[The arguable thesis, with reasoning attached.]</p>
+
+  <h2>Proof</h2>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Type</th><th>What</th><th>Supports</th></tr></thead>
+      <tbody>
+        <tr><td>Artifact</td><td>[thing they made]</td><td>[which claim]</td></tr>
+        <tr><td>Result</td><td>[outcome with a number]</td><td>[which claim]</td></tr>
+        <tr><td>Scar</td><td>[hard-won specific]</td><td>[which claim]</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Gaps: [what's missing and how to build it].</p>
+
+  <h2>The landscape</h2>
+  <p>[Who owns this audience's attention now, and what they miss.]</p>
+
+  <h2>Channels</h2>
+  <div class="cols">
+    <div class="card">
+      <h3>Primary — [channel]</h3>
+      <p>[Why this one.]</p>
+    </div>
+    <div class="card">
+      <h3>Secondary — [channel]</h3>
+      <p>[Why this one.]</p>
+    </div>
+  </div>
+
+  <h2>Formats</h2>
+  <div class="card">
+    <h3>[Format name]</h3>
+    <p>[What it is and why it works here.]</p>
+    <div class="example"><strong>Example:</strong> [worked example from their real material]</div>
+  </div>
+
+  <h2>Cadence</h2>
+  <p>[Specific and sustainable, with the batching rhythm.]</p>
+
+  <h2>90 days</h2>
+  <ul class="weeks">
+    <li><span class="w">Week 1</span><span>[Fix the surface — bio, headline, about.]</span></li>
+    <li><span class="w">Weeks 2–4</span><span>[First pieces in the chosen formats.]</span></li>
+    <li><span class="w">Weeks 5–8</span><span>[Second motion — commenting, guesting, outreach.]</span></li>
+    <li><span class="w">Weeks 9–12</span><span>[Review, double down, cut.]</span></li>
+  </ul>
+
+  <h2>Measuring it</h2>
+  <div class="cols">
+    <div class="card">
+      <h3>Leading (weeks)</h3>
+      <ul><li>[consistency, reply quality, who engages]</li></ul>
+    </div>
+    <div class="card">
+      <h3>Lagging (months)</h3>
+      <ul><li>[inbound, opportunities, revenue]</li></ul>
+    </div>
+  </div>
+
+  <h2>Open questions</h2>
+  <ul><li>[What's unresolved, and what would resolve it.]</li></ul>
+
+  <footer>Start here: [the one action for today].</footer>
+</div>
