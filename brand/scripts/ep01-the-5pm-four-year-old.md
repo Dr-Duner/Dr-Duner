@@ -290,3 +290,20 @@ of the method. Rules going forward:
    that contains the exact thing being asked to remove.
 4. **Wait for the instruction.** When Kevin is mid-direction, generate
    nothing until the direction is complete.
+
+- **S9 8am v5 — smile fix**, 2026-08-22, 16:9, dual reference =
+  anchor A + approved plate `f3d8a3da`. Only the boy's expression
+  changed; room, framing and shadowless lighting inherited from the
+  plate (here the reference carrying its lighting is *wanted*):
+  - Option A: job `f1951fb2-eb8b-4d03-8e60-741fcff8e822`
+  - Option B: job `1e15df54-25fd-413c-b30f-a8113d1bfa1d`
+  - **Verdict: PENDING KEVIN.**
+  - Note (Kevin): a wide open mouth on a chibi child reads as a scream,
+    not cooperation. Any open-mouth frame must be specified as a
+    laughing grin — corners up, apple cheeks, crescent eyes — or the
+    8am frame argues against itself.
+
+**Build order for the bookends (locked):** the 8am shadowless plate is
+generated and approved FIRST, then the 5pm frame is derived from it by
+ADDING low sun, long shadows and a sleeping child. Never the reverse —
+adding light to a clean frame works, subtracting it does not.
