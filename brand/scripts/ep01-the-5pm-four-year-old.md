@@ -93,10 +93,21 @@ Never a black terminal card.
 
 **S8 · THE TURN — NOW**
 > So yes. Blame me.
-> I'm obviously the one who scheduled a four-year-old for dental work
-> at the exact hour his nervous system clocks out.
-> Oh — I didn't?
-> Huh.
+> I'm obviously the one who looked at a four-year-old and thought —
+> you know when this kid'll be at his absolute best? Right after a full
+> day of being four.
+>
+> Genuine question though. When's the last time you scheduled something
+> hard for *yourself* at five o'clock on purpose?
+>
+> You don't. You know better. You've got thirty-four years of practice
+> managing your own mood, and you still won't book your own dentist
+> after work.
+>
+> He's got four.
+> Four years of practice being a person. And we asked him to lie flat,
+> hold still, and be brave at the end of his longest day.
+> And then we called him difficult.
 
 **S9 · THE FIX — EARLIER, brightest**
 > Here's the only thing in this story that anybody controlled.
@@ -120,7 +131,7 @@ Never a black terminal card.
 | S5 | EARLIER | The kid's day — 6am bed, bright; preschool, mid; 3pm couch, dimming | light drains across the cut |
 | S6 | NOW | The three of them; dad and dentist either side, kid small between | slow pull back |
 | S7 | NOW | Team mid-distraction, kid crying, dentist's eyes above the mask | pull back, hold |
-| S8 | NOW | Dentist to camera, palms up, shrug | hold on the beat |
+| S8 | NOW | Dentist to camera, palms up; hold on "he's got four" | slow push in, hold |
 | S9 | EARLIER | Same chair, same kid — 8am, bright white-gold, calm, mouth open | light blooms up |
 
 **S9 is the payoff shot.** Identical framing to S1, opposite light. The
