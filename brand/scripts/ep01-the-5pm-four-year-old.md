@@ -386,3 +386,21 @@ work happens; the parent is at the far end, closest to his son's feet,
 looking up the length of the chair at the professionals. That is the
 episode's argument in one composition — the adult with the most
 authority over the appointment has the least control in the room.
+
+- **S1 5PM BOOKEND — APPROVED FINAL (Kevin, 2026-08-22): job
+  `3ea1a266-9b6f-44a2-b669-dbeb427aa480`.** Four characters, staff at
+  the head of the chair, dad at the foot in street clothes, boy asleep,
+  low amber sun, long shadows. Locked.
+- **S9 8am v6 — assistant given pink cap + glasses** (ref: anchor +
+  `1e15df54`), three characters named explicitly:
+  - job `dcb90b95-8fd2-4886-97bb-fb10bfa872bf`
+  - *(a second variant returned an `nsfw` moderation flag and produced
+    nothing — no output, spurious on this content. Worth knowing it can
+    happen: re-fire rather than rewrite the prompt.)*
+  - **Verdict: PENDING KEVIN.**
+
+**Error logged:** the 8am prompt was written for two characters when the
+approved plate actually has three, so the assistant went unspecified and
+came back with no pink cap and no glasses. **Count the figures in the
+reference before writing the cast list** — never assume the prompt that
+produced an image matches what the image contains.
