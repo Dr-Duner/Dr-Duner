@@ -1,5 +1,8 @@
 # EP01 — The 5pm Four-Year-Old
-*Blame the Dentist · autopsy format · ~3:10 · 9:16*
+*Blame the Dentist · autopsy format · ~3:10 · 16:9 long-form*
+
+**Aspect: 16:9 long-form.** Search-led strategy means durable
+long-form, not Shorts; Shorts earn feed distribution, not search.
 
 **Working title:** "Your kid didn't melt down at the dentist. He melted
 down at 5pm."
@@ -81,7 +84,7 @@ Never a black terminal card.
 **S6 · THE COLLISION — NOW**
 > And here's the thing neither of us could fix in that room.
 > The child is the one variable neither adult controls.
-> I've known that since 2006. Dad found out at five o'clock on a
+> I've known that for twenty years. Dad found out at five o'clock on a
 > Tuesday, and he did not enjoy it.
 
 **S7 · THE FAILURE — NOW**
@@ -177,9 +180,13 @@ persistence mechanism.
   9:16, 1k, 3 credits for the pair (198 → 195):
   - Option A: job `751e190c-c123-4b47-a8e6-d97761070f3e`
   - Option B: job `cb674cb8-649b-4b26-8772-3981202b6f24`
-  - **Canonical pick: PENDING KEVIN.** Once chosen, this is the
-    dentist's official identity for every episode — reference it in
-    all later generations to hold proportions, palette, and mask.
+  - **CANONICAL PICK: Option A — job
+    `751e190c-c123-4b47-a8e6-d97761070f3e` LOCKED 2026-08-22 (Kevin).**
+    The one with the surgical cap. This is the dentist's official
+    identity for every episode across the channel — pass it as the
+    identity reference in every later generation to hold proportions,
+    palette, mask, and cap. Never regenerate the character from text
+    alone.
 
 **Actual cost observed:** 1.5 cr per still (cheaper than the ~2 cr
 estimate). Revised EP01 projection: 9 stills ≈ 14 cr + 9 clips ≈ 54 cr
