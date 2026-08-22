@@ -330,9 +330,13 @@ Standing cast for EP01:
 - **The Dad** — **street clothes, never scrubs.** Enters at S4, where he
   leans in over the chair. Not present in the bookends.
 
-**Bookend cast = dentist + assistant + boy.** That is what the approved
-8am plate already shows. Dad's entrance in S4 then reads as an event
-rather than as set dressing.
+**Bookend cast, per Kevin (2026-08-22):**
+- **S9 · 8am = dentist + boy.** APPROVED FINAL: job
+  `1e15df54-25fd-413c-b30f-a8113d1bfa1d`. Locked, no further changes.
+- **S1 · 5pm = dentist + assistant + parent + boy.** Four figures. The
+  room is fuller at the end of the day than at the start, which is
+  itself part of the argument: 8am is calm and uncrowded, 5pm has
+  everyone standing over a sleeping child.
 
 **Error to avoid:** I labelled the scrubbed figure "the boy's father" in
 the 5pm derivation prompt. Never infer a character's identity from
@@ -341,3 +345,11 @@ position — read the clothing. Scrubs are staff.
 **Labelling convention:** the generation widget shows no letters, so
 options are referred to by position — *first / left*, *second / right* —
 plus something visible in the frame. Never "Option A/B".
+
+- **S1 5pm, four-character version**, 2026-08-22, 16:9, dual reference =
+  anchor A + approved 8am bookend `1e15df54`. Dentist (cap/mask/scrubs),
+  assistant (scrubs/mask), father (street clothes, explicitly no medical
+  clothing), boy asleep. Low amber sun, long shadows:
+  - first / left: job `343af878-a927-4c3f-a12e-2eaba326e615`
+  - second / right: job `f216d9b8-fb0e-41ac-85ab-ded68a4d4817`
+  - **Verdict: PENDING KEVIN.**
