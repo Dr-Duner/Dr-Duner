@@ -316,10 +316,27 @@ adding light to a clean frame works, subtracting it does not.
   - second / right: job `ec0fd7f7-2b0e-45a1-903d-278c57c387fb`
   - **Verdict: PENDING KEVIN.**
 
-**Cast decision (2026-08-22):** the third figure beside the chair is
-**the dad**, not a staff member. He is in the story (S4), staff are not,
-and keeping the same three people in the room at both ends of the day
-makes the bookend cut sharper — only the hour changed.
+**Cast, corrected (Kevin, 2026-08-22):** the third figure beside the
+chair is **the dental assistant** — she is in scrubs. Not the dad. The
+dad wears street clothes and must be visually distinct from staff in
+every frame.
+
+Standing cast for EP01:
+- **The Dentist** — chibi, surgical cap, mint mask, light blue scrubs
+- **The Assistant** — chibi, scrubs, at the chairside. True to the real
+  room: the team is always there, and S7 depends on it ("my team is
+  good").
+- **The Boy** — chibi 4yo
+- **The Dad** — **street clothes, never scrubs.** Enters at S4, where he
+  leans in over the chair. Not present in the bookends.
+
+**Bookend cast = dentist + assistant + boy.** That is what the approved
+8am plate already shows. Dad's entrance in S4 then reads as an event
+rather than as set dressing.
+
+**Error to avoid:** I labelled the scrubbed figure "the boy's father" in
+the 5pm derivation prompt. Never infer a character's identity from
+position — read the clothing. Scrubs are staff.
 
 **Labelling convention:** the generation widget shows no letters, so
 options are referred to by position — *first / left*, *second / right* —
