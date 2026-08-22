@@ -215,6 +215,12 @@ estimate). Revised EP01 projection: 9 stills ≈ 14 cr + 9 clips ≈ 54 cr
   2026-08-22, 16:9, dual reference = anchor A + S1:
   - Option A: job `99ecbb21-3031-4308-9c35-24449d8b2d8f`
   - Option B: job `38ff7163-b4b5-4432-a45d-8eda9f43098d`
+  - **Verdict: REJECTED (Kevin)** — still shadowed, and extra staff
+    characters appeared unbidden.
+- **S9 v4 (two characters only, zero floor shadows)**, 2026-08-22,
+  16:9, dual reference = anchor A + S1:
+  - Option A: job `2b2907ef-d0c1-44c5-88d4-874250fc2074`
+  - Option B: job `454fdb13-4bdd-4b06-9d6f-97febaf48b12`
   - **Verdict: PENDING KEVIN.**
   - *No-reference control pair (my error — refs omitted on the call,
     kept only as a comparison of how far the room drifts without a
@@ -244,3 +250,20 @@ and raking), shadow length (short and tucked vs long and stretched), and
 colour temperature (clean white-gold vs amber).
 
 Rule of thumb: **reference the room, dictate the light.**
+
+**Name the exact cast, or the model adds people.** A dental operatory
+prompt invites assistants and hovering parents by default. Every shot
+must state the headcount explicitly and list who is *not* in frame.
+
+**The shadow rule (Kevin, 2026-08-22) — the show's core visual logic:**
+
+| Floor | Child | Reads as |
+|---|---|---|
+| Long shadows across it | asleep / collapsed | end of a day he has nothing left for |
+| No shadows at all, evenly lit | awake, eyes and mouth open | start of a day he can actually do this in |
+
+Shadow presence and the child's state are the SAME variable. They must
+never contradict each other — a shadowed floor with an alert child, or a
+bright floor with a slumped one, breaks the argument the light is making.
+An 8am room is lit from overhead plus window fill and casts nothing on
+the floor; it is not a low sun from the other side.
