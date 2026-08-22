@@ -208,7 +208,17 @@ estimate). Revised EP01 projection: 9 stills ≈ 14 cr + 9 clips ≈ 54 cr
   anchor A `751e190c` (character) + S1 `f6fc4688` (room):
   - Option A: job `68326a3d-d2fb-4189-a499-998004d15b0f`
   - Option B: job `49f62637-f1ae-4c69-88e9-35e1b868e67a`
+  - **Verdict: REJECTED (Kevin)** — floor matched, but referencing S1
+    dragged S1's *lighting* across too. Long raking shadows in both
+    frames, so the bookend cut read as the same time of day twice.
+- **S9 v3 (room referenced, lighting explicitly overridden)**,
+  2026-08-22, 16:9, dual reference = anchor A + S1:
+  - Option A: job `99ecbb21-3031-4308-9c35-24449d8b2d8f`
+  - Option B: job `38ff7163-b4b5-4432-a45d-8eda9f43098d`
   - **Verdict: PENDING KEVIN.**
+  - *No-reference control pair (my error — refs omitted on the call,
+    kept only as a comparison of how far the room drifts without a
+    reference):* `c0e47a6b`, `8a3df137`
 
 ## Technique note — matched-pair shots
 
@@ -222,3 +232,15 @@ the approved frame as `image_references`, and name the surfaces
 explicitly in the prompt (floor tone, wall colour, cabinet wood). S1 is
 now the room-of-record for EP01 — every other operatory shot references
 it.
+
+**But a reference carries its LIGHTING too, and that has to be
+explicitly overridden.** Referencing S1 for the room also reproduced
+S1's low amber sun and long raking shadows, which made the 8am frame
+read as another late afternoon and killed the bookend cut. When a
+matched shot needs different light, name the contrast directly: state
+what the reference's light is doing and instruct the opposite — light
+direction (opposite side of the room), height (high and diffuse vs low
+and raking), shadow length (short and tucked vs long and stretched), and
+colour temperature (clean white-gold vs amber).
+
+Rule of thumb: **reference the room, dictate the light.**
