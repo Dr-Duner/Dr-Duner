@@ -86,8 +86,8 @@ Never a black terminal card.
 
 **S7 · THE FAILURE — NOW**
 > We tried to get him numb. My team is good — we have tricks, and they
-> work on better than three out of four kids.
-> This wasn't one of them.
+> work on about 75% of kids.
+> Which means 25% of the time, they don't. This was one of those.
 > So I called it. Stopped. Rescheduled. Which is the correct clinical
 > decision, and also the one that gets me a complaint.
 
