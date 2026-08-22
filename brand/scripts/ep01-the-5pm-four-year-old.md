@@ -13,52 +13,63 @@ scenarios for education. Not dental advice for your specific child."*
 
 ## Visual system
 
-**Register 1 — THE ROOM** (what the parent saw)
-Full color, warm. Pediatric operatory: soft mint walls, warm wood, big
-window light, friendly clutter. Chibi characters, Pixar-meets-Funko —
-oversized heads, stubby bodies, glossy finish.
+**One warm world. No cold register, ever.** This is a clinical setting
+shown to a frightened parent — cool blue schematic reads as the exact
+thing they are already afraid of, and it puts distance between narrator
+and viewer at the moment we need closeness. Theta's cold/warm contrast
+belongs to a trading app. It does not come here.
 
-**Register 2 — THE TRUTH** (what was actually happening)
-Cool and schematic. Deep teal-black ground, cyan and white line work,
-lightbox/x-ray feel. Mono type. Used *only* for the reveal beats.
+Chibi throughout — Pixar-meets-Funko, oversized heads, stubby bodies,
+glossy finish. Soft mint and aqua walls, warm wood, honey light.
 
-Cut between registers. Never blend them.
+**The light is the argument.** Instead of cutting to a diagram, the same
+warm world changes temperature across the day:
+
+| Mode | When | Light |
+|---|---|---|
+| **NOW** | The operatory, 5pm | low, gold-amber, long shadows, tired |
+| **EARLIER** | The kid's day, replayed | starts bright white-gold at 6am, dims steadily to the 5pm gold of NOW |
+
+The reveal beats are not schematics. They are warm flashbacks to the
+child's actual day, and the draining light does what a battery graphic
+would have done — but felt instead of explained.
+
+Title and end cards are warm too: soft cream ground, hand-lettered feel.
+Never a black terminal card.
 
 **Cast**
 - **The Dentist (narrator)** — chibi, surgical mask always on, eyes
-  only. The mask is the pseudonym. This is the identity anchor:
+  only, warm and unhurried. The mask is the pseudonym. Identity anchor:
   generate once, reference in every later render.
-- **The Kid** — chibi 4yo, visibly running on empty
+- **The Kid** — chibi 4yo, visibly emptying as the light drops
 - **The Dad** — chibi, not a villain; tired, certain, wrong
-
----
 
 ## Script
 
-**S1 · COLD OPEN — Register 1**
+**S1 · COLD OPEN — NOW**
 > Five o'clock. Four years old. Bottom molar, needs a filling.
 > And in about eleven minutes, a grown man is going to look me in the
 > eye and ask me what I did to his son.
 
-**S2 · TITLE — Register 2**
+**S2 · TITLE — warm card**
 > So let's do it. Let's blame the dentist. I'll go first.
 
 *Card: BLAME THE DENTIST*
 
-**S3 · THE SETUP — Register 1**
+**S3 · THE SETUP — NOW**
 > Here's what I did to him. I put a little mask on his nose that smells
 > like strawberry and makes him feel floaty. Nitrous. Gentlest thing I
 > own.
 > He pulled it off. Immediately.
 
-**S4 · THE PARENT'S READ — Register 1**
+**S4 · THE PARENT'S READ — NOW**
 > Dad's read: he's being difficult. So dad says the thing every dad
 > says. "Leave it on. Stop moving."
 > And then — this is the part I want you to see — dad looks at *me*.
 > Like the matter's settled. Like his son was consulted, voted, and
 > lost.
 
-**S5 · THE TRUTH — Register 2**
+**S5 · THE TRUTH — EARLIER**
 > Here's what was actually happening.
 > That kid woke up at six. Preschool. No real nap. By three in the
 > afternoon he was running on fumes. By five he had nothing left.
@@ -67,27 +78,27 @@ Cut between registers. Never blend them.
 > A four-year-old pulling at that mask isn't misbehavior. It's
 > information.
 
-**S6 · THE COLLISION — Register 2**
+**S6 · THE COLLISION — NOW**
 > And here's the thing neither of us could fix in that room.
 > The child is the one variable neither adult controls.
 > I've known that since 2006. Dad found out at five o'clock on a
 > Tuesday, and he did not enjoy it.
 
-**S7 · THE FAILURE — Register 1**
+**S7 · THE FAILURE — NOW**
 > We tried to get him numb. My team is good — we have tricks, and they
 > work on better than three out of four kids.
 > This wasn't one of them.
 > So I called it. Stopped. Rescheduled. Which is the correct clinical
 > decision, and also the one that gets me a complaint.
 
-**S8 · THE TURN — Register 1 → 2**
+**S8 · THE TURN — NOW**
 > So yes. Blame me.
 > I'm obviously the one who scheduled a four-year-old for dental work
 > at the exact hour his nervous system clocks out.
 > Oh — I didn't?
 > Huh.
 
-**S9 · THE FIX — Register 2**
+**S9 · THE FIX — EARLIER, brightest**
 > Here's the only thing in this story that anybody controlled.
 > The appointment time.
 > Book the 8am. Not because your dentist prefers it. Because your kid
@@ -100,17 +111,20 @@ Cut between registers. Never blend them.
 
 ## Shot plan
 
-| # | Register | Frame | Motion |
+| # | Mode | Frame | Motion |
 |---|---|---|---|
-| S1 | Room | Wide operatory, late gold light, small kid in big chair | slow push in |
-| S2 | Truth | Black card, mono title | type-on |
-| S3 | Room | CU nasal hood going on, kid's hand rising | hand pulls off |
-| S4 | Room | Two-shot: dad leaning in, dentist's masked eyes | dad turns to camera |
-| S5 | Truth | Schematic "battery" timeline 6am→5pm draining | drain animation |
-| S6 | Truth | Three figures, line between the two adults, kid separate | line snaps |
-| S7 | Room | Team mid-distraction, kid crying, dentist's eyes | pull back |
-| S8 | Room→Truth | Dentist to camera, shrug; hard cut to black | whip cut |
-| S9 | Truth | Clock face: 8AM glowing, 5PM greyed | clock resolve |
+| S1 | NOW | Wide operatory, low gold light, small kid in a big chair | slow push in |
+| S2 | Card | Warm cream card, hand-lettered title | type-on |
+| S3 | NOW | CU nasal hood going on, kid's hand rising into frame | hand pulls it off |
+| S4 | NOW | Two-shot: dad leaning in over the chair, dentist's masked eyes | dad turns to camera |
+| S5 | EARLIER | The kid's day — 6am bed, bright; preschool, mid; 3pm couch, dimming | light drains across the cut |
+| S6 | NOW | The three of them; dad and dentist either side, kid small between | slow pull back |
+| S7 | NOW | Team mid-distraction, kid crying, dentist's eyes above the mask | pull back, hold |
+| S8 | NOW | Dentist to camera, palms up, shrug | hold on the beat |
+| S9 | EARLIER | Same chair, same kid — 8am, bright white-gold, calm, mouth open | light blooms up |
+
+**S9 is the payoff shot.** Identical framing to S1, opposite light. The
+whole argument in one cut: same child, same chair, different hour.
 
 ## Package
 
@@ -127,8 +141,9 @@ Cut between registers. Never blend them.
 dentist appointment time, nitrous oxide kids dentist, child scared of
 dentist, first filling toddler
 
-**Thumbnail:** masked chibi dentist, flat palms up, "IT'S MY FAULT
-APPARENTLY" — clock reading 5:00 behind.
+**Thumbnail:** masked chibi dentist, palms up, warm operatory behind,
+"IT'S MY FAULT APPARENTLY" — clock reading 5:00. Warm palette, never
+clinical blue.
 
 ## Cost estimate
 
