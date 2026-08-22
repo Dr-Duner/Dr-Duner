@@ -316,6 +316,21 @@ adding light to a clean frame works, subtracting it does not.
   - second / right: job `ec0fd7f7-2b0e-45a1-903d-278c57c387fb`
   - **Verdict: PENDING KEVIN.**
 
+## CHARACTER BIBLE (locked, Kevin 2026-08-22)
+
+Applies to every frame of every episode. Continuity errors here read as
+sloppiness the moment the cut moves.
+
+| Character | Locked details |
+|---|---|
+| **The Dentist** | Surgical cap, mint surgical mask (face never visible below the eyes), light blue scrubs, **small round eyeglasses — ALWAYS ON** |
+| **The Assistant** | **Pink scrub cap**, mask, scrubs, **small round eyeglasses — ALWAYS ON** |
+| **The Dad** | Street clothes only — casual shirt or zip jacket, jeans. Never scrubs, mask or cap. **Same chibi proportions and height as the other adults; never tall or lanky.** |
+| **The Boy** | Chibi 4-year-old. Open mouth is always a laughing grin, never a scream. |
+
+**Proportion rule:** every adult shares identical chibi proportions —
+oversized round head, short stubby body. Nobody towers.
+
 **Cast, corrected (Kevin, 2026-08-22):** the third figure beside the
 chair is **the dental assistant** — she is in scrubs. Not the dad. The
 dad wears street clothes and must be visually distinct from staff in
@@ -353,3 +368,21 @@ plus something visible in the frame. Never "Option A/B".
   - first / left: job `343af878-a927-4c3f-a12e-2eaba326e615`
   - second / right: job `f216d9b8-fb0e-41ac-85ab-ded68a4d4817`
   - **Verdict: PENDING KEVIN.**
+
+- **Continuity fix round**, 2026-08-22, 16:9:
+  - S9 8am, glasses added to the dentist (ref: anchor + `1e15df54`):
+    - first / left: job `03db9383-ac9e-441c-9dfd-e108b95439b3`
+    - second / right: job `67fc3e33-3917-409f-90ec-732cbef27c46`
+  - S1 5pm, restaged + glasses + pink cap + dad's height corrected
+    (ref: anchor + `f216d9b8`). Staff at the HEAD of the chair, dad at
+    the FOOT:
+    - first / left: job `3ea1a266-9b6f-44a2-b669-dbeb427aa480`
+    - second / right: job `c66311cf-cc08-4097-8edb-453313af955d`
+  - **Verdict: PENDING KEVIN.**
+
+**Staging note:** placing the two staff at the head and the dad at the
+foot is not just blocking. The people who can act are gathered where the
+work happens; the parent is at the far end, closest to his son's feet,
+looking up the length of the chair at the professionals. That is the
+episode's argument in one composition — the adult with the most
+authority over the appointment has the least control in the room.
