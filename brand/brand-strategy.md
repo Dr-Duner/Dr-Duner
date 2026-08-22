@@ -151,6 +151,24 @@ it makes the visit worse, and what to do with your body instead.
 *Example:* Pulling at the mask isn't defiance. It's a sensory report
 from someone without the vocabulary to file it.
 
+**5. The Mirror** — the engine. Find the thing the parent already does
+for themselves and never extends to the child, then put the two side by
+side. Works because it hands them a belief they already hold instead of
+a correction they have to accept, so the conclusion arrives as their own.
+
+*Example (EP01, S8):* "When's the last time you scheduled something hard
+for yourself at five o'clock on purpose? You don't. You know better.
+You've got thirty-four years of practice managing your own mood and you
+still won't book your own dentist after work. He's got four."
+
+Seeds: hungry and irritable / wanting warning before a stranger's hands
+are in your mouth / taking a sick day when you feel awful / needing a
+minute before hard news. Each is one episode.
+
+**Craft note:** the mirror only lands when the narrator stays inside it
+— "*we* asked him to be brave," not "*you* did this." The moment it
+points outward it becomes a lecture and the parent leaves.
+
 ## Cadence
 
 **Floor: one piece per week.** Planned against a bad week, not a good
