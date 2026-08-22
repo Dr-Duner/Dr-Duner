@@ -412,3 +412,26 @@ approved plate actually has three, so the assistant went unspecified and
 came back with no pink cap and no glasses. **Count the figures in the
 reference before writing the cast list** — never assume the prompt that
 produced an image matches what the image contains.
+
+- **Middle shots S3–S8**, 2026-08-22, 16:9, reference = anchor
+  `751e190c` + 5pm plate `3ea1a266` (S5 references the plate only, for
+  the boy's design — it is a home interior, not the operatory):
+  - S3 nasal hood, boy's hand rising: `28c748e0-d081-4953-8e32-f0b1ecffa884`
+  - S4 dad leaning in, dentist watching: `d9784e5f-d19c-44ee-bee0-39369af80678`
+  - S5 the boy at 3pm on the sofa at home: `26fd71f9-90e0-489d-a56c-bff9976c136d`
+  - S6 the three of them, boy small between: `32c1554a-088f-47e8-9f85-7d055452b329`
+  - S7 team distracting, boy upset — two options:
+    `7ab96020-c408-4c78-8eaf-7f1a31085aed` /
+    `efdab739-b5d0-433c-a9d6-2fcf131b43dd`
+  - S8 dentist to camera, palms up: `b4dcb2c4-f9f7-4278-b8e3-ef3d2ccea784`
+  - **Verdict: PENDING KEVIN.**
+
+**S2 title card is NOT generated.** Text rendered by the image model
+comes back garbled. Title and end cards are built as overlays at edit
+time over a plain warm cream ground. Applies to every episode.
+
+**Moderation flags:** the content filter rejected the upset-child shot
+twice (`nsfw` status, no output, no charge). Softer cartoon-register
+wording — "having a wobble", "one round cartoon tear", "eyebrows tilted
+up" — passes where clinical distress wording does not. Re-fire with
+gentler phrasing rather than abandoning the shot.
