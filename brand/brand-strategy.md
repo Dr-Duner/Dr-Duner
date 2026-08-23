@@ -246,13 +246,9 @@ Consider it the second build, not the tenth.
 
 ## Open questions
 
-- **Handle availability** — "Blame the Dentist" unverified on YouTube
-  and Reddit. Check at `youtube.com/@blamethedentist` and
-  `reddit.com/user/blamethedentist`, or via YouTube Studio →
-  Customization → Basic info, which validates live. Backups:
-  `blamethedentistshow`, `theblamethedentist`, `blamethedentist_`.
-  Matching handles across both surfaces beat the perfect handle on one.
-  Register both before publishing — names get squatted.
+- ~~Handle availability~~ — **CONFIRMED AVAILABLE on both YouTube and
+  Reddit (Kevin, 2026-08-22): "Blame the Dentist."** Register both
+  before publishing.
 - **Credits** — top up as needed; Kevin funds this. Stay conservative
   per generation (storyboard before generating, one re-roll maximum),
   but credits are not a planning constraint and should not gate scope.
