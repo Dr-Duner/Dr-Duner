@@ -246,18 +246,28 @@ Consider it the second build, not the tenth.
 
 ## Open questions
 
-- **Employer comms policy** — still unverified. Pseudonymity plus no
-  employer identification is a strong shield, but the policy should be
-  read before publishing. Week 1 item, Kevin's to do.
 - **Handle availability** — "Blame the Dentist" unverified on YouTube
-  and Reddit. Check before the first upload.
-- **Whether the pseudonym holds** — Alaska + tribal health + pediatric
-  dentist + twenty years is a very small set. Rule stands: never name
-  the state, the system, or the population. Content stays at
-  four-year-olds and dental chairs.
-- **Credits are the real cadence limit, not time.** ~148 remaining;
-  EP01 cost roughly 35 in stills with video still to come. At 4
-  episodes/month a top-up is needed within the first month. Decide
-  after EP01's video spend is measured.
+  and Reddit. Check at `youtube.com/@blamethedentist` and
+  `reddit.com/user/blamethedentist`, or via YouTube Studio →
+  Customization → Basic info, which validates live. Backups:
+  `blamethedentistshow`, `theblamethedentist`, `blamethedentist_`.
+  Matching handles across both surfaces beat the perfect handle on one.
+  Register both before publishing — names get squatted.
+- **Credits** — top up as needed; Kevin funds this. Stay conservative
+  per generation (storyboard before generating, one re-roll maximum),
+  but credits are not a planning constraint and should not gate scope.
 - **Non-social surfaces** — newsletter, podcast guesting, paid guide.
   Case by case, per Kevin.
+
+## Settled — do not reopen
+
+- **Employer communication policy is NOT a factor.** Kevin publishes
+  anonymously: no name, no face, no employer, no population, no
+  location. Employer comms policies govern identifiable employees;
+  they do not reach anonymous content about generic four-year-olds.
+  Do not raise this again.
+- **HIPAA** governs all clinical content and is assumed, never asked
+  about (see CLAUDE.md RULE 1c). Composite cases only.
+- **Pseudonym discipline:** never name the state, the system, or the
+  population. Content stays at four-year-olds and dental chairs. This
+  is what keeps the anonymity real, and it is already handled.
