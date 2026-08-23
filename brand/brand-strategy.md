@@ -208,15 +208,56 @@ morning slot because of this" beats five hundred passive views.
 no comment shows a parent changing a decision, the format is wrong —
 not the person, and not the thesis.
 
+## Episode slate
+
+Ten episodes drawn from material already in hand. Nothing here needs
+research — it is all things seen repeatedly over twenty years.
+
+| # | Episode | Format |
+|---|---|---|
+| 01 | **The 5pm four-year-old** — he melted down because of the hour, not the dentistry | Autopsy + Mirror · **built** |
+| 02 | **The four parents I meet every day** — controller, helicopter, oblivious, override | Taxonomy |
+| 03 | **Why I stopped the appointment** — the correct clinical call, and the complaint it earns | Autopsy |
+| 04 | **Your kid isn't picky, he's hungry** — you are useless when hungry and you know it | Mirror |
+| 05 | **Nobody told him what was about to happen** — you'd want warning before a stranger's hands were in your mouth | Mirror |
+| 06 | **The one standing over my shoulder** — "I cannot think of another job where this happens" | Taxonomy |
+| 07 | **"He was fine at home"** — what that sentence actually means | Translation |
+| 08 | **The 75%** — the distraction tricks, and why the other quarter isn't failure | Receipt |
+| 09 | **Crying is not the same as pain** — the single most useful thing a parent can learn | Translation |
+| 10 | **The thing I say that makes parents angriest** | Point of view |
+
+EP02 is the likeliest to travel — "which one am I" is an irresistible
+hook and it is the piece no practice-branded channel can publish.
+Consider it the second build, not the tenth.
+
+## Status
+
+| Decision | State |
+|---|---|
+| Position (Before substance, After hooks) | **Locked** |
+| Channel name — Blame the Dentist | **Locked**, handle unverified |
+| Tone — ironic frame, sincere content | **Locked** |
+| Aspect — 16:9 long-form, search-led | **Locked** |
+| Cadence — 4/month, light pipeline | **Locked** |
+| Character bible + visual system | **Locked** |
+| EP01 script + storyboard | **Complete** |
+| Voice, assembly, thumbnail | Not started |
+| Channel description / about text | Not written |
+
 ## Open questions
 
-- **Employer comms policy** — unverified. Pseudonymity plus no employer
-  identification is a strong shield, but the policy should be read.
+- **Employer comms policy** — still unverified. Pseudonymity plus no
+  employer identification is a strong shield, but the policy should be
+  read before publishing. Week 1 item, Kevin's to do.
+- **Handle availability** — "Blame the Dentist" unverified on YouTube
+  and Reddit. Check before the first upload.
 - **Whether the pseudonym holds** — Alaska + tribal health + pediatric
-  dentist + 2006 is a very small set. Rule: never name the state, the
-  system, or the population. Content stays at four-year-olds and dental
-  chairs.
-- **32 hrs/week** — if genuinely available, the plan can be resized to
-  2–3 pieces/week. Confirm after the first month of real data.
-- **Non-social surfaces** — newsletter, guesting, paid guide to be
-  addressed case by case, per Kevin.
+  dentist + twenty years is a very small set. Rule stands: never name
+  the state, the system, or the population. Content stays at
+  four-year-olds and dental chairs.
+- **Credits are the real cadence limit, not time.** ~148 remaining;
+  EP01 cost roughly 35 in stills with video still to come. At 4
+  episodes/month a top-up is needed within the first month. Decide
+  after EP01's video spend is measured.
+- **Non-social surfaces** — newsletter, podcast guesting, paid guide.
+  Case by case, per Kevin.
